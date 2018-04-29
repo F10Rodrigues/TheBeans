@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+       
         
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                 <Items>
@@ -43,9 +43,19 @@
                     </asp:MenuItem>
                 </Items>
             </asp:Menu>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         
+
+
+         </div>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
-    </div>
+   
     </form>
 </body>
 </html>
