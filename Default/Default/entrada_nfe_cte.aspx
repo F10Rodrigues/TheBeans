@@ -39,4 +39,5 @@
      <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" />
      <asp:Button ID="btn_limpar" runat="server" Text="LIMPAR" />
      <asp:Button ID="btn_sair" runat="server" Text="SAIR" />
+     <asp:Button ID="btn_voltar" runat="server" Text="VOLTAR" />
 </asp:Content>
