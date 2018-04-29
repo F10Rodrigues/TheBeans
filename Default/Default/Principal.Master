@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="Default.Principal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem Text="ENTRADA NFe" Value="ENTRADA NFe">
+                        <asp:MenuItem Text="CTe/NFe" Value="CTe/NFe"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="RELATÓRIOS" Value="RELATÓRIOS">
+                        <asp:MenuItem Text="CTe/NFe" Value="CTe/NFe"></asp:MenuItem>
+                        <asp:MenuItem Text="FORNECEDORES" Value="FORNECEDORES"></asp:MenuItem>
+                        <asp:MenuItem Text="FUNCIONARIOS" Value="FUNCIONARIOS"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="CADASTRO FUNCIONÁRIOS" Value="CADASTRO FUNCIONÁRIOS">
+                        <asp:MenuItem Text="ADICIONAR" Value="ADICIONAR"></asp:MenuItem>
+                        <asp:MenuItem Text="ATUALIZAR" Value="ATUALIZAR"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="CADASTRO FORNECEDOR" Value="CADASTRO FORNECEDOR">
+                        <asp:MenuItem Text="ADICIONAR" Value="ADICIONAR"></asp:MenuItem>
+                        <asp:MenuItem Text="ATUALIZAR" Value="ATUALIZAR"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="GED" Value="GED">
+                        <asp:MenuItem Text="ADICIONAR DOCUMENTO" Value="ADICIONAR DOCUMENTO"></asp:MenuItem>
+                        <asp:MenuItem Text="RELATÓRIO" Value="RELATÓRIO"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="FINANCEIRO" Value="FINANCEIRO">
+                        <asp:MenuItem Text="PAGAMENTOS" Value="PAGAMENTOS"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="AUTORIZAÇÃO" Value="AUTORIZAÇÃO">
+                        <asp:MenuItem Text="DOCUMENTOS" Value="DOCUMENTOS"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
