@@ -2,4 +2,59 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" />
+    <asp:Button ID="btn_limpar" runat="server" Text="LIMPAR" />
+    <asp:Button ID="btn_voltar" runat="server" Text="VOLTAR" />
+    <asp:Button ID="btn_sair" runat="server" Text="SAIR" /><br /><br />
+    <asp:Label ID="lbl_cnpj" runat="server" Text="CNPJ"></asp:Label>
+    <asp:TextBox ID="txt_cnpj" runat="server" Width="178px"></asp:TextBox>
+    <asp:Label ID="lbl_ie" runat="server" Text="INSCRIÇÃO ESTADUAL"></asp:Label>
+    <asp:TextBox ID="txt_ie" runat="server" Width="180px"></asp:TextBox>
+    <br /><br />
+    <asp:Label ID="lbl_razaosocial" runat="server" Text="RAZÃO SOCIAL"></asp:Label>
+    <asp:TextBox ID="txt_razaosocial" runat="server" Width="642px"></asp:TextBox><br /><br />
+    <asp:Label ID="lbl_telefone" runat="server" Text="TELEFONE"></asp:Label>
+    <asp:TextBox ID="txt_telefone" runat="server" Width="189px"></asp:TextBox>
+    <asp:Label ID="lbl_celular" runat="server" Text="CELULAR"></asp:Label>
+    <asp:TextBox ID="txt_celular" runat="server" Width="186px"></asp:TextBox>
+    <asp:Label ID="lbl_cep" runat="server" Text="CEP"></asp:Label>
+    <asp:TextBox ID="txt_cep" runat="server"></asp:TextBox><br /><br />
+    <asp:Label ID="lbl_endereco" runat="server" Text="ENDEREÇO"></asp:Label>
+    <asp:TextBox ID="txt_endereco" runat="server" Width="277px"></asp:TextBox>
+    <asp:Label ID="lbl_numero" runat="server" Text="Nº"></asp:Label>
+    <asp:TextBox ID="txt_numero" runat="server" Width="56px"></asp:TextBox>
+    <asp:Label ID="lbl_bairro" runat="server" Text="BAIRRO"></asp:Label>
+    <asp:TextBox ID="txt_bairro" runat="server" Width="181px"></asp:TextBox>
+    <asp:Label ID="lbl_estado" runat="server" Text="ESTADO"></asp:Label>
+    <asp:DropDownList ID="ddl_estado" runat="server">
+        <asp:ListItem>ACRE</asp:ListItem>
+        <asp:ListItem>ALAGOAS</asp:ListItem>
+        <asp:ListItem>AMAPA</asp:ListItem>
+        <asp:ListItem>AMAZONAS</asp:ListItem>
+        <asp:ListItem>BAHIA</asp:ListItem>
+        <asp:ListItem>CEARA</asp:ListItem>
+        <asp:ListItem>DISTRITO FEDERAL</asp:ListItem>
+        <asp:ListItem>ESPIRITO SANTO</asp:ListItem>
+        <asp:ListItem>GOIAS</asp:ListItem>
+        <asp:ListItem>MARANHÃO</asp:ListItem>
+        <asp:ListItem>MATO GROSSO</asp:ListItem>
+        <asp:ListItem>MATO GROSSO DO SUL</asp:ListItem>
+        <asp:ListItem>MINAS GERAIS</asp:ListItem>
+        <asp:ListItem>PARA</asp:ListItem>
+        <asp:ListItem>PARAIBA</asp:ListItem>
+        <asp:ListItem>PARANA</asp:ListItem>
+        <asp:ListItem>PERNAMBUCO</asp:ListItem>
+        <asp:ListItem>PIAUI</asp:ListItem>
+        <asp:ListItem>RIO DE JANEIRO</asp:ListItem>
+        <asp:ListItem>RIO GRANDE DO NORTE</asp:ListItem>
+        <asp:ListItem>RIO GRANDE DO SUL</asp:ListItem>
+        <asp:ListItem>RONDONIA</asp:ListItem>
+        <asp:ListItem>RORAIMA</asp:ListItem>
+        <asp:ListItem>SANTA CATARINA</asp:ListItem>
+        <asp:ListItem>SÃO PAULO</asp:ListItem>
+        <asp:ListItem>SERGIPE</asp:ListItem>
+        <asp:ListItem>TOCANTINS</asp:ListItem>
+    </asp:DropDownList><br /><br />
+    <asp:Label ID="lbl_email" runat="server" Text="E-MAIL"></asp:Label>
+    <asp:TextBox ID="txt_email" runat="server" Width="882px"></asp:TextBox>
 </asp:Content>
