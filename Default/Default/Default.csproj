@@ -94,10 +94,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LOGO.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="pos_login.aspx" />
     <Content Include="Principal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -186,6 +188,13 @@
     </Compile>
     <Compile Include="ged_relatorio.aspx.designer.cs">
       <DependentUpon>ged_relatorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pos_login.aspx.cs">
+      <DependentUpon>pos_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pos_login.aspx.designer.cs">
+      <DependentUpon>pos_login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
