@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bancodadosinterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Documento">
+          <Key>
+            <PropertyRef Name="numero_documento" />
+          </Key>
+          <Property Name="id_documento" Type="int" Nullable="false" />
+          <Property Name="numero_documento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="fornecedor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="id_fornecedor" />
+          </Key>
+          <Property Name="id_fornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="razao_social" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefone" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="celular" Type="varchar" MaxLength="12" />
+          <Property Name="endereco" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cep" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="bairro" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="funcao">
+          <Key>
+            <PropertyRef Name="id_funcao" />
+          </Key>
+          <Property Name="id_funcao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pode_aprovar" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pode_cadastrar" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pode_pagar" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="funcionario">
+          <Key>
+            <PropertyRef Name="id_funcao" />
+          </Key>
+          <Property Name="id_funcionario" Type="int" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cpf" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="ctps" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="rg" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="cep" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="celular" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="endereco" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="bairro" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="id_funcao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inter">
+          <Key>
+            <PropertyRef Name="id_login" />
+          </Key>
+          <Property Name="id_login" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="senha" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NFe">
+          <Key>
+            <PropertyRef Name="id_nfe" />
+          </Key>
+          <Property Name="id_nfe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="chave_acesso" Type="varchar" MaxLength="50" />
+          <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="data_emissao" Type="date" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="data_entrada" Type="date" Nullable="false" />
+          <Property Name="base_calc_icms" Type="float" />
+          <Property Name="valor_icms" Type="float" />
+          <Property Name="frete_nfe" Type="float" />
+          <Property Name="desconto" Type="float" />
+          <Property Name="base_st" Type="float" />
+          <Property Name="valor_st" Type="float" />
+          <Property Name="ipi" Type="float" />
+          <Property Name="valor_produtos" Type="float" Nullable="false" />
+          <Property Name="total" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="obs_gerente">
+          <Key>
+            <PropertyRef Name="id_obs_gerente" />
+          </Key>
+          <Property Name="id_obs_gerente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="observacao" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pagamento">
+          <Key>
+            <PropertyRef Name="id_pagamento" />
+          </Key>
+          <Property Name="id_pagamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vencimento" Type="date" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fornecedor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="valor" Type="float" Nullable="false" />
+          <Property Name="id_observacao" Type="int" Nullable="false" />
+          <Property Name="observacao" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="programacao_pagamento">
+          <Key>
+            <PropertyRef Name="id_programacao" />
+          </Key>
+          <Property Name="id_programacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="data_emissao" Type="date" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="data_entrada" Type="date" Nullable="false" />
+          <Property Name="data_vencimento" Type="date" Nullable="false" />
+          <Property Name="total" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rel_documentos">
+          <Key>
+            <PropertyRef Name="id_rel_documentos" />
+          </Key>
+          <Property Name="id_rel_documentos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="data_entrada" Type="date" Nullable="false" />
+          <Property Name="Nfe_CTe" Type="int" Nullable="false" />
+          <Property Name="razao_social" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="valor" Type="float" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rel_fornecedores">
+          <Key>
+            <PropertyRef Name="id_rel_fornecedores" />
+          </Key>
+          <Property Name="id_rel_fornecedores" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="razao_social" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="endereco" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="telefone" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rel_funcionarios">
+          <Key>
+            <PropertyRef Name="id_rel_funcionarios" />
+          </Key>
+          <Property Name="id_rel_funcionarios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cpf" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="endereco" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="telefone" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="funcao" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rel_ged">
+          <Key>
+            <PropertyRef Name="id_rel_ged" />
+          </Key>
+          <Property Name="id_rel_ged" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numero_documento" Type="int" Nullable="false" />
+          <Property Name="serie" Type="varchar" MaxLength="5" />
+          <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="fornecedor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="arquivo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="senha" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="bancodadosinterModelStoreContainer">
+          <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="funcao" EntityType="Self.funcao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="funcionario" EntityType="Self.funcionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inter" EntityType="Self.Inter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NFe" EntityType="Self.NFe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="obs_gerente" EntityType="Self.obs_gerente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pagamento" EntityType="Self.pagamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="programacao_pagamento" EntityType="Self.programacao_pagamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rel_documentos" EntityType="Self.Rel_documentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rel_fornecedores" EntityType="Self.Rel_fornecedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rel_funcionarios" EntityType="Self.Rel_funcionarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rel_ged" EntityType="Self.Rel_ged" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bancodadosinterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Documento">
+          <Key>
+            <PropertyRef Name="numero_documento" />
+          </Key>
+          <Property Name="id_documento" Type="Int32" Nullable="false" />
+          <Property Name="numero_documento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="serie" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fornecedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="id_fornecedor" />
+          </Key>
+          <Property Name="id_fornecedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ie" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="razao_social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="celular" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cep" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="bairro" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="funcao">
+          <Key>
+            <PropertyRef Name="id_funcao" />
+          </Key>
+          <Property Name="id_funcao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pode_aprovar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pode_cadastrar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pode_pagar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="funcionario">
+          <Key>
+            <PropertyRef Name="id_funcao" />
+          </Key>
+          <Property Name="id_funcionario" Type="Int32" Nullable="false" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cpf" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ctps" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rg" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cep" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="celular" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="bairro" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_funcao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Inter">
+          <Key>
+            <PropertyRef Name="id_login" />
+          </Key>
+          <Property Name="id_login" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NFe">
+          <Key>
+            <PropertyRef Name="id_nfe" />
+          </Key>
+          <Property Name="id_nfe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="chave_acesso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ie" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="data_emissao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="serie" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="base_calc_icms" Type="Double" />
+          <Property Name="valor_icms" Type="Double" />
+          <Property Name="frete_nfe" Type="Double" />
+          <Property Name="desconto" Type="Double" />
+          <Property Name="base_st" Type="Double" />
+          <Property Name="valor_st" Type="Double" />
+          <Property Name="ipi" Type="Double" />
+          <Property Name="valor_produtos" Type="Double" Nullable="false" />
+          <Property Name="total" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="obs_gerente">
+          <Key>
+            <PropertyRef Name="id_obs_gerente" />
+          </Key>
+          <Property Name="id_obs_gerente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="observacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pagamento">
+          <Key>
+            <PropertyRef Name="id_pagamento" />
+          </Key>
+          <Property Name="id_pagamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vencimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fornecedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="valor" Type="Double" Nullable="false" />
+          <Property Name="id_observacao" Type="Int32" Nullable="false" />
+          <Property Name="observacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="programacao_pagamento">
+          <Key>
+            <PropertyRef Name="id_programacao" />
+          </Key>
+          <Property Name="id_programacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ie" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="data_emissao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="serie" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="data_vencimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="total" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rel_documentos">
+          <Key>
+            <PropertyRef Name="id_rel_documentos" />
+          </Key>
+          <Property Name="id_rel_documentos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Nfe_CTe" Type="Int32" Nullable="false" />
+          <Property Name="razao_social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="valor" Type="Double" Nullable="false" />
+          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rel_fornecedores">
+          <Key>
+            <PropertyRef Name="id_rel_fornecedores" />
+          </Key>
+          <Property Name="id_rel_fornecedores" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="razao_social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="endereco" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefone" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ie" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Rel_funcionarios">
+          <Key>
+            <PropertyRef Name="id_rel_funcionarios" />
+          </Key>
+          <Property Name="id_rel_funcionarios" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cpf" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="endereco" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="funcao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rel_ged">
+          <Key>
+            <PropertyRef Name="id_rel_ged" />
+          </Key>
+          <Property Name="id_rel_ged" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numero_documento" Type="Int32" Nullable="false" />
+          <Property Name="serie" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fornecedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="arquivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="bancodadosinterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Documento" EntityType="Self.Documento" />
+          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" />
+          <EntitySet Name="funcao" EntityType="Self.funcao" />
+          <EntitySet Name="funcionario" EntityType="Self.funcionario" />
+          <EntitySet Name="Inter" EntityType="Self.Inter" />
+          <EntitySet Name="NFe" EntityType="Self.NFe" />
+          <EntitySet Name="obs_gerente" EntityType="Self.obs_gerente" />
+          <EntitySet Name="pagamento" EntityType="Self.pagamento" />
+          <EntitySet Name="programacao_pagamento" EntityType="Self.programacao_pagamento" />
+          <EntitySet Name="Rel_documentos" EntityType="Self.Rel_documentos" />
+          <EntitySet Name="Rel_fornecedores" EntityType="Self.Rel_fornecedores" />
+          <EntitySet Name="Rel_funcionarios" EntityType="Self.Rel_funcionarios" />
+          <EntitySet Name="Rel_ged" EntityType="Self.Rel_ged" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bancodadosinterModelStoreContainer" CdmEntityContainer="bancodadosinterEntities">
+          <EntitySetMapping Name="Documento">
+            <EntityTypeMapping TypeName="bancodadosinterModel.Documento">
+              <MappingFragment StoreEntitySet="Documento">
+                <ScalarProperty Name="id_documento" ColumnName="id_documento" />
+                <ScalarProperty Name="numero_documento" ColumnName="numero_documento" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="fornecedor" ColumnName="fornecedor" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fornecedor">
+            <EntityTypeMapping TypeName="bancodadosinterModel.fornecedor">
+              <MappingFragment StoreEntitySet="fornecedor">
+                <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="ie" ColumnName="ie" />
+                <ScalarProperty Name="razao_social" ColumnName="razao_social" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="funcao">
+            <EntityTypeMapping TypeName="bancodadosinterModel.funcao">
+              <MappingFragment StoreEntitySet="funcao">
+                <ScalarProperty Name="id_funcao" ColumnName="id_funcao" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="pode_aprovar" ColumnName="pode_aprovar" />
+                <ScalarProperty Name="pode_cadastrar" ColumnName="pode_cadastrar" />
+                <ScalarProperty Name="pode_pagar" ColumnName="pode_pagar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="funcionario">
+            <EntityTypeMapping TypeName="bancodadosinterModel.funcionario">
+              <MappingFragment StoreEntitySet="funcionario">
+                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="ctps" ColumnName="ctps" />
+                <ScalarProperty Name="rg" ColumnName="rg" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="id_funcao" ColumnName="id_funcao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inter">
+            <EntityTypeMapping TypeName="bancodadosinterModel.Inter">
+              <MappingFragment StoreEntitySet="Inter">
+                <ScalarProperty Name="id_login" ColumnName="id_login" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NFe">
+            <EntityTypeMapping TypeName="bancodadosinterModel.NFe">
+              <MappingFragment StoreEntitySet="NFe">
+                <ScalarProperty Name="id_nfe" ColumnName="id_nfe" />
+                <ScalarProperty Name="chave_acesso" ColumnName="chave_acesso" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="ie" ColumnName="ie" />
+                <ScalarProperty Name="data_emissao" ColumnName="data_emissao" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
+                <ScalarProperty Name="base_calc_icms" ColumnName="base_calc_icms" />
+                <ScalarProperty Name="valor_icms" ColumnName="valor_icms" />
+                <ScalarProperty Name="frete_nfe" ColumnName="frete_nfe" />
+                <ScalarProperty Name="desconto" ColumnName="desconto" />
+                <ScalarProperty Name="base_st" ColumnName="base_st" />
+                <ScalarProperty Name="valor_st" ColumnName="valor_st" />
+                <ScalarProperty Name="ipi" ColumnName="ipi" />
+                <ScalarProperty Name="valor_produtos" ColumnName="valor_produtos" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="obs_gerente">
+            <EntityTypeMapping TypeName="bancodadosinterModel.obs_gerente">
+              <MappingFragment StoreEntitySet="obs_gerente">
+                <ScalarProperty Name="id_obs_gerente" ColumnName="id_obs_gerente" />
+                <ScalarProperty Name="observacao" ColumnName="observacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pagamento">
+            <EntityTypeMapping TypeName="bancodadosinterModel.pagamento">
+              <MappingFragment StoreEntitySet="pagamento">
+                <ScalarProperty Name="id_pagamento" ColumnName="id_pagamento" />
+                <ScalarProperty Name="vencimento" ColumnName="vencimento" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="fornecedor" ColumnName="fornecedor" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="id_observacao" ColumnName="id_observacao" />
+                <ScalarProperty Name="observacao" ColumnName="observacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="programacao_pagamento">
+            <EntityTypeMapping TypeName="bancodadosinterModel.programacao_pagamento">
+              <MappingFragment StoreEntitySet="programacao_pagamento">
+                <ScalarProperty Name="id_programacao" ColumnName="id_programacao" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="ie" ColumnName="ie" />
+                <ScalarProperty Name="data_emissao" ColumnName="data_emissao" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
+                <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rel_documentos">
+            <EntityTypeMapping TypeName="bancodadosinterModel.Rel_documentos">
+              <MappingFragment StoreEntitySet="Rel_documentos">
+                <ScalarProperty Name="id_rel_documentos" ColumnName="id_rel_documentos" />
+                <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
+                <ScalarProperty Name="Nfe_CTe" ColumnName="Nfe_CTe" />
+                <ScalarProperty Name="razao_social" ColumnName="razao_social" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rel_fornecedores">
+            <EntityTypeMapping TypeName="bancodadosinterModel.Rel_fornecedores">
+              <MappingFragment StoreEntitySet="Rel_fornecedores">
+                <ScalarProperty Name="id_rel_fornecedores" ColumnName="id_rel_fornecedores" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="razao_social" ColumnName="razao_social" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="ie" ColumnName="ie" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rel_funcionarios">
+            <EntityTypeMapping TypeName="bancodadosinterModel.Rel_funcionarios">
+              <MappingFragment StoreEntitySet="Rel_funcionarios">
+                <ScalarProperty Name="id_rel_funcionarios" ColumnName="id_rel_funcionarios" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="funcao" ColumnName="funcao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rel_ged">
+            <EntityTypeMapping TypeName="bancodadosinterModel.Rel_ged">
+              <MappingFragment StoreEntitySet="Rel_ged">
+                <ScalarProperty Name="id_rel_ged" ColumnName="id_rel_ged" />
+                <ScalarProperty Name="numero_documento" ColumnName="numero_documento" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="fornecedor" ColumnName="fornecedor" />
+                <ScalarProperty Name="arquivo" ColumnName="arquivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="bancodadosinterModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

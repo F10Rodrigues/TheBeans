@@ -84,6 +84,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -102,9 +104,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\bancointer.mdf" />
-    <Content Include="App_Data\bancointer_log.ldf">
-      <DependentUpon>bancointer.mdf</DependentUpon>
+    <Content Include="App_Data\bancodadosinter.mdf" />
+    <Content Include="App_Data\bancodadosinter_log.ldf">
+      <DependentUpon>bancodadosinter.mdf</DependentUpon>
+    </Content>
+    <Content Include="bancodadosinter.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bancodadosinter.edmx</DependentUpon>
+      <LastGenOutput>bancodadosinter.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="bancodadosinter.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bancodadosinter.edmx</DependentUpon>
+      <LastGenOutput>bancodadosinter.cs</LastGenOutput>
     </Content>
     <Content Include="login.aspx" />
     <Content Include="LOGO.jpg" />
@@ -114,6 +126,13 @@
     </Content>
     <Content Include="pos_login.aspx" />
     <Content Include="Principal.Master" />
+    <EntityDeploy Include="bancodadosinter.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>bancodadosinter.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="bancodadosinter.edmx.diagram">
+      <DependentUpon>bancodadosinter.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -146,6 +165,21 @@
     <Compile Include="autorizar_documento.aspx.designer.cs">
       <DependentUpon>autorizar_documento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="bancodadosinter.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bancodadosinter.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bancodadosinter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bancodadosinter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bancodadosinter.edmx</DependentUpon>
+    </Compile>
     <Compile Include="cadastro_forn_adicionar.aspx.cs">
       <DependentUpon>cadastro_forn_adicionar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,6 +208,9 @@
     <Compile Include="Cadastro_func_Atualizar.aspx.designer.cs">
       <DependentUpon>Cadastro_func_Atualizar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Documento.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
     <Compile Include="entrada_nfe_cte.aspx.cs">
       <DependentUpon>entrada_nfe_cte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,6 +224,15 @@
     </Compile>
     <Compile Include="financeiro_pagamento.aspx.designer.cs">
       <DependentUpon>financeiro_pagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fornecedor.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="funcao.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="funcionario.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
     <Compile Include="ged_add_documento.aspx.cs">
       <DependentUpon>ged_add_documento.aspx</DependentUpon>
@@ -202,12 +248,24 @@
     <Compile Include="ged_relatorio.aspx.designer.cs">
       <DependentUpon>ged_relatorio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Inter.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NFe.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="obs_gerente.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pagamento.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
     <Compile Include="pos_login.aspx.cs">
       <DependentUpon>pos_login.aspx</DependentUpon>
@@ -222,6 +280,9 @@
     </Compile>
     <Compile Include="Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="programacao_pagamento.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="relatorio_cte_nfe.aspx.cs">
@@ -244,6 +305,21 @@
     </Compile>
     <Compile Include="relatorio_funcionario.aspx.designer.cs">
       <DependentUpon>relatorio_funcionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rel_documentos.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rel_fornecedores.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rel_funcionarios.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rel_ged.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usuario.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
