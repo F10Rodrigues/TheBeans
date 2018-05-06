@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -98,6 +106,7 @@
     <Content Include="App_Data\bancointer_log.ldf">
       <DependentUpon>bancointer.mdf</DependentUpon>
     </Content>
+    <Content Include="login.aspx" />
     <Content Include="LOGO.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -193,6 +202,13 @@
     <Compile Include="ged_relatorio.aspx.designer.cs">
       <DependentUpon>ged_relatorio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pos_login.aspx.cs">
       <DependentUpon>pos_login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -229,6 +245,9 @@
     <Compile Include="relatorio_funcionario.aspx.designer.cs">
       <DependentUpon>relatorio_funcionario.aspx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
