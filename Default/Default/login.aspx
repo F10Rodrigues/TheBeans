@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
+        <asp:Login ID="Login1" runat="server" FailureText="Login Inválido! Tente novamente." LoginButtonText="Entrar" OnAuthenticate="Login1_Authenticate" PasswordLabelText="Senha:" RememberMeText="Lembre-me das credenciais da próxima vez" TitleText="Entre com suas credenciais" UserNameLabelText="Usuário:">
         </asp:Login>
     
     </div>

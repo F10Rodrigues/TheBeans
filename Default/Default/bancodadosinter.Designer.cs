@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Felipe\Desktop\FATEC TI\4° Módulo\Inter 4\TheBeans Inter\TheBeans-4-Modulo-T.I\Default\Default\bancodadosinter.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Usuário\Documents\GESTÃO DE TI - 4º Módulo\Projeto Interdisciplinar IV - Programação para Internet\TheBeans-4-Modulo-T.I\Default\Default\bancodadosinter.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -374,7 +374,7 @@
           <Property Name="senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="bancodadosinterEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="bancodadosinterEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Documento" EntityType="Self.Documento" />
           <EntitySet Name="fornecedor" EntityType="Self.fornecedor" />
           <EntitySet Name="funcao" EntityType="Self.funcao" />
@@ -395,7 +395,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="bancodadosinterModelStoreContainer" CdmEntityContainer="bancodadosinterEntities">
+        <EntityContainerMapping StorageEntityContainer="bancodadosinterModelStoreContainer" CdmEntityContainer="bancodadosinterEntities1">
           <EntitySetMapping Name="Documento">
             <EntityTypeMapping TypeName="bancodadosinterModel.Documento">
               <MappingFragment StoreEntitySet="Documento">

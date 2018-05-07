@@ -13,10 +13,10 @@ namespace Default
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class bancodadosinterEntities : DbContext
+    public partial class bancodadosinterEntities1 : DbContext
     {
-        public bancodadosinterEntities()
-            : base("name=bancodadosinterEntities")
+        public bancodadosinterEntities1()
+            : base("name=bancodadosinterEntities1")
         {
         }
     
