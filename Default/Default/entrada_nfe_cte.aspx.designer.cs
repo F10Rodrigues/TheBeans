@@ -13,6 +13,15 @@ namespace Default {
     public partial class entrada_nfe_cte {
         
         /// <summary>
+        /// txtIDNFe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIDNFe;
+        
+        /// <summary>
         /// lbl_chave control.
         /// </summary>
         /// <remarks>
@@ -335,5 +344,14 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_voltar;
+        
+        /// <summary>
+        /// grid_NFe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grid_NFe;
     }
 }

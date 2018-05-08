@@ -9,6 +9,7 @@ namespace Default
 {
     public partial class Principal : System.Web.UI.MasterPage
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //Obtém valor que está alocado na sessão do servidor
