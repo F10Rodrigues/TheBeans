@@ -125,7 +125,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="pos_login.aspx" />
-    <Content Include="Principal.aspx" />
     <Content Include="Principal.Master" />
     <EntityDeploy Include="bancodadosinter.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -274,13 +273,6 @@
     </Compile>
     <Compile Include="pos_login.aspx.designer.cs">
       <DependentUpon>pos_login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Principal.aspx.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Principal.aspx.designer.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
