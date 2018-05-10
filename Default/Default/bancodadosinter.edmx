@@ -22,15 +22,16 @@
           <Property Name="id_fornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="razao_social" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="telefone" Type="varchar" MaxLength="11" Nullable="false" />
-          <Property Name="celular" Type="varchar" MaxLength="12" />
-          <Property Name="endereco" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="cep" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="razao_social" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="telefone" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="celular" Type="varchar" MaxLength="13" />
+          <Property Name="endereco" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cep" Type="varchar" MaxLength="9" Nullable="false" />
           <Property Name="numero" Type="varchar" MaxLength="8" />
-          <Property Name="bairro" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="bairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cidade" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="estado" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="70" />
         </EntityType>
         <EntityType Name="funcao">
           <Key>
@@ -379,15 +380,16 @@
           <Property Name="id_fornecedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
           <Property Name="ie" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="razao_social" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="telefone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="celular" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="endereco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cep" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="razao_social" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefone" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="endereco" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cep" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
           <Property Name="numero" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-          <Property Name="bairro" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="bairro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cidade" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -570,6 +572,7 @@
               <MappingFragment StoreEntitySet="fornecedor">
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
                 <ScalarProperty Name="bairro" ColumnName="bairro" />
                 <ScalarProperty Name="numero" ColumnName="numero" />
                 <ScalarProperty Name="cep" ColumnName="cep" />

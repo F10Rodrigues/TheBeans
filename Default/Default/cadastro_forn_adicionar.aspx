@@ -5,7 +5,7 @@
     <div>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="validacao" />
         <br />
-        <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" />
+        <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" ValidationGroup="validacao" />
         <asp:Button ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
         <asp:Button ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
         <asp:Button ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" /><br /><br />
@@ -42,7 +42,12 @@
         <asp:Label ID="lbl_bairro" runat="server" Text="BAIRRO"></asp:Label>
         <asp:TextBox ID="txt_bairro" runat="server" Width="181px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorBairro" runat="server" ControlToValidate="txt_bairro" ErrorMessage="Campo bairro não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <asp:Label ID="lbl_estado" runat="server" Text="ESTADO"></asp:Label>
+        <br />
+        <br />
+        <asp:Label ID="Label1" runat="server" Text="CIDADE"></asp:Label>
+&nbsp;<asp:TextBox ID="txt_cidade" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="validatorCidade" runat="server" ControlToValidate="txt_cidade" ErrorMessage="Campo cidade não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
+&nbsp;<asp:Label ID="lbl_estado" runat="server" Text="ESTADO"></asp:Label>
         <asp:DropDownList ID="ddl_estado" runat="server">
             <asp:ListItem>ACRE</asp:ListItem>
             <asp:ListItem>ALAGOAS</asp:ListItem>
@@ -78,7 +83,7 @@
     <div>
 
 
-        <asp:GridView ID="grid_fornec" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="grid_fornec_PageIndexChanging">
+        <asp:GridView ID="grid_fornec" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="grid_fornec_PageIndexChanging" OnRowCommand="grid_fornec_RowCommand">
             <Columns>
                 <asp:BoundField DataField="id_fornecedor" HeaderText="ID" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
@@ -90,6 +95,7 @@
                 <asp:BoundField DataField="cep" HeaderText="CEP" />
                 <asp:BoundField DataField="numero" HeaderText="numero" />
                 <asp:BoundField DataField="bairro" HeaderText="Bairro" />
+                <asp:BoundField DataField="cidade" HeaderText="Cidade" />
                 <asp:BoundField DataField="estado" HeaderText="Estado" />
                 <asp:BoundField DataField="email" HeaderText="E-Mail" />
                 <asp:ButtonField CommandName="btAlterar" HeaderText="Alterar" Text="Alterar" />

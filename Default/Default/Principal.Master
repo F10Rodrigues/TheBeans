@@ -36,7 +36,6 @@
                     </asp:MenuItem>
                     <asp:MenuItem Text="CADASTRO FORNECEDOR" Value="CADASTRO FORNECEDOR">
                         <asp:MenuItem Text="ADICIONAR" Value="ADICIONAR" NavigateUrl="~/cadastro_forn_adicionar.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="ATUALIZAR" Value="ATUALIZAR" NavigateUrl="~/cadastro_forn_atualizar.aspx"></asp:MenuItem>
                     </asp:MenuItem>
                     <asp:MenuItem Text="GED" Value="GED">
                         <asp:MenuItem Text="ADICIONAR DOCUMENTO" Value="ADICIONAR DOCUMENTO" NavigateUrl="~/ged_add_documento.aspx"></asp:MenuItem>

@@ -15,7 +15,6 @@ namespace Default
         public void LimparCampos()
         {
             //limpar todos os campos da capa NFe
-            txtIDNFe.Text = string.Empty;
             txtIDNFe.Text = string.Empty;  
             txt_chave.Text = string.Empty;
             txt_base_calc_icms.Text = string.Empty;
@@ -131,7 +130,6 @@ namespace Default
                 entities.SaveChanges();
                 carregaGrid();
             }
-
 
             else if (e.CommandName.ToString().Equals("btAlterar"))
             {

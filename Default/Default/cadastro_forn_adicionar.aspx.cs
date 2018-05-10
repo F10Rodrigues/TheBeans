@@ -26,6 +26,7 @@ namespace Default
             txt_cep.Text = string.Empty;
             txt_numero.Text = string.Empty;
             txt_bairro.Text = string.Empty;
+            txt_cidade.Text = string.Empty;
             ddl_estado.Text = string.Empty;
             txt_email.Text = string.Empty;
         }
@@ -54,6 +55,7 @@ namespace Default
         {
             if(txtID_Fornec.Text == string.Empty)
             {
+                //novo registro
                 fornecedor f = new fornecedor();
                 f.cnpj = txt_cnpj.Text;
                 f.ie = txt_ie.Text;
@@ -64,13 +66,33 @@ namespace Default
                 f.cep = txt_cep.Text;
                 f.numero = txt_numero.Text;
                 f.bairro = txt_bairro.Text;
+                f.cidade = txt_cidade.Text;
                 f.estado = ddl_estado.Text;
                 f.email = txt_email.Text;
                 entities.fornecedor.Add(f);
-                entities.SaveChanges();
-                carregaGrid();
-                limparCampos();
             }
+            else
+            {
+                //alterar registros
+                fornecedor f = entities.fornecedor.Find(Convert.ToInt32(txtID_Fornec.Text));
+                f.cnpj = txt_cnpj.Text;
+                f.ie = txt_ie.Text;
+                f.razao_social = txt_razaosocial.Text;
+                f.telefone = txt_telefone.Text;
+                f.celular = txt_celular.Text;
+                f.endereco = txt_endereco.Text;
+                f.cep = txt_cep.Text;
+                f.numero = txt_numero.Text;
+                f.bairro = txt_bairro.Text;
+                f.cidade = txt_cidade.Text;
+                f.estado = ddl_estado.Text;
+                f.email = txt_email.Text;
+                entities.Entry(f);
+            }
+
+            entities.SaveChanges();
+            carregaGrid();
+            limparCampos();
         }
 
         private void carregaGrid()
@@ -85,6 +107,42 @@ namespace Default
             grid_fornec.DataSource = lista;
             grid_fornec.PageIndex = e.NewPageIndex;
             grid_fornec.DataBind();
+        }
+
+        protected void grid_fornec_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            // linha selecionada
+            int index = Convert.ToInt32(e.CommandArgument);
+            // ID da linha selecionada
+            int idSelect = Convert.ToInt32(grid_fornec.Rows[index].Cells[0].Text.ToString());
+            if (e.CommandName.ToString().Equals("btRemover"))
+            {
+                //remover
+                fornecedor f = entities.fornecedor.Find(Convert.ToInt32(idSelect));
+                entities.fornecedor.Remove(f);
+                entities.SaveChanges();
+                carregaGrid();
+            }
+            else if (e.CommandName.ToString().Equals("btAlterar"))
+            {
+                fornecedor f = entities.fornecedor.Find(Convert.ToInt32(idSelect));
+                txtID_Fornec.Text = f.id_fornecedor.ToString();
+                txt_cnpj.Text = f.cnpj;
+                txt_ie.Text = f.ie;
+                txt_razaosocial.Text = f.razao_social;
+                txt_telefone.Text = f.telefone;
+                txt_celular.Text = f.celular;
+                txt_endereco.Text = f.endereco;
+                txt_cep.Text = f.cep;
+                txt_numero.Text = f.numero;
+                txt_bairro.Text = f.bairro;
+                txt_cidade.Text = f.cidade;
+                ddl_estado.Text = f.estado;
+                txt_email.Text = f.email;
+            }
+
+            entities.SaveChanges();
+            carregaGrid();
         }
     }
 }
