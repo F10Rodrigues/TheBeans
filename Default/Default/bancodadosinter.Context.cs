@@ -26,7 +26,6 @@ namespace Default
         }
     
         public virtual DbSet<Documento> Documento { get; set; }
-        public virtual DbSet<fornecedor> fornecedor { get; set; }
         public virtual DbSet<funcao> funcao { get; set; }
         public virtual DbSet<funcionario> funcionario { get; set; }
         public virtual DbSet<Inter> Inter { get; set; }
@@ -39,5 +38,6 @@ namespace Default
         public virtual DbSet<Rel_ged> Rel_ged { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
         public virtual DbSet<NFe> NFe { get; set; }
+        public virtual DbSet<fornecedor> fornecedor { get; set; }
     }
 }

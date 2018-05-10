@@ -13,6 +13,15 @@ namespace Default {
     public partial class cadastro_forn_adicionar {
         
         /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
         /// btn_concluir control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.Button btn_sair;
         
         /// <summary>
+        /// txtID_Fornec control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtID_Fornec;
+        
+        /// <summary>
         /// lbl_cnpj control.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_cnpj;
+        
+        /// <summary>
+        /// validatorCNPJ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorCNPJ;
         
         /// <summary>
         /// lbl_ie control.
@@ -85,6 +112,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_ie;
         
         /// <summary>
+        /// validatorIE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorIE;
+        
+        /// <summary>
         /// lbl_razaosocial control.
         /// </summary>
         /// <remarks>
@@ -103,6 +139,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_razaosocial;
         
         /// <summary>
+        /// validatorRazaoSocial control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorRazaoSocial;
+        
+        /// <summary>
         /// lbl_telefone control.
         /// </summary>
         /// <remarks>
@@ -119,6 +164,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_telefone;
+        
+        /// <summary>
+        /// validatorTelefone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorTelefone;
         
         /// <summary>
         /// lbl_celular control.
@@ -157,6 +211,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_cep;
         
         /// <summary>
+        /// validatorCEP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorCEP;
+        
+        /// <summary>
         /// lbl_endereco control.
         /// </summary>
         /// <remarks>
@@ -173,6 +236,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_endereco;
+        
+        /// <summary>
+        /// validatorEndereco control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorEndereco;
         
         /// <summary>
         /// lbl_numero control.
@@ -211,6 +283,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_bairro;
         
         /// <summary>
+        /// validatorBairro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorBairro;
+        
+        /// <summary>
         /// lbl_estado control.
         /// </summary>
         /// <remarks>
@@ -245,5 +326,14 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_email;
+        
+        /// <summary>
+        /// grid_fornec control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grid_fornec;
     }
 }
