@@ -15,6 +15,7 @@ namespace Default
         public void LimparCampos()
         {
             //limpar todos os campos da capa NFe
+            txtIDNFe.Text = string.Empty;
             txtIDNFe.Text = string.Empty;  
             txt_chave.Text = string.Empty;
             txt_base_calc_icms.Text = string.Empty;
@@ -54,97 +55,109 @@ namespace Default
             Response.Redirect("pos_login.aspx");
         }
 
+        
         public void carregaGrid()
         {
             List<NFe> lista = entities.NFe.ToList();
-            grid_NFe.DataSource = lista;
-            //grid_NFe.DataBind();
+            gridNfe.DataSource = lista;
+            gridNfe.DataBind();
         }
 
-        protected void btn_concluir_Click(object sender, EventArgs e)
+
+    protected void btn_concluir_Click(object sender, EventArgs e)
         {
             if(txtIDNFe.Text == string.Empty)
             {
+                //novo registro
                 NFe n = new NFe();
                 n.chave_acesso = txt_chave.Text;
                 n.cnpj = txt_cnpj.Text;
                 n.ie = txt_ie.Text;
-                n.data_emissao = Convert.ToDateTime(txt_data_emissao.Text);
-                n.numero = Convert.ToInt32(txt_numero.Text);
+                n.data_emissao = Convert.ToDateTime(txt_data_emissao.Text.ToString());
+                n.numero = txt_numero.Text.ToString();
                 n.serie = txt_serie.Text;
-                n.data_entrada = Convert.ToDateTime(txt_data_entrada.Text);
-                n.base_calc_icms = Convert.ToDouble(txt_base_calc_icms.Text);
-                n.valor_icms = Convert.ToDouble(txt_valor_icms.Text);
-                n.frete_nfe = Convert.ToDouble(txt_frete_nf.Text);
-                n.desconto = Convert.ToDouble(txt_desconto.Text);
-                n.base_st = Convert.ToDouble(txt_base_calc_st.Text);
-                n.valor_st = Convert.ToDouble(txt_valor_st.Text);
-                n.ipi = Convert.ToDouble(txt_ipi.Text);
-                n.valor_produtos = Convert.ToDouble(txt_vlor_produtos.Text);
-                n.total = Convert.ToDouble(txt_total.Text);
+                n.data_entrada = Convert.ToDateTime(txt_data_entrada.Text.ToString());
+                n.base_calc_icms = Convert.ToDecimal(txt_base_calc_icms.Text.ToString());
+                n.valor_icms = Convert.ToDecimal(txt_valor_icms.Text.ToString());
+                n.frete_nfe = Convert.ToDecimal(txt_frete_nf.Text.ToString());
+                n.desconto = Convert.ToDecimal(txt_desconto.Text.ToString());
+                n.base_st = Convert.ToDecimal(txt_base_calc_st.Text.ToString());
+                n.valor_st = Convert.ToDecimal(txt_valor_st.Text.ToString());
+                n.ipi = Convert.ToDecimal(txt_ipi.Text.ToString());
+                n.valor_produtos = Convert.ToDecimal(txt_vlor_produtos.Text.ToString());
+                n.total = Convert.ToDecimal(txt_total.Text.ToString());
                 entities.NFe.Add(n);
             }
             else
             {
+                //altera o registro
                 NFe n = entities.NFe.Find(Convert.ToInt32(txtIDNFe.Text));
                 n.chave_acesso = txt_chave.Text;
                 n.cnpj = txt_cnpj.Text;
                 n.ie = txt_ie.Text;
-                n.data_emissao = Convert.ToDateTime(txt_data_emissao.Text);
-                n.numero = Convert.ToInt32(txt_numero.Text);
+                n.data_emissao = Convert.ToDateTime(txt_data_emissao.Text.ToString());
+                n.numero = txt_numero.Text.ToString();
                 n.serie = txt_serie.Text;
-                n.data_entrada = Convert.ToDateTime(txt_data_entrada.Text);
-                n.base_calc_icms = Convert.ToDouble(txt_base_calc_icms.Text);
-                n.valor_icms = Convert.ToDouble(txt_valor_icms.Text);
-                n.frete_nfe = Convert.ToDouble(txt_frete_nf.Text);
-                n.desconto = Convert.ToDouble(txt_desconto.Text);
-                n.base_st = Convert.ToDouble(txt_base_calc_st.Text);
-                n.valor_st = Convert.ToDouble(txt_valor_st.Text);
-                n.ipi = Convert.ToDouble(txt_ipi.Text);
-                n.valor_produtos = Convert.ToDouble(txt_vlor_produtos.Text);
-                n.total = Convert.ToDouble(txt_total.Text);
+                n.data_entrada = Convert.ToDateTime(txt_data_entrada.Text.ToString());
+                n.base_calc_icms = Convert.ToDecimal(txt_base_calc_icms.Text.ToString());
+                n.valor_icms = Convert.ToDecimal(txt_valor_icms.Text.ToString());
+                n.frete_nfe = Convert.ToDecimal(txt_frete_nf.Text.ToString());
+                n.desconto = Convert.ToDecimal(txt_desconto.Text.ToString());
+                n.base_st = Convert.ToDecimal(txt_base_calc_st.Text.ToString());
+                n.valor_st = Convert.ToDecimal(txt_valor_st.Text.ToString());
+                n.ipi = Convert.ToDecimal(txt_ipi.Text.ToString());
+                n.valor_produtos = Convert.ToDecimal(txt_vlor_produtos.Text.ToString());
+                n.total = Convert.ToDecimal(txt_total.Text.ToString());
                 entities.Entry(n);
             }
 
             entities.SaveChanges();
             carregaGrid();
             LimparCampos();
+            
         }
 
         protected void grid_NFe_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
+            //linha selecionada
             int index = Convert.ToInt32(e.CommandArgument);
-            int idSelect = Convert.ToInt32(grid_NFe.Rows[index].Cells[0].Text.ToString());
+            // ID da linha selecionada
+            int idSelect = Convert.ToInt32(gridNfe.Rows[index].Cells[0].Text.ToString());
             if (e.CommandName.ToString().Equals("btRemover"))
             {
+                //remover
                 NFe n = entities.NFe.Find(Convert.ToInt32(idSelect));
                 entities.NFe.Remove(n);
                 entities.SaveChanges();
                 carregaGrid();
             }
+
+
             else if (e.CommandName.ToString().Equals("btAlterar"))
             {
                 NFe n = entities.NFe.Find(Convert.ToInt32(idSelect));
                 txtIDNFe.Text = n.id_nfe.ToString();
-                n.chave_acesso = txt_chave.Text;
-                n.cnpj = txt_cnpj.Text;
-                n.ie = txt_ie.Text;
-                n.data_emissao = Convert.ToDateTime(txt_data_emissao.Text);
-                n.numero = Convert.ToInt32(txt_numero.Text);
-                n.serie = txt_serie.Text;
-                n.data_entrada = Convert.ToDateTime(txt_data_entrada.Text);
-                n.base_calc_icms = Convert.ToDouble(txt_base_calc_icms.Text);
-                n.valor_icms = Convert.ToDouble(txt_valor_icms.Text);
-                n.frete_nfe = Convert.ToDouble(txt_frete_nf.Text);
-                n.desconto = Convert.ToDouble(txt_desconto.Text);
-                n.base_st = Convert.ToDouble(txt_base_calc_st.Text);
-                n.valor_st = Convert.ToDouble(txt_valor_st.Text);
-                n.ipi = Convert.ToDouble(txt_ipi.Text);
-                n.valor_produtos = Convert.ToDouble(txt_vlor_produtos.Text);
-                n.total = Convert.ToDouble(txt_total.Text);
+                txt_chave.Text = n.chave_acesso;
+                txt_cnpj.Text = n.cnpj;
+                txt_ie.Text = n.ie;
+                txt_data_emissao.Text = n.data_emissao.ToString();
+                txt_numero.Text = n.numero;
+                txt_serie.Text = n.serie;
+                txt_data_entrada.Text = n.data_entrada.ToString();
+                txt_base_calc_icms.Text = n.base_calc_icms.ToString();
+                txt_valor_icms.Text = n.valor_icms.ToString();
+                txt_frete_nf.Text = n.frete_nfe.ToString();
+                txt_desconto.Text = n.desconto.ToString();
+                txt_base_calc_st.Text = n.base_st.ToString();
+                txt_valor_st.Text = n.valor_st.ToString();
+                txt_ipi.Text = n.ipi.ToString();
+                txt_vlor_produtos.Text = n.valor_produtos.ToString();
+                txt_total.Text = n.total.ToString();
 
             }
+
+            entities.SaveChanges();
+            carregaGrid();
         }
     }
 }

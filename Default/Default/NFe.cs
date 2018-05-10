@@ -19,17 +19,17 @@ namespace Default
         public string cnpj { get; set; }
         public string ie { get; set; }
         public System.DateTime data_emissao { get; set; }
-        public int numero { get; set; }
+        public string numero { get; set; }
         public string serie { get; set; }
         public System.DateTime data_entrada { get; set; }
-        public Nullable<double> base_calc_icms { get; set; }
-        public Nullable<double> valor_icms { get; set; }
-        public Nullable<double> frete_nfe { get; set; }
-        public Nullable<double> desconto { get; set; }
-        public Nullable<double> base_st { get; set; }
-        public Nullable<double> valor_st { get; set; }
-        public Nullable<double> ipi { get; set; }
-        public double valor_produtos { get; set; }
-        public double total { get; set; }
+        public Nullable<decimal> base_calc_icms { get; set; }
+        public Nullable<decimal> valor_icms { get; set; }
+        public Nullable<decimal> frete_nfe { get; set; }
+        public Nullable<decimal> desconto { get; set; }
+        public Nullable<decimal> base_st { get; set; }
+        public Nullable<decimal> valor_st { get; set; }
+        public Nullable<decimal> ipi { get; set; }
+        public decimal valor_produtos { get; set; }
+        public decimal total { get; set; }
     }
 }

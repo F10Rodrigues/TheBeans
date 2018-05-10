@@ -54,9 +54,10 @@
 
 
 
-            <asp:GridView ID="grid_NFe" runat="server" AutoGenerateColumns="False" GridLines="None" OnRowCommand="grid_NFe_RowCommand">
+            <asp:GridView ID="gridNfe" runat="server" AutoGenerateColumns="False" OnRowCommand="grid_NFe_RowCommand">
                 <Columns>
-                    <asp:BoundField DataField="chave" HeaderText="Chave" />
+                    <asp:BoundField DataField="id_nfe" HeaderText="ID" />
+                    <asp:BoundField DataField="chave_acesso" HeaderText="Chave" />
                     <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
                     <asp:BoundField DataField="ie" HeaderText="I.E." />
                     <asp:BoundField DataField="data_emissao" HeaderText="Data Emissão" />

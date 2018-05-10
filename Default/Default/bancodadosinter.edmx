@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bancodadosinterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="bancodadosinterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Documento">
           <Key>
             <PropertyRef Name="numero_documento" />
@@ -73,22 +73,22 @@
             <PropertyRef Name="id_nfe" />
           </Key>
           <Property Name="id_nfe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="chave_acesso" Type="varchar" MaxLength="50" />
+          <Property Name="chave_acesso" Type="varchar" MaxLength="44" />
           <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="data_emissao" Type="date" Nullable="false" />
-          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="numero" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="data_entrada" Type="date" Nullable="false" />
-          <Property Name="base_calc_icms" Type="float" />
-          <Property Name="valor_icms" Type="float" />
-          <Property Name="frete_nfe" Type="float" />
-          <Property Name="desconto" Type="float" />
-          <Property Name="base_st" Type="float" />
-          <Property Name="valor_st" Type="float" />
-          <Property Name="ipi" Type="float" />
-          <Property Name="valor_produtos" Type="float" Nullable="false" />
-          <Property Name="total" Type="float" Nullable="false" />
+          <Property Name="base_calc_icms" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="valor_icms" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="frete_nfe" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="desconto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="base_st" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="valor_st" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ipi" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="valor_produtos" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="obs_gerente">
           <Key>
@@ -195,8 +195,7 @@
           <EntitySet Name="Rel_ged" EntityType="Self.Rel_ged" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bancodadosinterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -262,28 +261,6 @@
           <Property Name="id_login" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
-        <EntityType Name="NFe">
-          <Key>
-            <PropertyRef Name="id_nfe" />
-          </Key>
-          <Property Name="id_nfe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="chave_acesso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ie" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="data_emissao" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="numero" Type="Int32" Nullable="false" />
-          <Property Name="serie" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="base_calc_icms" Type="Double" />
-          <Property Name="valor_icms" Type="Double" />
-          <Property Name="frete_nfe" Type="Double" />
-          <Property Name="desconto" Type="Double" />
-          <Property Name="base_st" Type="Double" />
-          <Property Name="valor_st" Type="Double" />
-          <Property Name="ipi" Type="Double" />
-          <Property Name="valor_produtos" Type="Double" Nullable="false" />
-          <Property Name="total" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="obs_gerente">
           <Key>
@@ -380,7 +357,6 @@
           <EntitySet Name="funcao" EntityType="Self.funcao" />
           <EntitySet Name="funcionario" EntityType="Self.funcionario" />
           <EntitySet Name="Inter" EntityType="Self.Inter" />
-          <EntitySet Name="NFe" EntityType="Self.NFe" />
           <EntitySet Name="obs_gerente" EntityType="Self.obs_gerente" />
           <EntitySet Name="pagamento" EntityType="Self.pagamento" />
           <EntitySet Name="programacao_pagamento" EntityType="Self.programacao_pagamento" />
@@ -389,7 +365,30 @@
           <EntitySet Name="Rel_funcionarios" EntityType="Self.Rel_funcionarios" />
           <EntitySet Name="Rel_ged" EntityType="Self.Rel_ged" />
           <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <EntitySet Name="NFe" EntityType="bancodadosinterModel.NFe" />
         </EntityContainer>
+        <EntityType Name="NFe">
+          <Key>
+            <PropertyRef Name="id_nfe" />
+          </Key>
+          <Property Name="id_nfe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="chave_acesso" Type="String" MaxLength="44" FixedLength="false" Unicode="false" />
+          <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="ie" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="data_emissao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="numero" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="serie" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="base_calc_icms" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="valor_icms" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="frete_nfe" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="desconto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="base_st" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="valor_st" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ipi" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="valor_produtos" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -461,29 +460,6 @@
                 <ScalarProperty Name="id_login" ColumnName="id_login" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="senha" ColumnName="senha" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NFe">
-            <EntityTypeMapping TypeName="bancodadosinterModel.NFe">
-              <MappingFragment StoreEntitySet="NFe">
-                <ScalarProperty Name="id_nfe" ColumnName="id_nfe" />
-                <ScalarProperty Name="chave_acesso" ColumnName="chave_acesso" />
-                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
-                <ScalarProperty Name="ie" ColumnName="ie" />
-                <ScalarProperty Name="data_emissao" ColumnName="data_emissao" />
-                <ScalarProperty Name="numero" ColumnName="numero" />
-                <ScalarProperty Name="serie" ColumnName="serie" />
-                <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
-                <ScalarProperty Name="base_calc_icms" ColumnName="base_calc_icms" />
-                <ScalarProperty Name="valor_icms" ColumnName="valor_icms" />
-                <ScalarProperty Name="frete_nfe" ColumnName="frete_nfe" />
-                <ScalarProperty Name="desconto" ColumnName="desconto" />
-                <ScalarProperty Name="base_st" ColumnName="base_st" />
-                <ScalarProperty Name="valor_st" ColumnName="valor_st" />
-                <ScalarProperty Name="ipi" ColumnName="ipi" />
-                <ScalarProperty Name="valor_produtos" ColumnName="valor_produtos" />
-                <ScalarProperty Name="total" ColumnName="total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -581,6 +557,29 @@
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="senha" ColumnName="senha" />
                 <ScalarProperty Name="nome" ColumnName="nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NFe">
+            <EntityTypeMapping TypeName="bancodadosinterModel.NFe">
+              <MappingFragment StoreEntitySet="NFe">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="valor_produtos" ColumnName="valor_produtos" />
+                <ScalarProperty Name="ipi" ColumnName="ipi" />
+                <ScalarProperty Name="valor_st" ColumnName="valor_st" />
+                <ScalarProperty Name="base_st" ColumnName="base_st" />
+                <ScalarProperty Name="desconto" ColumnName="desconto" />
+                <ScalarProperty Name="frete_nfe" ColumnName="frete_nfe" />
+                <ScalarProperty Name="valor_icms" ColumnName="valor_icms" />
+                <ScalarProperty Name="base_calc_icms" ColumnName="base_calc_icms" />
+                <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="data_emissao" ColumnName="data_emissao" />
+                <ScalarProperty Name="ie" ColumnName="ie" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="chave_acesso" ColumnName="chave_acesso" />
+                <ScalarProperty Name="id_nfe" ColumnName="id_nfe" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
