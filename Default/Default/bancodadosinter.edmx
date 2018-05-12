@@ -77,10 +77,10 @@
           <Property Name="chave_acesso" Type="varchar" MaxLength="44" />
           <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="data_emissao" Type="date" Nullable="false" />
+          <Property Name="data_emissao" Type="datetime" Nullable="false" />
           <Property Name="numero" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="data_entrada" Type="date" Nullable="false" />
+          <Property Name="data_entrada" Type="datetime" Nullable="false" />
           <Property Name="base_calc_icms" Type="decimal" Precision="18" Scale="2" />
           <Property Name="valor_icms" Type="decimal" Precision="18" Scale="2" />
           <Property Name="frete_nfe" Type="decimal" Precision="18" Scale="2" />
@@ -348,31 +348,9 @@
           <EntitySet Name="Rel_funcionarios" EntityType="Self.Rel_funcionarios" />
           <EntitySet Name="Rel_ged" EntityType="Self.Rel_ged" />
           <EntitySet Name="usuario" EntityType="Self.usuario" />
-          <EntitySet Name="NFe" EntityType="bancodadosinterModel.NFe" />
           <EntitySet Name="fornecedor" EntityType="bancodadosinterModel.fornecedor" />
+          <EntitySet Name="NFe" EntityType="bancodadosinterModel.NFe" />
         </EntityContainer>
-        <EntityType Name="NFe">
-          <Key>
-            <PropertyRef Name="id_nfe" />
-          </Key>
-          <Property Name="id_nfe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="chave_acesso" Type="String" MaxLength="44" FixedLength="false" Unicode="false" />
-          <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
-          <Property Name="ie" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="data_emissao" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="numero" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="serie" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="base_calc_icms" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="valor_icms" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="frete_nfe" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="desconto" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="base_st" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="valor_st" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="ipi" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="valor_produtos" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-        </EntityType>
         <EntityType Name="fornecedor">
           <Key>
             <PropertyRef Name="id_fornecedor" />
@@ -390,6 +368,28 @@
           <Property Name="cidade" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NFe">
+          <Key>
+            <PropertyRef Name="id_nfe" />
+          </Key>
+          <Property Name="id_nfe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="chave_acesso" Type="String" MaxLength="44" FixedLength="false" Unicode="false" />
+          <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="ie" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="data_emissao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="numero" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="serie" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="base_calc_icms" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="valor_icms" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="frete_nfe" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="desconto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="base_st" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="valor_st" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ipi" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="valor_produtos" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -544,6 +544,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="fornecedor">
+            <EntityTypeMapping TypeName="bancodadosinterModel.fornecedor">
+              <MappingFragment StoreEntitySet="fornecedor">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="razao_social" ColumnName="razao_social" />
+                <ScalarProperty Name="ie" ColumnName="ie" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="NFe">
             <EntityTypeMapping TypeName="bancodadosinterModel.NFe">
               <MappingFragment StoreEntitySet="NFe">
@@ -564,25 +583,6 @@
                 <ScalarProperty Name="cnpj" ColumnName="cnpj" />
                 <ScalarProperty Name="chave_acesso" ColumnName="chave_acesso" />
                 <ScalarProperty Name="id_nfe" ColumnName="id_nfe" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="fornecedor">
-            <EntityTypeMapping TypeName="bancodadosinterModel.fornecedor">
-              <MappingFragment StoreEntitySet="fornecedor">
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="cidade" ColumnName="cidade" />
-                <ScalarProperty Name="bairro" ColumnName="bairro" />
-                <ScalarProperty Name="numero" ColumnName="numero" />
-                <ScalarProperty Name="cep" ColumnName="cep" />
-                <ScalarProperty Name="endereco" ColumnName="endereco" />
-                <ScalarProperty Name="celular" ColumnName="celular" />
-                <ScalarProperty Name="telefone" ColumnName="telefone" />
-                <ScalarProperty Name="razao_social" ColumnName="razao_social" />
-                <ScalarProperty Name="ie" ColumnName="ie" />
-                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
-                <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

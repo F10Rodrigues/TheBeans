@@ -37,7 +37,7 @@ namespace Default
         public virtual DbSet<Rel_funcionarios> Rel_funcionarios { get; set; }
         public virtual DbSet<Rel_ged> Rel_ged { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
-        public virtual DbSet<NFe> NFe { get; set; }
         public virtual DbSet<fornecedor> fornecedor { get; set; }
+        public virtual DbSet<NFe> NFe { get; set; }
     }
 }

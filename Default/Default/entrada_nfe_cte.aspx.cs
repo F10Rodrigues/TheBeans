@@ -12,6 +12,8 @@ namespace Default
 
         private bancodadosinterEntities1 entities = new bancodadosinterEntities1();
 
+        private List<NFe> lista;
+
         public void LimparCampos()
         {
             //limpar todos os campos da capa NFe
@@ -57,7 +59,7 @@ namespace Default
         
         public void carregaGrid()
         {
-            List<NFe> lista = entities.NFe.ToList();
+            lista = entities.NFe.OrderBy(x => x.numero).ToList();
             gridNfe.DataSource = lista;
             gridNfe.DataBind();
         }
@@ -156,6 +158,13 @@ namespace Default
 
             entities.SaveChanges();
             carregaGrid();
+        }
+
+        protected void gridNfe_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridNfe.DataSource = lista;
+            gridNfe.PageIndex = e.NewPageIndex;
+            gridNfe.DataBind();
         }
     }
 }

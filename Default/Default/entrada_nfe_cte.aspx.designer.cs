@@ -13,6 +13,15 @@ namespace Default {
     public partial class entrada_nfe_cte {
         
         /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
         /// txtIDNFe control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_cnpj;
         
         /// <summary>
+        /// validatorCNPJ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorCNPJ;
+        
+        /// <summary>
         /// lbl_ie control.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ie;
+        
+        /// <summary>
+        /// validatorIE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorIE;
         
         /// <summary>
         /// lbl_data_emissao control.
@@ -94,6 +121,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_data_emissao;
         
         /// <summary>
+        /// validatorDataEmissao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorDataEmissao;
+        
+        /// <summary>
         /// lbl_numero control.
         /// </summary>
         /// <remarks>
@@ -110,6 +146,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_numero;
+        
+        /// <summary>
+        /// validatorNumero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorNumero;
         
         /// <summary>
         /// lbl_serie control.
@@ -130,6 +175,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_serie;
         
         /// <summary>
+        /// validatorSerie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorSerie;
+        
+        /// <summary>
         /// lbl_data_entrada control.
         /// </summary>
         /// <remarks>
@@ -146,6 +200,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_data_entrada;
+        
+        /// <summary>
+        /// validatorDataEntrada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorDataEntrada;
         
         /// <summary>
         /// lbl_base_calc_icms control.
@@ -292,6 +355,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_vlor_produtos;
         
         /// <summary>
+        /// validatorValorProdutos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorValorProdutos;
+        
+        /// <summary>
         /// lbl_total control.
         /// </summary>
         /// <remarks>
@@ -308,6 +380,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_total;
+        
+        /// <summary>
+        /// validatorTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorTotal;
         
         /// <summary>
         /// btn_concluir control.

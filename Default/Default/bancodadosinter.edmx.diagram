@@ -17,8 +17,8 @@
         <EntityTypeShape EntityType="bancodadosinterModel.Rel_funcionarios" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.Rel_ged" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.usuario" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancodadosinterModel.NFe" Width="1.5" PointX="11.375" PointY="3.75" />
         <EntityTypeShape EntityType="bancodadosinterModel.fornecedor" Width="1.5" PointX="11.375" PointY="9.75" />
+        <EntityTypeShape EntityType="bancodadosinterModel.NFe" Width="1.5" PointX="11.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
