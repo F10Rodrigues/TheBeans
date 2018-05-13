@@ -5,15 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="bancodadosinterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Documento">
+        <EntityType Name="documento_ged">
           <Key>
-            <PropertyRef Name="numero_documento" />
+            <PropertyRef Name="Id_documento" />
           </Key>
-          <Property Name="id_documento" Type="int" Nullable="false" />
-          <Property Name="numero_documento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="fornecedor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_documento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numero_documento" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="serie" Type="varchar" MaxLength="8" Nullable="false" />
           <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="fornecedor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="arquivo" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="fornecedor">
           <Key>
@@ -181,7 +182,7 @@
           <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityContainer Name="bancodadosinterModelStoreContainer">
-          <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="documento_ged" EntityType="Self.documento_ged" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="funcao" EntityType="Self.funcao" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="funcionario" EntityType="Self.funcionario" Schema="dbo" store:Type="Tables" />
@@ -200,16 +201,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bancodadosinterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Documento">
-          <Key>
-            <PropertyRef Name="numero_documento" />
-          </Key>
-          <Property Name="id_documento" Type="Int32" Nullable="false" />
-          <Property Name="numero_documento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="serie" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="fornecedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
         <EntityType Name="funcao">
           <Key>
             <PropertyRef Name="id_funcao" />
@@ -336,7 +327,6 @@
           <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityContainer Name="bancodadosinterEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Documento" EntityType="Self.Documento" />
           <EntitySet Name="funcao" EntityType="Self.funcao" />
           <EntitySet Name="funcionario" EntityType="Self.funcionario" />
           <EntitySet Name="Inter" EntityType="Self.Inter" />
@@ -350,6 +340,7 @@
           <EntitySet Name="usuario" EntityType="Self.usuario" />
           <EntitySet Name="fornecedor" EntityType="bancodadosinterModel.fornecedor" />
           <EntitySet Name="NFe" EntityType="bancodadosinterModel.NFe" />
+          <EntitySet Name="documento_ged" EntityType="bancodadosinterModel.documento_ged" />
         </EntityContainer>
         <EntityType Name="fornecedor">
           <Key>
@@ -391,23 +382,23 @@
           <Property Name="valor_produtos" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
         </EntityType>
+        <EntityType Name="documento_ged">
+          <Key>
+            <PropertyRef Name="Id_documento" />
+          </Key>
+          <Property Name="Id_documento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numero_documento" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="serie" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="fornecedor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="arquivo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="bancodadosinterModelStoreContainer" CdmEntityContainer="bancodadosinterEntities1">
-          <EntitySetMapping Name="Documento">
-            <EntityTypeMapping TypeName="bancodadosinterModel.Documento">
-              <MappingFragment StoreEntitySet="Documento">
-                <ScalarProperty Name="id_documento" ColumnName="id_documento" />
-                <ScalarProperty Name="numero_documento" ColumnName="numero_documento" />
-                <ScalarProperty Name="serie" ColumnName="serie" />
-                <ScalarProperty Name="fornecedor" ColumnName="fornecedor" />
-                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="funcao">
             <EntityTypeMapping TypeName="bancodadosinterModel.funcao">
               <MappingFragment StoreEntitySet="funcao">
@@ -583,6 +574,18 @@
                 <ScalarProperty Name="cnpj" ColumnName="cnpj" />
                 <ScalarProperty Name="chave_acesso" ColumnName="chave_acesso" />
                 <ScalarProperty Name="id_nfe" ColumnName="id_nfe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="documento_ged">
+            <EntityTypeMapping TypeName="bancodadosinterModel.documento_ged">
+              <MappingFragment StoreEntitySet="documento_ged">
+                <ScalarProperty Name="arquivo" ColumnName="arquivo" />
+                <ScalarProperty Name="fornecedor" ColumnName="fornecedor" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="numero_documento" ColumnName="numero_documento" />
+                <ScalarProperty Name="Id_documento" ColumnName="Id_documento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ab12478c8c5e453a840912a36b4f8ece" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="bancodadosinterModel.Documento" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.funcao" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.funcionario" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.Inter" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
@@ -19,6 +18,7 @@
         <EntityTypeShape EntityType="bancodadosinterModel.usuario" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.fornecedor" Width="1.5" PointX="11.375" PointY="9.75" />
         <EntityTypeShape EntityType="bancodadosinterModel.NFe" Width="1.5" PointX="11.375" PointY="3.75" />
+        <EntityTypeShape EntityType="bancodadosinterModel.documento_ged" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -208,7 +208,7 @@
     <Compile Include="Cadastro_func_Atualizar.aspx.designer.cs">
       <DependentUpon>Cadastro_func_Atualizar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Documento.cs">
+    <Compile Include="documento_ged.cs">
       <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
     <Compile Include="entrada_nfe_cte.aspx.cs">
