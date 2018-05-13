@@ -2,10 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" />
-    <asp:Button ID="btn_limpar" runat="server" Text="LIMPAR" />
-    <asp:Button ID="btn_voltar" runat="server" Text="VOLTAR" />
-    <asp:Button ID="btn_sair" runat="server" Text="SAIR" /><br /><br />
+    <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" />
+    <asp:Button ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
+    <asp:Button ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
+    <asp:Button ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" /><br /><br />
     <asp:Label ID="lbl_cpf" runat="server" Text="CPF"></asp:Label>
     <asp:TextBox ID="txt_cpf" runat="server" Width="178px"></asp:TextBox>
     <asp:Label ID="lbl_rg" runat="server" Text="RG"></asp:Label>
@@ -60,4 +60,21 @@
     <asp:TextBox ID="txt_função" runat="server" Width="221px"></asp:TextBox>
     <asp:Label ID="lbl_email" runat="server" Text="E-MAIL"></asp:Label>
     <asp:TextBox ID="txt_email" runat="server" Width="448px"></asp:TextBox>
+    <asp:GridView ID="grid_funcionario" runat="server" AutoGenerateColumns="False">
+        <Columns>
+            <asp:BoundField DataField="cpf" HeaderText="CPF" />
+            <asp:BoundField DataField="nome" HeaderText="NOME" />
+            <asp:BoundField DataField="ctps" HeaderText="CTPS" />
+            <asp:BoundField DataField="rg" HeaderText="RG" />
+            <asp:BoundField DataField="cep" HeaderText="CEP" />
+            <asp:BoundField DataField="celular" HeaderText="CELULAR" />
+            <asp:BoundField DataField="endereco" HeaderText="ENDEREÇO" />
+            <asp:BoundField DataField="numero" HeaderText="NUMERO" />
+            <asp:BoundField DataField="bairro" HeaderText="BAIRRO" />
+            <asp:BoundField DataField="estado" HeaderText="ESTADO" />
+            <asp:BoundField DataField="email" HeaderText="EMAIL" />
+            <asp:ButtonField DataTextField="btAlterar" HeaderText="ALTERAR" Text="ALTERAR" />
+            <asp:ButtonField DataTextField="btExcluir" HeaderText="EXCLUIR" Text="EXCLUIR" />
+        </Columns>
+    </asp:GridView>
 </asp:Content>

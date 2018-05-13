@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="ab12478c8c5e453a840912a36b4f8ece" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="bancodadosinterModel.funcao" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancodadosinterModel.funcionario" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancodadosinterModel.funcionario" Width="2.25" PointX="4.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.Inter" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.obs_gerente" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.pagamento" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
