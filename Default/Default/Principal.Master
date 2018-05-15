@@ -5,16 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="../estilo.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="logo">
+             <img src="Imagens/deere.logo.ag.hq.png" />
+
+        </div>
 
     <div>
         <asp:Label ID="lbl_usuario" runat="server" Text="Usuário Logado:"></asp:Label>
         <asp:Label ID="lbl_usuario_logado" runat="server" Text="Fulano"></asp:Label>
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+        
         <br />
     </div>
 
@@ -24,7 +30,7 @@
 
         </div>
 
-    <div aria-orientation="horizontal">
+    <div class="menu">
        
         
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
@@ -69,5 +75,11 @@
         </asp:ContentPlaceHolder>
    
     </form>
+        <div class="rodape">
+        
+    </div>
+    <div class="rodape2">
+        
+    </div>
 </body>
 </html>

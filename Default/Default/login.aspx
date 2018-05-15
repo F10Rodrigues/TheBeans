@@ -10,12 +10,23 @@
 <body>
     <form id="form1" runat="server">
 
-        <div class="logo"> <img src="Imagens/deere.logo.ag.hq.png" /> </div>
+        <div class="logo">
+             <img src="Imagens/deere.logo.ag.hq.png" />
 
-        <asp:Login ID="Login1" CssClass="login" runat="server" FailureText="Login Inválido! Tente novamente." LoginButtonText="Entrar" OnAuthenticate="Login1_Authenticate" PasswordLabelText="Senha:" RememberMeText="Lembre-me das credenciais da próxima vez" TitleText="Entre com suas credenciais" UserNameLabelText="Usuário:">
-        </asp:Login>
+        </div>
+
+
+            <asp:Login ID="Login1" CssClass="login" runat="server" FailureText="Login Inválido! Tente novamente." LoginButtonText="Entrar" OnAuthenticate="Login1_Authenticate" PasswordLabelText="Senha:" RememberMeText="Lembre-me das credenciais da próxima vez" TitleText="Entre com suas credenciais" UserNameLabelText="Usuário:">
+            </asp:Login>
 
    
     </form>
+
+    <div class="rodape">
+        
+    </div>
+    <div class="rodape2">
+        
+    </div>
 </body>
 </html>

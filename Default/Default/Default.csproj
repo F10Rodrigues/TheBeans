@@ -121,7 +121,6 @@
     <Content Include="estilo.css" />
     <Content Include="Imagens\deere.logo.ag.hq.png" />
     <Content Include="login.aspx" />
-    <Content Include="LOGO.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
