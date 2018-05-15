@@ -15,7 +15,14 @@
         <asp:Label ID="lbl_usuario" runat="server" Text="Usuário Logado:"></asp:Label>
         <asp:Label ID="lbl_usuario_logado" runat="server" Text="Fulano"></asp:Label>
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+        <br />
     </div>
+
+        <div>
+
+
+
+        </div>
 
     <div aria-orientation="horizontal">
        
@@ -32,7 +39,6 @@
                     </asp:MenuItem>
                     <asp:MenuItem Text="CADASTRO FUNCIONÁRIOS" Value="CADASTRO FUNCIONÁRIOS">
                         <asp:MenuItem Text="ADICIONAR" Value="ADICIONAR" NavigateUrl="~/Cadastro_Func_adicionar.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="ATUALIZAR" Value="ATUALIZAR" NavigateUrl="~/Cadastro_func_Atualizar.aspx"></asp:MenuItem>
                     </asp:MenuItem>
                     <asp:MenuItem Text="CADASTRO FORNECEDOR" Value="CADASTRO FORNECEDOR">
                         <asp:MenuItem Text="ADICIONAR" Value="ADICIONAR" NavigateUrl="~/cadastro_forn_adicionar.aspx"></asp:MenuItem>

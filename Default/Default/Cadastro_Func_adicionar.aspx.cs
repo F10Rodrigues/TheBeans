@@ -16,6 +16,7 @@ namespace Default
         public void limparCampos()
         {
             //limpar os campos cadastro fornecedor
+            txt_IdFunc.Text = string.Empty;
             txt_cpf.Text = string.Empty;
             txt_nome.Text = string.Empty;
             txt_ctps.Text = string.Empty;
@@ -25,6 +26,7 @@ namespace Default
             txt_endereco.Text = string.Empty;
             txt_numero.Text = string.Empty;
             txt_bairro.Text = string.Empty;
+            txt_Cidade.Text = string.Empty;
             ddl_estado.Text = string.Empty;
             txt_email.Text = string.Empty;
         }
@@ -35,7 +37,7 @@ namespace Default
 
         protected void btn_concluir_Click(object sender, EventArgs e)
         {
-            if (txt_cpf .Text == string.Empty)
+            if (txt_IdFunc.Text == string.Empty)
             {
                 //novo registro
                 funcionario k = new funcionario();
@@ -46,8 +48,9 @@ namespace Default
                 k.cep = txt_cep.Text;
                 k.celular = txt_celular.Text;
                 k.endereco = txt_endereco.Text;
-                k.numero = txt_numero.Text;
+                k.numero = Convert.ToInt32(txt_numero.Text.ToString());
                 k.bairro = txt_bairro.Text;
+                k.cidade = txt_Cidade.Text;
                 k.estado = ddl_estado.Text;
                 k.email = txt_email.Text;
 
@@ -56,7 +59,7 @@ namespace Default
             else
             {
                 //alterar registros
-                funcionario k = entities.funcionario.Find(Convert.ToInt32(txt_cpf.Text));
+                funcionario k = entities.funcionario.Find(Convert.ToInt32(txt_IdFunc.Text));
                 k.cpf = txt_cpf.Text;
                 k.nome = txt_nome.Text;
                 k.ctps = txt_ctps.Text;
@@ -64,8 +67,9 @@ namespace Default
                 k.cep = txt_cep.Text;
                 k.celular = txt_celular.Text;
                 k.endereco = txt_endereco.Text;
-                k.numero = txt_numero.Text;
+                k.numero = Convert.ToInt32(txt_numero.Text.ToString());
                 k.bairro = txt_bairro.Text;
+                k.cidade = txt_Cidade.Text;
                 k.estado = ddl_estado.Text;
                 k.email = txt_email.Text;
                 entities.Entry(k);
@@ -78,7 +82,7 @@ namespace Default
 
         private void carregaGrid()
         {
-            lista = entities.funcionario.OrderBy(x => x.cpf).ToList();
+            lista = entities.funcionario.OrderBy(x => x.nome).ToList();
             grid_funcionario.DataSource = lista;
             grid_funcionario.DataBind();
         }
@@ -106,17 +110,19 @@ namespace Default
             else if (e.CommandName.ToString().Equals("btAlterar"))
             {
                 funcionario k = entities.funcionario.Find(Convert.ToInt32(idSelect));
-                k.cpf = txt_cpf.Text;
+                txt_IdFunc.Text = k.id_funcionario.ToString();
+                txt_cpf.Text = k.cpf;
                 txt_nome.Text= k.nome;
                 txt_ctps.Text = k.ctps ;
-                txt_rg.Text= k.rg;
-                txt_cep.Text= k.cep;
-                txt_celular.Text= k.celular;
-                txt_endereco.Text= k.endereco;
-                txt_numero.Text= k.numero;
-                txt_bairro.Text= k.bairro;
-                ddl_estado.Text= k.estado;
-                txt_email.Text= k.email;
+                txt_rg.Text = k.rg;
+                txt_cep.Text = k.cep;
+                txt_celular.Text = k.celular;
+                txt_endereco.Text = k.endereco;
+                txt_numero.Text = k.numero.ToString();
+                txt_bairro.Text = k.bairro;
+                txt_Cidade.Text = k.cidade;
+                ddl_estado.Text = k.estado;
+                txt_email.Text = k.email;
             }
 
             entities.SaveChanges();
@@ -139,4 +145,3 @@ namespace Default
         }
     }
     }
-}

@@ -118,6 +118,8 @@
       <DependentUpon>bancodadosinter.edmx</DependentUpon>
       <LastGenOutput>bancodadosinter.cs</LastGenOutput>
     </Content>
+    <Content Include="estilo.css" />
+    <Content Include="Imagens\deere.logo.ag.hq.png" />
     <Content Include="login.aspx" />
     <Content Include="LOGO.jpg" />
     <Content Include="packages.config" />
@@ -143,9 +145,7 @@
   <ItemGroup>
     <Content Include="autorizar_documento.aspx" />
     <Content Include="cadastro_forn_adicionar.aspx" />
-    <Content Include="cadastro_forn_atualizar.aspx" />
     <Content Include="Cadastro_Func_adicionar.aspx" />
-    <Content Include="Cadastro_func_Atualizar.aspx" />
     <Content Include="entrada_nfe_cte.aspx" />
     <Content Include="financeiro_pagamento.aspx" />
     <Content Include="ged_add_documento.aspx" />
@@ -187,26 +187,12 @@
     <Compile Include="cadastro_forn_adicionar.aspx.designer.cs">
       <DependentUpon>cadastro_forn_adicionar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="cadastro_forn_atualizar.aspx.cs">
-      <DependentUpon>cadastro_forn_atualizar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="cadastro_forn_atualizar.aspx.designer.cs">
-      <DependentUpon>cadastro_forn_atualizar.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Cadastro_Func_adicionar.aspx.cs">
       <DependentUpon>Cadastro_Func_adicionar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Cadastro_Func_adicionar.aspx.designer.cs">
       <DependentUpon>Cadastro_Func_adicionar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Cadastro_func_Atualizar.aspx.cs">
-      <DependentUpon>Cadastro_func_Atualizar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Cadastro_func_Atualizar.aspx.designer.cs">
-      <DependentUpon>Cadastro_func_Atualizar.aspx</DependentUpon>
     </Compile>
     <Compile Include="documento_ged.cs">
       <DependentUpon>bancodadosinter.tt</DependentUpon>
@@ -325,6 +311,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

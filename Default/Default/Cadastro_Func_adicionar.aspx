@@ -5,7 +5,11 @@
     <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" />
     <asp:Button ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
     <asp:Button ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
-    <asp:Button ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" /><br /><br />
+    <asp:Button ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" />
+    <br />
+    <br />
+    <asp:TextBox ID="txt_IdFunc" runat="server"></asp:TextBox>
+    <br />
     <asp:Label ID="lbl_cpf" runat="server" Text="CPF"></asp:Label>
     <asp:TextBox ID="txt_cpf" runat="server" Width="178px"></asp:TextBox>
     <asp:Label ID="lbl_rg" runat="server" Text="RG"></asp:Label>
@@ -26,6 +30,10 @@
     <asp:TextBox ID="txt_numero" runat="server" Width="56px"></asp:TextBox>
     <asp:Label ID="lbl_bairro" runat="server" Text="BAIRRO"></asp:Label>
     <asp:TextBox ID="txt_bairro" runat="server" Width="181px"></asp:TextBox>
+    <br />
+    <br />
+    <asp:Label ID="Label1" runat="server" Text="CIDADE"></asp:Label>
+    <asp:TextBox ID="txt_Cidade" runat="server"></asp:TextBox>
     <asp:Label ID="lbl_estado" runat="server" Text="ESTADO"></asp:Label>
     <asp:DropDownList ID="ddl_estado" runat="server">
         <asp:ListItem>ACRE</asp:ListItem>
@@ -55,15 +63,16 @@
         <asp:ListItem>SÃO PAULO</asp:ListItem>
         <asp:ListItem>SERGIPE</asp:ListItem>
         <asp:ListItem>TOCANTINS</asp:ListItem>
-    </asp:DropDownList><br /><br />
-    <asp:Label ID="lbl_função" runat="server" Text="FUNÇÃO"></asp:Label>
-    <asp:TextBox ID="txt_função" runat="server" Width="221px"></asp:TextBox>
+    </asp:DropDownList>
+    <br />
+    <br />
     <asp:Label ID="lbl_email" runat="server" Text="E-MAIL"></asp:Label>
     <asp:TextBox ID="txt_email" runat="server" Width="448px"></asp:TextBox>
     <asp:GridView ID="grid_funcionario" runat="server" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField DataField="cpf" HeaderText="CPF" />
+            <asp:BoundField DataField="id_funcionario" HeaderText="ID" />
             <asp:BoundField DataField="nome" HeaderText="NOME" />
+            <asp:BoundField DataField="cpf" HeaderText="CPF" />
             <asp:BoundField DataField="ctps" HeaderText="CTPS" />
             <asp:BoundField DataField="rg" HeaderText="RG" />
             <asp:BoundField DataField="cep" HeaderText="CEP" />
@@ -71,10 +80,11 @@
             <asp:BoundField DataField="endereco" HeaderText="ENDEREÇO" />
             <asp:BoundField DataField="numero" HeaderText="NUMERO" />
             <asp:BoundField DataField="bairro" HeaderText="BAIRRO" />
+            <asp:BoundField DataField="cidade" HeaderText="CIDADE" />
             <asp:BoundField DataField="estado" HeaderText="ESTADO" />
             <asp:BoundField DataField="email" HeaderText="EMAIL" />
-            <asp:ButtonField DataTextField="btAlterar" HeaderText="ALTERAR" Text="ALTERAR" />
-            <asp:ButtonField DataTextField="btExcluir" HeaderText="EXCLUIR" Text="EXCLUIR" />
+            <asp:ButtonField DataTextField="btAlterar" HeaderText="ALTERAR" Text="ALTERAR" CommandName="btAlterar" />
+            <asp:ButtonField DataTextField="btExcluir" HeaderText="REMOVER" Text="REMOVER" CommandName="btRemover" />
         </Columns>
     </asp:GridView>
 </asp:Content>
