@@ -62,14 +62,6 @@
           <Property Name="estado" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Inter">
-          <Key>
-            <PropertyRef Name="id_login" />
-          </Key>
-          <Property Name="id_login" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="senha" Type="varchar" MaxLength="20" Nullable="false" />
-        </EntityType>
         <EntityType Name="NFe">
           <Key>
             <PropertyRef Name="id_nfe" />
@@ -119,12 +111,12 @@
           <Property Name="id_programacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="data_emissao" Type="date" Nullable="false" />
-          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="data_emissao" Type="datetime" Nullable="false" />
+          <Property Name="numero" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="data_entrada" Type="date" Nullable="false" />
-          <Property Name="data_vencimento" Type="date" Nullable="false" />
-          <Property Name="total" Type="float" Nullable="false" />
+          <Property Name="data_entrada" Type="datetime" Nullable="false" />
+          <Property Name="data_vencimento" Type="datetime" Nullable="false" />
+          <Property Name="total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Rel_documentos">
           <Key>
@@ -186,7 +178,6 @@
           <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="funcao" EntityType="Self.funcao" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="funcionario" EntityType="Self.funcionario" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Inter" EntityType="Self.Inter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NFe" EntityType="Self.NFe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="obs_gerente" EntityType="Self.obs_gerente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pagamento" EntityType="Self.pagamento" Schema="dbo" store:Type="Tables" />
@@ -211,14 +202,6 @@
           <Property Name="pode_cadastrar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="pode_pagar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityType Name="Inter">
-          <Key>
-            <PropertyRef Name="id_login" />
-          </Key>
-          <Property Name="id_login" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
         <EntityType Name="obs_gerente">
           <Key>
             <PropertyRef Name="id_obs_gerente" />
@@ -238,20 +221,6 @@
           <Property Name="valor" Type="Double" Nullable="false" />
           <Property Name="id_observacao" Type="Int32" Nullable="false" />
           <Property Name="observacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
-        <EntityType Name="programacao_pagamento">
-          <Key>
-            <PropertyRef Name="id_programacao" />
-          </Key>
-          <Property Name="id_programacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ie" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="data_emissao" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="numero" Type="Int32" Nullable="false" />
-          <Property Name="serie" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="data_vencimento" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="total" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="Rel_documentos">
           <Key>
@@ -310,10 +279,8 @@
         </EntityType>
         <EntityContainer Name="bancodadosinterEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="funcao" EntityType="Self.funcao" />
-          <EntitySet Name="Inter" EntityType="Self.Inter" />
           <EntitySet Name="obs_gerente" EntityType="Self.obs_gerente" />
           <EntitySet Name="pagamento" EntityType="Self.pagamento" />
-          <EntitySet Name="programacao_pagamento" EntityType="Self.programacao_pagamento" />
           <EntitySet Name="Rel_documentos" EntityType="Self.Rel_documentos" />
           <EntitySet Name="Rel_fornecedores" EntityType="Self.Rel_fornecedores" />
           <EntitySet Name="Rel_funcionarios" EntityType="Self.Rel_funcionarios" />
@@ -323,6 +290,7 @@
           <EntitySet Name="NFe" EntityType="bancodadosinterModel.NFe" />
           <EntitySet Name="documento_ged" EntityType="bancodadosinterModel.documento_ged" />
           <EntitySet Name="funcionario" EntityType="bancodadosinterModel.funcionario" />
+          <EntitySet Name="programacao_pagamento" EntityType="bancodadosinterModel.programacao_pagamento" />
         </EntityContainer>
         <EntityType Name="fornecedor">
           <Key>
@@ -393,6 +361,20 @@
           <Property Name="estado" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="programacao_pagamento">
+          <Key>
+            <PropertyRef Name="id_programacao" />
+          </Key>
+          <Property Name="id_programacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="ie" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="data_emissao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="numero" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="serie" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="data_vencimento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -407,15 +389,6 @@
                 <ScalarProperty Name="pode_aprovar" ColumnName="pode_aprovar" />
                 <ScalarProperty Name="pode_cadastrar" ColumnName="pode_cadastrar" />
                 <ScalarProperty Name="pode_pagar" ColumnName="pode_pagar" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Inter">
-            <EntityTypeMapping TypeName="bancodadosinterModel.Inter">
-              <MappingFragment StoreEntitySet="Inter">
-                <ScalarProperty Name="id_login" ColumnName="id_login" />
-                <ScalarProperty Name="usuario" ColumnName="usuario" />
-                <ScalarProperty Name="senha" ColumnName="senha" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -438,21 +411,6 @@
                 <ScalarProperty Name="valor" ColumnName="valor" />
                 <ScalarProperty Name="id_observacao" ColumnName="id_observacao" />
                 <ScalarProperty Name="observacao" ColumnName="observacao" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="programacao_pagamento">
-            <EntityTypeMapping TypeName="bancodadosinterModel.programacao_pagamento">
-              <MappingFragment StoreEntitySet="programacao_pagamento">
-                <ScalarProperty Name="id_programacao" ColumnName="id_programacao" />
-                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
-                <ScalarProperty Name="ie" ColumnName="ie" />
-                <ScalarProperty Name="data_emissao" ColumnName="data_emissao" />
-                <ScalarProperty Name="numero" ColumnName="numero" />
-                <ScalarProperty Name="serie" ColumnName="serie" />
-                <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
-                <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
-                <ScalarProperty Name="total" ColumnName="total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -586,6 +544,21 @@
                 <ScalarProperty Name="cpf" ColumnName="cpf" />
                 <ScalarProperty Name="nome" ColumnName="nome" />
                 <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="programacao_pagamento">
+            <EntityTypeMapping TypeName="bancodadosinterModel.programacao_pagamento">
+              <MappingFragment StoreEntitySet="programacao_pagamento">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
+                <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="data_emissao" ColumnName="data_emissao" />
+                <ScalarProperty Name="ie" ColumnName="ie" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="id_programacao" ColumnName="id_programacao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

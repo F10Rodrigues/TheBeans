@@ -88,6 +88,8 @@ namespace Default
                 n.valor_produtos = Convert.ToDecimal(txt_vlor_produtos.Text.ToString());
                 n.total = Convert.ToDecimal(txt_total.Text.ToString());
                 entities.NFe.Add(n);
+
+                
             }
             else
             {
@@ -114,7 +116,9 @@ namespace Default
 
             entities.SaveChanges();
             carregaGrid();
+            Response.Redirect("obs_gerente.aspx");
             LimparCampos();
+
             
         }
 

@@ -83,8 +83,8 @@
             <asp:BoundField DataField="cidade" HeaderText="CIDADE" />
             <asp:BoundField DataField="estado" HeaderText="ESTADO" />
             <asp:BoundField DataField="email" HeaderText="EMAIL" />
-            <asp:ButtonField DataTextField="btAlterar" HeaderText="ALTERAR" Text="ALTERAR" CommandName="btAlterar" />
-            <asp:ButtonField DataTextField="btExcluir" HeaderText="REMOVER" Text="REMOVER" CommandName="btRemover" />
+            <asp:ButtonField HeaderText="ALTERAR" Text="ALTERAR" CommandName="btAlterar" />
+            <asp:ButtonField HeaderText="REMOVER" Text="REMOVER" CommandName="btRemover" />
         </Columns>
     </asp:GridView>
 </asp:Content>

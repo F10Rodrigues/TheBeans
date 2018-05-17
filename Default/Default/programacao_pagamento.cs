@@ -18,10 +18,10 @@ namespace Default
         public string cnpj { get; set; }
         public string ie { get; set; }
         public System.DateTime data_emissao { get; set; }
-        public int numero { get; set; }
+        public string numero { get; set; }
         public string serie { get; set; }
         public System.DateTime data_entrada { get; set; }
         public System.DateTime data_vencimento { get; set; }
-        public double total { get; set; }
+        public decimal total { get; set; }
     }
 }
