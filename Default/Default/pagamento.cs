@@ -16,11 +16,11 @@ namespace Default
     {
         public int id_pagamento { get; set; }
         public System.DateTime vencimento { get; set; }
-        public string tipo { get; set; }
-        public string descricao { get; set; }
-        public string fornecedor { get; set; }
-        public double valor { get; set; }
-        public int id_observacao { get; set; }
+        public string cnpj { get; set; }
+        public string numero { get; set; }
+        public string serie { get; set; }
+        public decimal total { get; set; }
         public string observacao { get; set; }
+        public string pago { get; set; }
     }
 }

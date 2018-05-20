@@ -127,7 +127,6 @@
     <Content Include="estilo.css" />
     <Content Include="Imagens\deere.logo.ag.hq.png" />
     <Content Include="login.aspx" />
-    <Content Include="obs_gerente.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -212,6 +211,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="autorizar.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
     <Compile Include="autorizar_documento.aspx.cs">
       <DependentUpon>autorizar_documento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,9 +270,6 @@
     <Compile Include="fornecedor.cs">
       <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
-    <Compile Include="funcao.cs">
-      <DependentUpon>bancodadosinter.tt</DependentUpon>
-    </Compile>
     <Compile Include="funcionario.cs">
       <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
@@ -296,16 +295,6 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="NFe.cs">
-      <DependentUpon>bancodadosinter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="obs_gerente.aspx.cs">
-      <DependentUpon>obs_gerente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="obs_gerente.aspx.designer.cs">
-      <DependentUpon>obs_gerente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="obs_gerente.cs">
       <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
     <Compile Include="pagamento.cs">

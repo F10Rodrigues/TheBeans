@@ -12,9 +12,15 @@ namespace Default
     using System;
     using System.Collections.Generic;
     
-    public partial class obs_gerente
+    public partial class autorizar
     {
-        public int id_obs_gerente { get; set; }
+        public int Id_autorizar { get; set; }
+        public System.DateTime vencimento { get; set; }
+        public string cnpj { get; set; }
+        public string numero { get; set; }
+        public string serie { get; set; }
+        public decimal total { get; set; }
         public string observacao { get; set; }
+        public string autorizado { get; set; }
     }
 }

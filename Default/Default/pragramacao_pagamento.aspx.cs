@@ -16,6 +16,7 @@ namespace Default
         public void limparCampos()
         {
             txt_DataVencimento.Text = string.Empty;
+            txt_obs.Text = string.Empty;
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -52,6 +53,7 @@ namespace Default
                 p.data_entrada = Convert.ToDateTime(txt_DataEntrada.Text.ToString());
                 p.data_vencimento = Convert.ToDateTime(txt_DataVencimento.Text.ToString());
                 p.total = Convert.ToDecimal(txt_Total.Text.ToString());
+                p.observacao = txt_obs.Text;
                 entities.programacao_pagamento.Add(p);
             }
             entities.SaveChanges();

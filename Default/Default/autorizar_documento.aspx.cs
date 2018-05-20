@@ -9,9 +9,31 @@ namespace Default
 {
     public partial class autorizar_documento : System.Web.UI.Page
     {
+
+        private bancodadosinterEntities1 entities = new bancodadosinterEntities1();
+
+        private List<autorizar> lista;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btn_Voltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("pos_login.aspx");
+        }
+
+        protected void btn_Sair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
+
+        public void carregagrid()
+        {
+            lista = entities.autorizar.OrderBy(x => x.vencimento).ToList();
+            grid_autorizar.DataSource = lista;
+            grid_autorizar.DataBind();
         }
     }
 }

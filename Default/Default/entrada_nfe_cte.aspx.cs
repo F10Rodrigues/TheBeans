@@ -116,7 +116,7 @@ namespace Default
 
             entities.SaveChanges();
             carregaGrid();
-            Response.Redirect("obs_gerente.aspx");
+            Response.Redirect("pragramacao_pagamento.aspx");
             LimparCampos();
 
             

@@ -23,5 +23,6 @@ namespace Default
         public System.DateTime data_entrada { get; set; }
         public System.DateTime data_vencimento { get; set; }
         public decimal total { get; set; }
+        public string observacao { get; set; }
     }
 }

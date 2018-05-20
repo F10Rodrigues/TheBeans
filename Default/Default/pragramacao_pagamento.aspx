@@ -31,6 +31,12 @@
 &nbsp;<asp:Label ID="Label8" runat="server" Text="TOTAL"></asp:Label>
             <asp:TextBox ID="txt_Total" runat="server"></asp:TextBox>
 
+            <br />
+            <br />
+            <asp:Label ID="Label9" runat="server" Text="OBSERVAÇÃO."></asp:Label>
+        <asp:TextBox ID="txt_obs" runat="server" Width="523px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="validatorObservacao" runat="server" ControlToValidate="txt_obs" ErrorMessage="CAMPO OBSERVAÇÃO NÃO INFORMADO." ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
+
     </div>
 
     <div>
@@ -54,6 +60,7 @@
                 <asp:BoundField DataField="data_entrada" HeaderText="DATA ENTRADA" />
                 <asp:BoundField DataField="data_vencimento" HeaderText="DATA VENCIMENTO" />
                 <asp:BoundField DataField="total" HeaderText="TOTAL" />
+                <asp:BoundField DataField="observacao" HeaderText="OBSERVAÇÃO" />
             </Columns>
         </asp:GridView>
 
