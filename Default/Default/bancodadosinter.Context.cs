@@ -37,5 +37,6 @@ namespace Default
         public virtual DbSet<programacao_pagamento> programacao_pagamento { get; set; }
         public virtual DbSet<autorizar> autorizar { get; set; }
         public virtual DbSet<pagamento> pagamento { get; set; }
+        public virtual DbSet<Entity1> Entity1Set { get; set; }
     }
 }

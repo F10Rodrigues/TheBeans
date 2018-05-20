@@ -253,6 +253,9 @@
     <Compile Include="documento_ged.cs">
       <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity1.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
     <Compile Include="entrada_nfe_cte.aspx.cs">
       <DependentUpon>entrada_nfe_cte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -256,6 +256,7 @@
           <EntitySet Name="programacao_pagamento" EntityType="bancodadosinterModel.programacao_pagamento" />
           <EntitySet Name="autorizar" EntityType="bancodadosinterModel.autorizar" />
           <EntitySet Name="pagamento" EntityType="bancodadosinterModel.pagamento" />
+          <EntitySet Name="Entity1Set" EntityType="bancodadosinterModel.Entity1" />
         </EntityContainer>
         <EntityType Name="fornecedor">
           <Key>
@@ -366,6 +367,12 @@
           <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="observacao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="pago" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Entity1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
