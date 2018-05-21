@@ -20,7 +20,7 @@
                 <asp:BoundField DataField="serie" HeaderText="SERIE" />
                 <asp:BoundField DataField="total" HeaderText="TOTAL" />
                 <asp:BoundField DataField="observacao" HeaderText="OBSERVAÇÃO" />
-                <asp:BoundField DataField="autorizado" HeaderText="AUTORIZADO" />
+                <asp:BoundField DataField="pago" HeaderText="PAGO ?" />
             </Columns>
         </asp:GridView>
 

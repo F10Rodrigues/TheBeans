@@ -16,7 +16,7 @@ namespace Default
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            carregagrid();
         }
 
         protected void btn_Voltar_Click(object sender, EventArgs e)
@@ -31,6 +31,7 @@ namespace Default
 
         public void carregagrid()
         {
+            string nao = grid_autorizar.Columns[7].ToString();
             lista = entities.autorizar.OrderBy(x => x.vencimento).ToList();
             grid_autorizar.DataSource = lista;
             grid_autorizar.DataBind();

@@ -13,7 +13,7 @@
 
         <asp:GridView ID="grid_autorizar" runat="server" AutoGenerateColumns="False">
             <Columns>
-                <asp:BoundField DataField="id_autorizar" HeaderText="ID" />
+                <asp:BoundField DataField="Id_autorizar" HeaderText="ID" />
                 <asp:BoundField DataField="vencimento" HeaderText="DATA VENCIMENTO" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
                 <asp:BoundField DataField="numero" HeaderText="NUMERO" />
@@ -27,6 +27,7 @@
     </div>
 
     <div>
-        <asp:Button ID="btn_autorizar" runat="server" Text="AUTORIZAR" OnClick="btn_autorizar_Click" />
+        <asp:Button ID="btn_autorizar" runat="server" Text="AUTORIZAR" />
     </div>
+
 </asp:Content>

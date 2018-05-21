@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id_autorizar" />
           </Key>
-          <Property Name="Id_autorizar" Type="int" Nullable="false" />
+          <Property Name="Id_autorizar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="vencimento" Type="datetime" Nullable="false" />
           <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="numero" Type="varchar" MaxLength="30" Nullable="false" />
