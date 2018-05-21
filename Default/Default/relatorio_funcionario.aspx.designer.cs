@@ -31,12 +31,12 @@ namespace Default {
         protected global::System.Web.UI.WebControls.Button btn_sair;
         
         /// <summary>
-        /// cons_funci control.
+        /// grid_funcionario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView cons_funci;
+        protected global::System.Web.UI.WebControls.GridView grid_funcionario;
     }
 }

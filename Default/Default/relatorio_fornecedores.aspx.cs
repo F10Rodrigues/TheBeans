@@ -18,7 +18,14 @@ namespace Default
             carregagrid();
         }
 
-        protected void btn_sair_Click(object sender, EventArgs e)
+        public void carregagrid()
+        {
+            lista = entities.fornecedor.OrderBy(x => x.razao_social).ToList();
+            grid_consulta_forn.DataSource = lista;
+            grid_consulta_forn.DataBind();
+        }
+
+        protected void btn_sair_Click1(object sender, EventArgs e)
         {
             Response.Redirect("login.aspx");
         }
@@ -26,12 +33,6 @@ namespace Default
         protected void btn_voltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("pos_login.aspx");
-        }
-        public void carregagrid()
-        {
-            lista = entities.fornecedor.OrderBy(x => x.razao_social).ToList();
-            grid_consulta_forn.DataSource = lista;
-            grid_consulta_forn.DataBind();
         }
     }
 }

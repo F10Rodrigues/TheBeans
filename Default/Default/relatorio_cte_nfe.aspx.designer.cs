@@ -13,15 +13,6 @@ namespace Default {
     public partial class relatorio_cte_nfe {
         
         /// <summary>
-        /// btn_concluir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_concluir;
-        
-        /// <summary>
         /// btn_voltar control.
         /// </summary>
         /// <remarks>
@@ -40,21 +31,12 @@ namespace Default {
         protected global::System.Web.UI.WebControls.Button btn_sair;
         
         /// <summary>
-        /// GridView1 control.
+        /// grid_NFe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// btn_exluir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_exluir;
+        protected global::System.Web.UI.WebControls.GridView grid_NFe;
     }
 }

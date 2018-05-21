@@ -12,9 +12,10 @@ namespace Default
         private bancodadosinterEntities1 entities = new bancodadosinterEntities1();
 
         private List<funcionario> lista;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            carregagrid();
         }
 
         protected void btn_voltar_Click(object sender, EventArgs e)
@@ -29,8 +30,8 @@ namespace Default
         public void carregagrid()
         {
             lista = entities.funcionario.OrderBy(x => x.nome).ToList();
-            cons_funci.DataSource = lista;
-            cons_funci.DataBind();
+            grid_funcionario.DataSource = lista;
+            grid_funcionario.DataBind();
         }
     }
 }
