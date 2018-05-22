@@ -9,9 +9,9 @@ namespace Default
 {
     public partial class cadastro_forn_adicionar : System.Web.UI.Page
     {
-
         private bancodadosinterEntities1 entities = new bancodadosinterEntities1();
         private List<fornecedor> lista;
+
 
         public void limparCampos()
         {

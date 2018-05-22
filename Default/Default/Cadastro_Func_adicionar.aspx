@@ -81,6 +81,7 @@
             <asp:BoundField DataField="rg" HeaderText="RG" />
             <asp:BoundField DataField="cep" HeaderText="CEP" />
             <asp:BoundField DataField="celular" HeaderText="CELULAR" />
+            <asp:BoundField DataField="telefone" HeaderText="TELEFONE" />
             <asp:BoundField DataField="endereco" HeaderText="ENDEREÇO" />
             <asp:BoundField DataField="numero" HeaderText="NUMERO" />
             <asp:BoundField DataField="bairro" HeaderText="BAIRRO" />

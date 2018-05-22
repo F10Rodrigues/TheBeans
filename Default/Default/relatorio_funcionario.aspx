@@ -9,19 +9,20 @@
     </div>
     <br />
 
-    <asp:GridView CssClass="grid" ID="grid_funcionario" runat="server" Width="1043px" AutoGenerateColumns="False">
+    <asp:GridView CssClass="grid" ID="grid_funcionario" runat="server" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField HeaderText="NOME" DataField="nome" />
             <asp:BoundField HeaderText="CPF" DataField="cpf" />
             <asp:BoundField DataField="ctps" HeaderText="CTPS" />
             <asp:BoundField HeaderText="R.G." DataField="rg" />
             <asp:BoundField HeaderText="CELULAR" DataField="celular" />
+            <asp:BoundField DataField="cep" HeaderText="CEP" />
             <asp:BoundField HeaderText="ENDEREÇO" DataField="endereco" />
             <asp:BoundField DataField="numero" HeaderText="NUMERO" />
             <asp:BoundField DataField="bairro" HeaderText="BAIRRO" />
             <asp:BoundField DataField="cidade" HeaderText="CIDADE" />
-            <asp:BoundField HeaderText="EMAIL" DataField="email" />
             <asp:BoundField DataField="estado" HeaderText="ESTADO" />
+            <asp:BoundField HeaderText="EMAIL" DataField="email" />
         </Columns>
     </asp:GridView>
     <br />

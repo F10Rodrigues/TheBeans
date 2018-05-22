@@ -8,20 +8,25 @@
     </div>
     <br />
 
-    <asp:GridView CssClass="grid" ID="grid_consulta_forn" runat="server" Width="1043px" AutoGenerateColumns="False">
-        <Columns>
-            <asp:BoundField HeaderText="CNPJ" DataField="cnpj" />
-            <asp:BoundField HeaderText="I.E." DataField="ie" />
-            <asp:BoundField HeaderText="RAZÃO SOCIAL" DataField="razao_social" />
-            <asp:BoundField HeaderText="ENDEREÇO" DataField="endereco" />
-            <asp:BoundField HeaderText="NUMERO" DataField="numero" />
-            <asp:BoundField HeaderText="TELEFONE" DataField="telefone" />
-            <asp:BoundField DataField="bairro" HeaderText="BAIRRO" />
-            <asp:BoundField DataField="cidade" HeaderText="CIDADE" />
-            <asp:BoundField DataField="estado" HeaderText="ESTADO" />
-            <asp:BoundField HeaderText="E-MAIL" DataField="email" />
-        </Columns>
-    </asp:GridView>
+    <div>
+        <asp:GridView CssClass="grid" ID="grid_consulta_forn" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField HeaderText="CNPJ" DataField="cnpj" />
+                <asp:BoundField HeaderText="I.E." DataField="ie" />
+                <asp:BoundField HeaderText="RAZÃO SOCIAL" DataField="razao_social" />
+                <asp:BoundField HeaderText="NUMERO" DataField="numero" />
+                <asp:BoundField HeaderText="TELEFONE" DataField="telefone" />
+                <asp:BoundField DataField="celular" HeaderText="CELULAR" />
+                <asp:BoundField DataField="cep" HeaderText="CEP" />
+                <asp:BoundField HeaderText="ENDEREÇO" DataField="endereco" />
+                <asp:BoundField DataField="numero" HeaderText="NUMERO" />
+                <asp:BoundField DataField="bairro" HeaderText="BAIRRO" />
+                <asp:BoundField DataField="cidade" HeaderText="CIDADE" />
+                <asp:BoundField DataField="estado" HeaderText="ESTADO" />
+                <asp:BoundField HeaderText="E-MAIL" DataField="email" />
+            </Columns>
+        </asp:GridView>
+    </div>
     <br />
     <br />
-    </asp:Content>
+</asp:Content>

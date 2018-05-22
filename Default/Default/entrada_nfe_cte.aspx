@@ -58,7 +58,7 @@
             <asp:TextBox ID="txt_vlor_produtos" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorValorProdutos" runat="server" ControlToValidate="txt_vlor_produtos" ErrorMessage="Campo Valor Produtos não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
             <asp:Label ID="lbl_total" runat="server" Text="TOTAL"></asp:Label>
-            <asp:TextBox ID="txt_total" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txt_total" runat="server" Enabled="False"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorTotal" runat="server" ControlToValidate="txt_total" ErrorMessage="Campo Total não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
             <br />
             <br />

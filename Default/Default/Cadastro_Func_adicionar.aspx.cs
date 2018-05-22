@@ -22,6 +22,7 @@ namespace Default
             txt_ctps.Text = string.Empty;
             txt_rg.Text = string.Empty;
             txt_cep.Text = string.Empty;
+            txt_telefone.Text = string.Empty;
             txt_celular.Text = string.Empty;
             txt_endereco.Text = string.Empty;
             txt_numero.Text = string.Empty;
@@ -46,14 +47,14 @@ namespace Default
                 k.ctps = txt_ctps.Text;
                 k.rg = txt_rg.Text;
                 k.cep = txt_cep.Text;
+                k.telefone = txt_telefone.Text;
                 k.celular = txt_celular.Text;
                 k.endereco = txt_endereco.Text;
-                k.numero = Convert.ToInt32(txt_numero.Text.ToString());
+                k.numero = txt_numero.Text;
                 k.bairro = txt_bairro.Text;
                 k.cidade = txt_Cidade.Text;
                 k.estado = ddl_estado.Text;
                 k.email = txt_email.Text;
-
                 entities.funcionario.Add(k);
             }
             else
@@ -65,9 +66,10 @@ namespace Default
                 k.ctps = txt_ctps.Text;
                 k.rg = txt_rg.Text;
                 k.cep = txt_cep.Text;
+                k.telefone = txt_telefone.Text;
                 k.celular = txt_celular.Text;
                 k.endereco = txt_endereco.Text;
-                k.numero = Convert.ToInt32(txt_numero.Text.ToString());
+                k.numero = txt_numero.Text;
                 k.bairro = txt_bairro.Text;
                 k.cidade = txt_Cidade.Text;
                 k.estado = ddl_estado.Text;
@@ -116,6 +118,7 @@ namespace Default
                 txt_ctps.Text = k.ctps ;
                 txt_rg.Text = k.rg;
                 txt_cep.Text = k.cep;
+                txt_telefone.Text = k.telefone;
                 txt_celular.Text = k.celular;
                 txt_endereco.Text = k.endereco;
                 txt_numero.Text = k.numero.ToString();

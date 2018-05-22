@@ -9,14 +9,16 @@
     </div>
     <br />
 
-    <asp:GridView CssClass="grid" ID="grid_NFe" runat="server" Width="1043px" AutoGenerateColumns="False">
+    <asp:GridView CssClass="grid" ID="grid_NFe" runat="server" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField HeaderText="NUMERO" DataField="numero" />
             <asp:BoundField HeaderText="SERIE" DataField="serie" />
             <asp:BoundField HeaderText="DATA EMISSÃO" DataField="data_emissao" />
             <asp:BoundField HeaderText="DATA ENTRADA" DataField="data_entrada" />
+            <asp:BoundField DataField="valor_produtos" HeaderText="VALOR PRODUTOS" />
             <asp:BoundField HeaderText="TOTAL" DataField="total" />
             <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
+            <asp:BoundField DataField="ie" HeaderText="I.E." />
         </Columns>
     </asp:GridView>
     <br />

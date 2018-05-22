@@ -9,11 +9,11 @@
         <EntityTypeShape EntityType="bancodadosinterModel.usuario" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancodadosinterModel.fornecedor" Width="1.5" PointX="7.75" PointY="0.75" />
         <EntityTypeShape EntityType="bancodadosinterModel.NFe" Width="1.5" PointX="10" PointY="3.5" />
-        <EntityTypeShape EntityType="bancodadosinterModel.funcionario" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="bancodadosinterModel.programacao_pagamento" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="bancodadosinterModel.autorizar" Width="1.5" PointX="3" PointY="6.875" />
         <EntityTypeShape EntityType="bancodadosinterModel.pagamento" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="bancodadosinterModel.documento_ged" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="bancodadosinterModel.funcionario" Width="1.5" PointX="7.375" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

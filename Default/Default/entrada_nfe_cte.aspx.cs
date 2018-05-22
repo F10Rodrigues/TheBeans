@@ -67,6 +67,15 @@ namespace Default
 
     protected void btn_concluir_Click(object sender, EventArgs e)
         {
+
+            decimal frete = Convert.ToDecimal(txt_frete_nf.Text.ToString());
+            decimal desconto = Convert.ToDecimal(txt_desconto.Text.ToString());
+            decimal valor_st = Convert.ToDecimal(txt_base_calc_st.Text.ToString());
+            decimal ipi = Convert.ToDecimal(txt_ipi.Text.ToString());
+            decimal produtos = Convert.ToDecimal(txt_vlor_produtos.Text.ToString());
+        
+            decimal total = ((frete + valor_st + ipi + produtos)-desconto); 
+
             if(txtIDNFe.Text == string.Empty)
             {
                 //novo registro
@@ -86,7 +95,7 @@ namespace Default
                 n.valor_st = Convert.ToDecimal(txt_valor_st.Text.ToString());
                 n.ipi = Convert.ToDecimal(txt_ipi.Text.ToString());
                 n.valor_produtos = Convert.ToDecimal(txt_vlor_produtos.Text.ToString());
-                n.total = Convert.ToDecimal(txt_total.Text.ToString());
+                n.total = total;
                 entities.NFe.Add(n);
 
                 
@@ -110,7 +119,7 @@ namespace Default
                 n.valor_st = Convert.ToDecimal(txt_valor_st.Text.ToString());
                 n.ipi = Convert.ToDecimal(txt_ipi.Text.ToString());
                 n.valor_produtos = Convert.ToDecimal(txt_vlor_produtos.Text.ToString());
-                n.total = Convert.ToDecimal(txt_total.Text.ToString());
+                n.total = total;
                 entities.Entry(n);
             }
 
