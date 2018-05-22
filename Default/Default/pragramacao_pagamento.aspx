@@ -3,12 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="validacao" />
-            <br />
-            <asp:TextBox ID="txt_IDpag" runat="server"></asp:TextBox>
-
-            <br />
-            <br />
+        <asp:Button class="btn btn-success" ID="btn_Concluir" runat="server" Text="CONCLUIR" OnClick="btn_Concluir_Click" ValidationGroup="validacao" />
+        <asp:Button class="btn btn-success" ID="btn_Limpar" runat="server" OnClick="btn_Limpar_Click" Text="LIMPAR" />
+        <asp:Button class="btn btn-success" ID="btn_Voltar" runat="server" OnClick="btn_Voltar_Click" Text="VOLTAR" />
+        <asp:Button class="btn btn-success" ID="btn_Sair" runat="server" OnClick="btn_Sair_Click" Text="SAIR" />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="validacao" />
+    </div>
+    <br />
+                
+            <asp:TextBox ID="txt_IDpag" runat="server" Visible="False"></asp:TextBox>
             <asp:Label ID="Label1" runat="server" Text="CNPJ"></asp:Label>
             <asp:TextBox ID="txt_CNPJ" runat="server" Width="183px"></asp:TextBox>
 &nbsp;<asp:Label ID="Label2" runat="server" Text="I.E."></asp:Label>
@@ -37,16 +40,12 @@
         <asp:TextBox ID="txt_obs" runat="server" Width="523px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorObservacao" runat="server" ControlToValidate="txt_obs" ErrorMessage="CAMPO OBSERVAÇÃO NÃO INFORMADO." ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
 
-    </div>
-
-    <div>
-        <asp:Button ID="btn_Concluir" runat="server" Text="CONCLUIR" OnClick="btn_Concluir_Click" ValidationGroup="validacao" />
-
-        <asp:Button ID="btn_Limpar" runat="server" OnClick="btn_Limpar_Click" Text="LIMPAR" />
-        <asp:Button ID="btn_Voltar" runat="server" OnClick="btn_Voltar_Click" Text="VOLTAR" />
-        <asp:Button ID="btn_Sair" runat="server" OnClick="btn_Sair_Click" Text="SAIR" />
+            <br />
+            <br />
 
     </div>
+
+    <br />
 
     <div>
 

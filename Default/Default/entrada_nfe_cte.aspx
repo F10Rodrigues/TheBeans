@@ -2,13 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
-
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
+                <asp:Button class="btn btn-success" ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" />
+                &nbsp;<asp:Button class="btn btn-success" ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
+                &nbsp;<asp:Button class="btn btn-success" ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" />
+                &nbsp;<asp:Button class="btn btn-success" ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="validacao" />
             <br />
-            <br />
-            <asp:TextBox ID="txtIDNFe" runat="server"></asp:TextBox>
+        </div>
+        <div>
+            <asp:TextBox ID="txtIDNFe" runat="server" Visible="False"></asp:TextBox>
             <br />
             <asp:Label ID="lbl_chave" runat="server" Text="CHAVE"></asp:Label>
             <asp:TextBox ID="txt_chave" runat="server" Width="920px"></asp:TextBox><br /><br />
@@ -53,15 +57,6 @@
             <asp:TextBox ID="txt_total" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorTotal" runat="server" ControlToValidate="txt_total" ErrorMessage="Campo Total não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
             <br /><br />
-        </div>
-
-        <div>
-            <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" />
-            <asp:Button ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
-            <asp:Button ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" />
-            <asp:Button ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
-                       
-            
         </div>
 
         <div>

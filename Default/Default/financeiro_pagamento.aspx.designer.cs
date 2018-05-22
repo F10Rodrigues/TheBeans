@@ -40,12 +40,12 @@ namespace Default {
         protected global::System.Web.UI.WebControls.GridView grid_pag;
         
         /// <summary>
-        /// btn_pagar control.
+        /// btn_Pagar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_pagar;
+        protected global::System.Web.UI.WebControls.Button btn_Pagar;
     }
 }

@@ -31,10 +31,18 @@ namespace Default
 
         public void carregagrid()
         {
-            string nao = grid_autorizar.Columns[7].ToString();
+            
             lista = entities.autorizar.OrderBy(x => x.vencimento).ToList();
             grid_autorizar.DataSource = lista;
             grid_autorizar.DataBind();
+        }
+
+        protected void grid_autorizar_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if(e.Row.Cells[7].Text == "0")
+            {
+                e.Row.Cells[7].Text = "NÃO";
+            }
         }
     }
 }

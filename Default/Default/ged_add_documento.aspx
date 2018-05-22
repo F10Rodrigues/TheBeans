@@ -3,23 +3,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        &nbsp
+              <asp:Button class="btn btn-success" ID="btn_Concluir" runat="server" Text="CONCLUIR" OnClick="btn_Concluir_Click" ValidationGroup="validacao" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btn_Limpar" runat="server" Text="LIMPAR" OnClick="btn_Limpar_Click" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btnVoltar" runat="server" Text="VOLTAR" OnClick="btnVoltar_Click" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btn_Sair" runat="server" Text="SAIR" OnClick="btn_Sair_Click" />
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="validacao" />
-        <br />
-        <br />
-        <asp:Button ID="btn_Concluir" runat="server" Text="CONCLUIR" OnClick="btn_Concluir_Click" ValidationGroup="validacao" />
-        <asp:Button ID="btn_Limpar" runat="server" Text="LIMPAR" OnClick="btn_Limpar_Click" />
-        <asp:Button ID="btnVoltar" runat="server" Text="VOLTAR" OnClick="btnVoltar_Click" />
-        <asp:Button ID="btn_Sair" runat="server" Text="SAIR" OnClick="btn_Sair_Click" />
-        <br />
-        <br />
     </div>
+    <br />
 
     <div>
-
         <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox>
-        <br />
-
         <asp:Label ID="lbl_NumeroDoc" runat="server" Text="NUMERO DOCUMENTO"></asp:Label>
         <asp:TextBox ID="txt_NumeroDoc" runat="server" Width="178px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorNumeroDoc" runat="server" ControlToValidate="txt_NumeroDoc" ErrorMessage="Campo numero documento não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>

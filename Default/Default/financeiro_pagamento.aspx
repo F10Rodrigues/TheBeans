@@ -4,14 +4,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
 
-        <asp:Button ID="btn_Voltar" runat="server" OnClick="btn_Voltar_Click" Text="VOLTAR" />
-        <asp:Button ID="btn_Sair" runat="server" OnClick="btn_Sair_Click" Text="SAIR" />
-
+        <asp:Button class="btn btn-success" ID="btn_Voltar" runat="server" OnClick="btn_Voltar_Click" Text="VOLTAR" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btn_Sair" runat="server" OnClick="btn_Sair_Click" Text="SAIR" />
     </div>
-
+    <br />
     <div>
 
-        <asp:GridView ID="grid_pag" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="grid_pag" runat="server" AutoGenerateColumns="False" OnRowDataBound="grid_pag_RowDataBound">
             <Columns>
                 <asp:BoundField DataField="id_pagamento" HeaderText="ID" />
                 <asp:BoundField DataField="vencimento" HeaderText="DATA VENCIMENTO" />
@@ -27,6 +26,6 @@
     </div>
 
     <div>
-        <asp:Button ID="btn_pagar" runat="server" Text="PAGAR" OnClick="btn_autorizar_Click" />
+        <asp:Button class="btn btn-success" ID="btn_Pagar" runat="server" Text="PAGAR" />
     </div>
 </asp:Content>

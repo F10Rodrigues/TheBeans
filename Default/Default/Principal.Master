@@ -32,9 +32,9 @@
 
         </div>
 
-    <div class="menu">
-       
-        
+           <nav class="navbar navbar-light" style="background-color: #F7FE2E;">
+        <div class="btn-group">
+
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                 <Items>
                     <asp:MenuItem Text="ENTRADA NFe" Value="ENTRADA NFe">
@@ -63,16 +63,13 @@
                     </asp:MenuItem>
                 </Items>
             </asp:Menu>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        
+        <br/>
+        <br/>
+        <br/>
+        <br/>        
+</div>
+        </nav>
 
-
-         </div>
          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
    

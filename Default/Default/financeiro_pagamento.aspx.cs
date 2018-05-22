@@ -35,9 +35,14 @@ namespace Default
             grid_pag.DataBind();
         }
 
-        protected void btn_autorizar_Click(object sender, EventArgs e)
-        {
 
+        protected void grid_pag_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.Cells[7].Text == "0")
+            {
+                e.Row.Cells[7].Text = "NÃO";
+            }
+            
         }
     }
 }

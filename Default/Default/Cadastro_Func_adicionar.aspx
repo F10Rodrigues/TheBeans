@@ -2,13 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" />
-    <asp:Button ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
-    <asp:Button ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
-    <asp:Button ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" />
+    <div>
+        <asp:Button class="btn btn-success" ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" />
+    </div>
     <br />
-    <br />
-    <asp:TextBox ID="txt_IdFunc" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txt_IdFunc" runat="server" Visible="False"></asp:TextBox>
     <br />
     <asp:Label ID="lbl_cpf" runat="server" Text="CPF"></asp:Label>
     <asp:TextBox ID="txt_cpf" runat="server" Width="178px"></asp:TextBox>

@@ -3,17 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        &nbsp;
+              <asp:Button class="btn btn-success" ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" ValidationGroup="validacao" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
+        &nbsp;<asp:Button class="btn btn-success" ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" /><br /><br />
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="validacao" />
-        <br />
-        <asp:Button ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" ValidationGroup="validacao" />
-        <asp:Button ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
-        <asp:Button ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
-        <asp:Button ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" /><br /><br />
     </div>
 
     <div>
-        <asp:TextBox ID="txtID_Fornec" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtID_Fornec" runat="server" Visible="False"></asp:TextBox>
         <br />
         <asp:Label ID="lbl_cnpj" runat="server" Text="CNPJ"></asp:Label>
         <asp:TextBox ID="txt_cnpj" runat="server" Width="178px"></asp:TextBox>
