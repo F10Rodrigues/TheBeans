@@ -2,15 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <div>
+       
+    <div>
             <asp:Button class="btn btn-success" ID="btn_Voltar" runat="server" OnClick="btn_Voltar_Click" Text="VOLTAR" />
             &nbsp;<asp:Button class="btn btn-success" ID="btn_Sair" runat="server" OnClick="btn_Sair_Click" Text="SAIR" />
-        </div>
+    </div>
     <br />
 
     <div>
-
-        <asp:GridView ID="grid_autorizar" runat="server" AutoGenerateColumns="False" OnRowDataBound="grid_autorizar_RowDataBound">
+        <asp:GridView CssClass="grid" ID="grid_autorizar" runat="server" AutoGenerateColumns="False" OnRowDataBound="grid_autorizar_RowDataBound">
             <Columns>
                 <asp:BoundField DataField="Id_autorizar" HeaderText="ID" />
                 <asp:BoundField DataField="vencimento" HeaderText="DATA VENCIMENTO" />
@@ -23,7 +23,6 @@
                 <asp:ButtonField CommandName="btPagar" HeaderText="PAGAR" Text="PAGAR" />
             </Columns>
         </asp:GridView>
-
     </div>
 
     <div>

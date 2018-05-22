@@ -3,14 +3,16 @@
 </asp:Content>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        
         <div>
-                <asp:Button class="btn btn-success" ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" />
-                &nbsp;<asp:Button class="btn btn-success" ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
-                &nbsp;<asp:Button class="btn btn-success" ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" />
-                &nbsp;<asp:Button class="btn btn-success" ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
+            <asp:Button class="btn btn-success" ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" />
+            &nbsp;<asp:Button class="btn btn-success" ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
+            &nbsp;<asp:Button class="btn btn-success" ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" />
+            &nbsp;<asp:Button class="btn btn-success" ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="validacao" />
             <br />
         </div>
+
         <div>
             <asp:TextBox ID="txtIDNFe" runat="server" Visible="False"></asp:TextBox>
             <br />
@@ -25,7 +27,8 @@
             <asp:Label ID="lbl_data_emissao" runat="server" Text="DATA EMISSÃO"></asp:Label>
             <asp:TextBox ID="txt_data_emissao" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorDataEmissao" runat="server" ControlToValidate="txt_data_emissao" ErrorMessage="Campo Data Emissão não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-            <br /><br />
+            <br />
+            <br />
             <asp:Label ID="lbl_numero" runat="server" Text="NUMERO"></asp:Label>
             <asp:TextBox ID="txt_numero" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorNumero" runat="server" ControlToValidate="txt_numero" ErrorMessage="Campo Numero não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
@@ -35,7 +38,8 @@
             <asp:Label ID="lbl_data_entrada" runat="server" Text="Data Entrada"></asp:Label>
             <asp:TextBox ID="txt_data_entrada" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorDataEntrada" runat="server" ControlToValidate="txt_data_entrada" ErrorMessage="Campo Data Entrada não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-            <br /><br />
+            <br />
+            <br />
             <asp:Label ID="lbl_base_calc_icms" runat="server" Text="BASE CÁLC. ICMS"></asp:Label>
             <asp:TextBox ID="txt_base_calc_icms" runat="server"></asp:TextBox>
             <asp:Label ID="lbl_valor_icms" runat="server" Text="VALOR ICMS"></asp:Label>
@@ -56,14 +60,12 @@
             <asp:Label ID="lbl_total" runat="server" Text="TOTAL"></asp:Label>
             <asp:TextBox ID="txt_total" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorTotal" runat="server" ControlToValidate="txt_total" ErrorMessage="Campo Total não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-            <br /><br />
+            <br />
+            <br />
         </div>
 
         <div>
-
-
-
-            <asp:GridView ID="gridNfe" runat="server" AutoGenerateColumns="False" OnRowCommand="grid_NFe_RowCommand" OnPageIndexChanging="gridNfe_PageIndexChanging">
+            <asp:GridView CssClass="grid" ID="gridNfe" runat="server" AutoGenerateColumns="False" OnRowCommand="grid_NFe_RowCommand" OnPageIndexChanging="gridNfe_PageIndexChanging">
                 <Columns>
                     <asp:BoundField DataField="id_nfe" HeaderText="ID" />
                     <asp:BoundField DataField="chave_acesso" HeaderText="Chave" />
@@ -86,9 +88,6 @@
                     <asp:ButtonField CommandName="btRemover" HeaderText="Remover" Text="Remover" />
                 </Columns>
             </asp:GridView>
-
-
-
         </div>
     </asp:Content>
 

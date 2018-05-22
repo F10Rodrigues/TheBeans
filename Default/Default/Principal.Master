@@ -5,15 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-
+    
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <link href="estilo.css" rel="stylesheet" />
     <form id="form1" runat="server">
-        <div class="logo">
+        <div class="mx-auto" style="width: 200px;">
              <img src="Imagens/deere.logo.ag.hq.png" />
 
         </div>
@@ -26,16 +27,11 @@
         <br />
     </div>
 
-        <div>
-
-
-
-        </div>
-
            <nav class="navbar navbar-light" style="background-color: #F7FE2E;">
         <div class="btn-group">
-
+            <div class="menuitens">
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+
                 <Items>
                     <asp:MenuItem Text="ENTRADA NFe" Value="ENTRADA NFe">
                         <asp:MenuItem Text="CTe/NFe" Value="CTe/NFe" NavigateUrl="~/entrada_nfe_cte.aspx"></asp:MenuItem>
@@ -63,6 +59,7 @@
                     </asp:MenuItem>
                 </Items>
             </asp:Menu>
+                </div>
         <br/>
         <br/>
         <br/>
@@ -72,8 +69,12 @@
 
          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
-   
-    </form>
 
+    </form>
+    <br />
+
+    <div class="footer">
+        TODOS OS DIREITOS RESERVADOS: THE BEANS SOLUTIONS.
+        </div>
 </body>
 </html>

@@ -2,8 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
     <div>
-              <asp:Button class="btn btn-success" ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" ValidationGroup="validacao" />
+        <asp:Button class="btn btn-success" ID="btn_concluir" runat="server" Text="CONCLUIR" OnClick="btn_concluir_Click" ValidationGroup="validacao" />
         &nbsp;<asp:Button class="btn btn-success" ID="btn_limpar" runat="server" Text="LIMPAR" OnClick="btn_limpar_Click" />
         &nbsp;<asp:Button class="btn btn-success" ID="btn_voltar" runat="server" Text="VOLTAR" OnClick="btn_voltar_Click" />
         &nbsp;<asp:Button class="btn btn-success" ID="btn_sair" runat="server" Text="SAIR" OnClick="btn_sair_Click" /><br /><br />
@@ -19,11 +20,13 @@
         <asp:Label ID="lbl_ie" runat="server" Text="INSCRIÇÃO ESTADUAL"></asp:Label>
         <asp:TextBox ID="txt_ie" runat="server" Width="180px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorIE" runat="server" ControlToValidate="txt_ie" ErrorMessage="Campo I.E. não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <br /><br />
+        <br />
+        <br />
         <asp:Label ID="lbl_razaosocial" runat="server" Text="RAZÃO SOCIAL"></asp:Label>
         <asp:TextBox ID="txt_razaosocial" runat="server" Width="642px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorRazaoSocial" runat="server" ControlToValidate="txt_razaosocial" ErrorMessage="Campo Razão Social não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <br /><br />
+        <br />
+        <br />
         <asp:Label ID="lbl_telefone" runat="server" Text="TELEFONE"></asp:Label>
         <asp:TextBox ID="txt_telefone" runat="server" Width="189px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorTelefone" runat="server" ControlToValidate="txt_telefone" ErrorMessage="Campo telefone não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
@@ -32,7 +35,8 @@
         <asp:Label ID="lbl_cep" runat="server" Text="CEP"></asp:Label>
         <asp:TextBox ID="txt_cep" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorCEP" runat="server" ControlToValidate="txt_cep" ErrorMessage="Campo CEP não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <br /><br />
+        <br />
+        <br />
         <asp:Label ID="lbl_endereco" runat="server" Text="ENDEREÇO"></asp:Label>
         <asp:TextBox ID="txt_endereco" runat="server" Width="277px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorEndereco" runat="server" ControlToValidate="txt_endereco" ErrorMessage="Campo endereço não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
@@ -44,9 +48,9 @@
         <br />
         <br />
         <asp:Label ID="Label1" runat="server" Text="CIDADE"></asp:Label>
-&nbsp;<asp:TextBox ID="txt_cidade" runat="server"></asp:TextBox>
+        &nbsp;<asp:TextBox ID="txt_cidade" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorCidade" runat="server" ControlToValidate="txt_cidade" ErrorMessage="Campo cidade não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-&nbsp;<asp:Label ID="lbl_estado" runat="server" Text="ESTADO"></asp:Label>
+        &nbsp;<asp:Label ID="lbl_estado" runat="server" Text="ESTADO"></asp:Label>
         <asp:DropDownList ID="ddl_estado" runat="server">
             <asp:ListItem>ACRE</asp:ListItem>
             <asp:ListItem>ALAGOAS</asp:ListItem>
@@ -79,10 +83,9 @@
         <asp:Label ID="lbl_email" runat="server" Text="E-MAIL"></asp:Label>
         <asp:TextBox ID="txt_email" runat="server" Width="882px"></asp:TextBox>
     </div>
+
     <div>
-
-
-        <asp:GridView ID="grid_fornec" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="grid_fornec_PageIndexChanging" OnRowCommand="grid_fornec_RowCommand">
+        <asp:GridView CssClass="grid" ID="grid_fornec" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="grid_fornec_PageIndexChanging" OnRowCommand="grid_fornec_RowCommand">
             <Columns>
                 <asp:BoundField DataField="id_fornecedor" HeaderText="ID" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
@@ -101,8 +104,6 @@
                 <asp:ButtonField CommandName="btRemover" HeaderText="Remover" Text="Remover" />
             </Columns>
         </asp:GridView>
-
-
     </div>
 
 </asp:Content>

@@ -33,3 +33,23 @@
     background-color: yellow;
 }
 
+.footer {
+    text-align:right;
+    position: sticky; 
+    bottom: 0px; 
+    width: 100%; 
+    height: 60px; 
+    background-color: green;
+    font-size: 15px;
+    color:white;
+}
+
+.menuitens{
+    display: flex;
+    align-items: flex-start;
+}
+
+.grid{
+    width:100%;
+}
+

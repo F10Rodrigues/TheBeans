@@ -175,31 +175,13 @@ namespace Default {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorFornecedor;
         
         /// <summary>
-        /// txt_CaminhoDoc control.
+        /// FileUpload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_CaminhoDoc;
-        
-        /// <summary>
-        /// btn_Add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Add;
-        
-        /// <summary>
-        /// btn_Salvar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Salvar;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
         /// Label5 control.

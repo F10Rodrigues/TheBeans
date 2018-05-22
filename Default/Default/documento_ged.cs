@@ -19,6 +19,6 @@ namespace Default
         public string serie { get; set; }
         public string cnpj { get; set; }
         public string fornecedor { get; set; }
-        public string arquivo { get; set; }
+        public byte[] arquivo { get; set; }
     }
 }

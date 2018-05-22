@@ -26,7 +26,6 @@ namespace Default
             txt_Serie.Text = string.Empty;
             txt_CNPJ.Text = string.Empty;
             txt_Fornecedor.Text = string.Empty;
-            txt_CaminhoDoc.Text = string.Empty;
         }
 
         protected void btn_Sair_Click(object sender, EventArgs e)
@@ -61,7 +60,6 @@ namespace Default
                 g.serie = txt_Serie.Text;
                 g.cnpj = txt_CNPJ.Text;
                 g.fornecedor = txt_Fornecedor.Text;
-                g.arquivo = txt_CaminhoDoc.Text;
                 entities.documento_ged.Add(g);
             }
             else
@@ -72,7 +70,6 @@ namespace Default
                 g.serie = txt_Serie.Text;
                 g.cnpj = txt_Serie.Text;
                 g.fornecedor = txt_Fornecedor.Text;
-                g.arquivo = txt_CaminhoDoc.Text;
                 entities.Entry(g);
             }
             entities.SaveChanges();
@@ -86,7 +83,18 @@ namespace Default
             int index = Convert.ToInt32(e.CommandArgument);
             //id da linha selecionada
             int idSelect = Convert.ToInt32(grid_DocumentosGed.Rows[index].Cells[0].Text.ToString());
-            if(e.CommandName.ToString().Equals("btRemover"))
+
+            FileUpload fileUpload = (FileUpload)grid_DocumentosGed.Rows[5].FindControl("FileUpload1");
+
+            System.IO.Stream stream = fileUpload.PostedFile.InputStream;
+
+            int length = fileUpload.PostedFile.ContentLength;
+
+            byte[] data = new byte[length];
+
+            stream.Read(data, 0, length);
+
+            if (e.CommandName.ToString().Equals("btRemover"))
             {
                 documento_ged g = entities.documento_ged.Find(Convert.ToInt32(idSelect));
                 entities.documento_ged.Remove(g);
@@ -102,7 +110,6 @@ namespace Default
                 txt_Serie.Text = g.serie;
                 txt_CNPJ.Text = g.cnpj;
                 txt_Fornecedor.Text = g.fornecedor;
-                txt_CaminhoDoc.Text = g.arquivo;
             }
 
             entities.SaveChanges();

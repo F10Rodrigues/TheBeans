@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-              <asp:Button class="btn btn-success" ID="btn_Concluir" runat="server" Text="CONCLUIR" OnClick="btn_Concluir_Click" ValidationGroup="validacao" />
+        <asp:Button class="btn btn-success" ID="btn_Concluir" runat="server" Text="CONCLUIR" OnClick="btn_Concluir_Click" ValidationGroup="validacao" />
         &nbsp;<asp:Button class="btn btn-success" ID="btn_Limpar" runat="server" Text="LIMPAR" OnClick="btn_Limpar_Click" />
         &nbsp;<asp:Button class="btn btn-success" ID="btnVoltar" runat="server" Text="VOLTAR" OnClick="btnVoltar_Click" />
         &nbsp;<asp:Button class="btn btn-success" ID="btn_Sair" runat="server" Text="SAIR" OnClick="btn_Sair_Click" />
@@ -12,7 +12,7 @@
     <br />
 
     <div>
-        <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txt_ID" runat="server" Visible="False"></asp:TextBox>
         <asp:Label ID="lbl_NumeroDoc" runat="server" Text="NUMERO DOCUMENTO"></asp:Label>
         <asp:TextBox ID="txt_NumeroDoc" runat="server" Width="178px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorNumeroDoc" runat="server" ControlToValidate="txt_NumeroDoc" ErrorMessage="Campo numero documento não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
@@ -28,11 +28,9 @@
         <asp:RequiredFieldValidator ID="validatorFornecedor" runat="server" ControlToValidate="txt_Fornecedor" ErrorMessage="Campo fornecedor não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
         <br />
         <br />
-        <asp:TextBox ID="txt_CaminhoDoc" runat="server" Width="322px">Caminho do arquivo...</asp:TextBox>
-&nbsp;<asp:Button ID="btn_Add" runat="server" Text="ADD" />
-&nbsp;<asp:Button ID="btn_Salvar" runat="server" Text="SALVAR" />
-    </div>
-        </div>
+        &nbsp;<asp:FileUpload ID="FileUpload1" runat="server" />
+        &nbsp;</div>
+    
     <div>
 
         <asp:Label ID="Label5" runat="server" Text="Documentos"></asp:Label>
