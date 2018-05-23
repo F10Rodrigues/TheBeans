@@ -11,7 +11,7 @@ namespace Default
     {
         private bancodadosinterEntities1 entities = new bancodadosinterEntities1();
 
-        private List<NFe> lista;
+        private List<programacao_pagamento> lista;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,9 +20,9 @@ namespace Default
 
         public void carregaGrid()
         {
-            lista = entities.NFe.OrderBy(x => x.numero).ToList();
-            grid_NFe.DataSource = lista;
-            grid_NFe.DataBind();
+            lista = entities.programacao_pagamento.OrderBy(x => x.numero).ToList();
+            grid_pag.DataSource = lista;
+            grid_pag.DataBind();
         }
 
         protected void btn_voltar_Click(object sender, EventArgs e)

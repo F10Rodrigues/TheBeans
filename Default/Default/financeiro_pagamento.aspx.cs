@@ -25,7 +25,6 @@ namespace Default
             txt_DataEntrada.Text = n.data_entrada.ToString();
             txt_Total.Text = n.total.ToString();
             */
-            carregagrid();
         }
 
         protected void btn_Voltar_Click(object sender, EventArgs e)

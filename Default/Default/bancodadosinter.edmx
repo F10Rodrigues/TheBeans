@@ -52,19 +52,19 @@
             <PropertyRef Name="id_funcionario" />
           </Key>
           <Property Name="id_funcionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="cpf" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cpf" Type="varchar" MaxLength="13" Nullable="false" />
           <Property Name="ctps" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="rg" Type="varchar" MaxLength="9" Nullable="false" />
-          <Property Name="cep" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="rg" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="cep" Type="varchar" MaxLength="9" Nullable="false" />
           <Property Name="telefone" Type="varchar" MaxLength="13" />
-          <Property Name="celular" Type="varchar" MaxLength="11" Nullable="false" />
-          <Property Name="endereco" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="celular" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="endereco" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="numero" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="bairro" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="bairro" Type="varchar" MaxLength="80" Nullable="false" />
           <Property Name="cidade" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="estado" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="NFe">
           <Key>
@@ -179,8 +179,8 @@
           <EntitySet Name="programacao_pagamento" EntityType="bancodadosinterModel.programacao_pagamento" />
           <EntitySet Name="autorizar" EntityType="bancodadosinterModel.autorizar" />
           <EntitySet Name="pagamento" EntityType="bancodadosinterModel.pagamento" />
-          <EntitySet Name="funcionario" EntityType="bancodadosinterModel.funcionario" />
           <EntitySet Name="documento_ged" EntityType="bancodadosinterModel.documento_ged" />
+          <EntitySet Name="funcionario" EntityType="bancodadosinterModel.funcionario" />
         </EntityContainer>
         <EntityType Name="fornecedor">
           <Key>
@@ -263,25 +263,6 @@
           <Property Name="observacao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="pago" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="funcionario">
-          <Key>
-            <PropertyRef Name="id_funcionario" />
-          </Key>
-          <Property Name="id_funcionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cpf" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="ctps" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="rg" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
-          <Property Name="cep" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
-          <Property Name="telefone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Name="celular" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="endereco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="numero" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="bairro" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="cidade" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="estado" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="documento_ged">
           <Key>
             <PropertyRef Name="Id_documento" />
@@ -292,6 +273,25 @@
           <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
           <Property Name="fornecedor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="arquivo" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="funcionario">
+          <Key>
+            <PropertyRef Name="id_funcionario" />
+          </Key>
+          <Property Name="id_funcionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cpf" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="ctps" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="rg" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cep" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="telefone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="endereco" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="numero" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="bairro" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="cidade" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -407,6 +407,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="documento_ged">
+            <EntityTypeMapping TypeName="bancodadosinterModel.documento_ged">
+              <MappingFragment StoreEntitySet="documento_ged">
+                <ScalarProperty Name="arquivo" ColumnName="arquivo" />
+                <ScalarProperty Name="fornecedor" ColumnName="fornecedor" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="numero_documento" ColumnName="numero_documento" />
+                <ScalarProperty Name="Id_documento" ColumnName="Id_documento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="funcionario">
             <EntityTypeMapping TypeName="bancodadosinterModel.funcionario">
               <MappingFragment StoreEntitySet="funcionario">
@@ -424,18 +436,6 @@
                 <ScalarProperty Name="cpf" ColumnName="cpf" />
                 <ScalarProperty Name="nome" ColumnName="nome" />
                 <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="documento_ged">
-            <EntityTypeMapping TypeName="bancodadosinterModel.documento_ged">
-              <MappingFragment StoreEntitySet="documento_ged">
-                <ScalarProperty Name="arquivo" ColumnName="arquivo" />
-                <ScalarProperty Name="fornecedor" ColumnName="fornecedor" />
-                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
-                <ScalarProperty Name="serie" ColumnName="serie" />
-                <ScalarProperty Name="numero_documento" ColumnName="numero_documento" />
-                <ScalarProperty Name="Id_documento" ColumnName="Id_documento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

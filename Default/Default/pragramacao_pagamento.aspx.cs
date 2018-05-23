@@ -11,6 +11,8 @@ namespace Default
     {
         private bancodadosinterEntities1 entities = new bancodadosinterEntities1();
 
+        private List<programacao_pagamento> lista;
+
         public void limparCampos()
         {
             txt_DataVencimento.Text = string.Empty;
@@ -27,7 +29,8 @@ namespace Default
             txt_Serie.Text = n.serie;
             txt_DataEntrada.Text = n.data_entrada.ToString();
             txt_Total.Text = n.total.ToString();
-
+            carregaGrid();
+            
         }
 
         protected void btn_Sair_Click(object sender, EventArgs e)
@@ -63,7 +66,15 @@ namespace Default
                 entities.programacao_pagamento.Add(p);
             }
             entities.SaveChanges();
+            carregaGrid();
             Response.Redirect("pos_login.aspx");
+        }
+
+        public void carregaGrid()
+        {
+            lista = entities.programacao_pagamento.OrderBy(x => x.numero).ToList();
+            grid_pag.DataSource = lista;
+            grid_pag.DataBind();
         }
     }
 }
