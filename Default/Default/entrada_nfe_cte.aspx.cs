@@ -70,7 +70,7 @@ namespace Default
 
             decimal frete = Convert.ToDecimal(txt_frete_nf.Text.ToString());
             decimal desconto = Convert.ToDecimal(txt_desconto.Text.ToString());
-            decimal valor_st = Convert.ToDecimal(txt_base_calc_st.Text.ToString());
+            decimal valor_st = Convert.ToDecimal(txt_valor_st.Text.ToString());
             decimal ipi = Convert.ToDecimal(txt_ipi.Text.ToString());
             decimal produtos = Convert.ToDecimal(txt_vlor_produtos.Text.ToString());
         
@@ -97,6 +97,7 @@ namespace Default
                 n.valor_produtos = Convert.ToDecimal(txt_vlor_produtos.Text.ToString());
                 n.total = total;
                 entities.NFe.Add(n);
+                Session["nfe"] = n;
 
                 
             }
@@ -121,6 +122,7 @@ namespace Default
                 n.valor_produtos = Convert.ToDecimal(txt_vlor_produtos.Text.ToString());
                 n.total = total;
                 entities.Entry(n);
+                Session["nfe"] = n; // efetua o controle de sessão
             }
 
             entities.SaveChanges();

@@ -49,6 +49,7 @@
             <Columns>
                 <asp:BoundField DataField="id_programacao" HeaderText="ID" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
+                <asp:BoundField DataField="ie" HeaderText="IE" />
                 <asp:BoundField DataField="data_emissao" HeaderText="DATA EMISSÃO" />
                 <asp:BoundField DataField="numero" HeaderText="NUMERO" />
                 <asp:BoundField DataField="serie" HeaderText="SERIE" />
