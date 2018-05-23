@@ -11,8 +11,6 @@ namespace Default
     {
         private bancodadosinterEntities1 entities = new bancodadosinterEntities1();
 
-        //private List<programacao_pagamento> lista;
-
         public void limparCampos()
         {
             txt_DataVencimento.Text = string.Empty;
@@ -67,6 +65,5 @@ namespace Default
             entities.SaveChanges();
             Response.Redirect("pos_login.aspx");
         }
-
     }
 }

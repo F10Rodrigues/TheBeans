@@ -45,7 +45,7 @@
     <br />
 
     <div>
-        <asp:GridView CssClass="grid" ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="grid_pag_PageIndexChanging">
             <Columns>
                 <asp:BoundField DataField="id_programacao" HeaderText="ID" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />

@@ -25,6 +25,5 @@
     </div>
 
     <div>
-        <asp:Button class="btn btn-success" ID="btn_Pagar" runat="server" Text="PAGAR" />
     </div>
 </asp:Content>

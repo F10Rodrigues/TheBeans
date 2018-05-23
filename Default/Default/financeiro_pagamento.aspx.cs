@@ -15,6 +15,16 @@ namespace Default
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            /*NFe n = (NFe)Session["nfe"];
+            grid_pag = n.cnpj;
+            txt_IE.Text = n.ie;
+            txt_DataEmissao.Text = n.data_emissao.ToString();
+            txt_Numero.Text = n.numero;
+            txt_Serie.Text = n.serie;
+            txt_DataEntrada.Text = n.data_entrada.ToString();
+            txt_Total.Text = n.total.ToString();
+            */
             carregagrid();
         }
 
