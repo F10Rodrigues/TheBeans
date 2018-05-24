@@ -20,13 +20,12 @@
                 <asp:BoundField DataField="total" HeaderText="TOTAL" />
                 <asp:BoundField DataField="observacao" HeaderText="OBSERVAÇÃO" />
                 <asp:BoundField DataField="autorizado" HeaderText="AUTORIZADO" />
-                <asp:ButtonField CommandName="btPagar" HeaderText="PAGAR" Text="PAGAR" />
+                <asp:ButtonField CommandName="btAutorizar" HeaderText="AUTORIZAR" Text="AUTORIZAR" />
             </Columns>
         </asp:GridView>
     </div>
 
     <div>
-        <asp:Button class="btn btn-success" ID="btn_autorizar" runat="server" Text="AUTORIZAR" />
     </div>
 
 </asp:Content>

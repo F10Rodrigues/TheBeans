@@ -15,16 +15,7 @@ namespace Default
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            /*NFe n = (NFe)Session["nfe"];
-            grid_pag = n.cnpj;
-            txt_IE.Text = n.ie;
-            txt_DataEmissao.Text = n.data_emissao.ToString();
-            txt_Numero.Text = n.numero;
-            txt_Serie.Text = n.serie;
-            txt_DataEntrada.Text = n.data_entrada.ToString();
-            txt_Total.Text = n.total.ToString();
-            */
+            carregagrid();
         }
 
         protected void btn_Voltar_Click(object sender, EventArgs e)
@@ -47,11 +38,31 @@ namespace Default
 
         protected void grid_pag_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.Cells[7].Text == "0")
+            if (e.Row.Cells[8].Text == "0")
             {
-                e.Row.Cells[7].Text = "NÃO";
+                e.Row.Cells[8].Text = "NÃO";
             }
-            
+            else
+            {
+                e.Row.Cells[8].Text = "SIM";
+            }
+
+        }
+
+        protected void grid_pag_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int idpagamento = Convert.ToInt32(e.CommandArgument);
+
+            int idSelect = Convert.ToInt32(grid_pag.Rows[idpagamento].Cells[0].Text.ToString());
+
+            pagamento p = entities.pagamento.Find(idSelect);
+
+            p.pago = "1";
+            entities.Entry(p);
+            entities.SaveChanges();
+            carregagrid();
+
+            //atualizar os valores 
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Default
         public string serie { get; set; }
         public decimal total { get; set; }
         public string observacao { get; set; }
+        public string autorizar { get; set; }
         public string pago { get; set; }
     }
 }

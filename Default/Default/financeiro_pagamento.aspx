@@ -10,7 +10,7 @@
     <br />
 
     <div>
-        <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False" OnRowDataBound="grid_pag_RowDataBound">
+        <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False" OnRowDataBound="grid_pag_RowDataBound" OnRowCommand="grid_pag_RowCommand">
             <Columns>
                 <asp:BoundField DataField="id_pagamento" HeaderText="ID" />
                 <asp:BoundField DataField="vencimento" HeaderText="DATA VENCIMENTO" />
@@ -19,7 +19,9 @@
                 <asp:BoundField DataField="serie" HeaderText="SERIE" />
                 <asp:BoundField DataField="total" HeaderText="TOTAL" />
                 <asp:BoundField DataField="observacao" HeaderText="OBSERVAÇÃO" />
+                <asp:BoundField DataField="autorizar" HeaderText="AUTORIZADO" />
                 <asp:BoundField DataField="pago" HeaderText="PAGO ?" />
+                <asp:ButtonField CommandName="btPagar" HeaderText="PAGAR" Text="PAGAR" />
             </Columns>
         </asp:GridView>
     </div>
