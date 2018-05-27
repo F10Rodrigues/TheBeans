@@ -12,13 +12,13 @@ namespace Default
     using System;
     using System.Collections.Generic;
     
-    public partial class documento_ged
+    public partial class Rel_documentos
     {
-        public int Id_documento { get; set; }
-        public string numero_documento { get; set; }
-        public string serie { get; set; }
-        public string cnpj { get; set; }
-        public string fornecedor { get; set; }
-        public string arquivo { get; set; }
+        public int id_rel_documentos { get; set; }
+        public System.DateTime data_entrada { get; set; }
+        public int Nfe_CTe { get; set; }
+        public string razao_social { get; set; }
+        public double valor { get; set; }
+        public string usuario { get; set; }
     }
 }

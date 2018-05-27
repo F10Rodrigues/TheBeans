@@ -347,6 +347,15 @@
     <Compile Include="relatorio_funcionario.aspx.designer.cs">
       <DependentUpon>relatorio_funcionario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Rel_documentos.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rel_fornecedores.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rel_funcionarios.cs">
+      <DependentUpon>bancodadosinter.tt</DependentUpon>
+    </Compile>
     <Compile Include="Rel_ged.cs">
       <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
