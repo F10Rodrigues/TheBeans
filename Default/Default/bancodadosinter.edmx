@@ -27,7 +27,7 @@
           <Property Name="serie" Type="varchar" MaxLength="8" Nullable="false" />
           <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="fornecedor" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="arquivo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="arquivo" Type="varchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <EntityType Name="fornecedor">
           <Key>
@@ -225,7 +225,7 @@
           <Property Name="serie" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
           <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
           <Property Name="fornecedor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="arquivo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="arquivo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="fornecedor">
           <Key>

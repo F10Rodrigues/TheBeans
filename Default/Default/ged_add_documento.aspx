@@ -29,7 +29,8 @@
         <br />
         <br />
         &nbsp;<asp:FileUpload ID="FileUpload1" runat="server" />
-        &nbsp;</div>
+        &nbsp;<asp:Label ID="lbl_Msg" runat="server"></asp:Label>
+    </div>
     
     <div>
 
