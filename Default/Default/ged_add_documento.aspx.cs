@@ -15,7 +15,7 @@ namespace Default
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            carregaGrid();
         }
 
         private void limparCampos()
@@ -26,6 +26,7 @@ namespace Default
             txt_Serie.Text = string.Empty;
             txt_CNPJ.Text = string.Empty;
             txt_Fornecedor.Text = string.Empty;
+            lbl_Msg.Text = string.Empty;
         }
 
         protected void btn_Sair_Click(object sender, EventArgs e)
@@ -52,8 +53,43 @@ namespace Default
 
         protected void btn_Concluir_Click(object sender, EventArgs e)
         {
+
+
             if (txt_ID.Text == string.Empty)
             {
+                // Specify the path on the server to
+                // save the uploaded file to.
+                String savePath = @"C:\Users\Felipe\Desktop\FATEC TI\4° Módulo\Inter 4\TheBeans Inter\TheBeans-4-Modulo-T.I\Default\Default\Documentos GED\";
+
+                if (FileUpload1.HasFile)
+                {
+                    // Get the name of the file to upload.
+                    String fileName = FileUpload1.FileName;
+
+                    // Append the name of the file to upload to the path.
+                    savePath += fileName;
+
+
+                    // Call the SaveAs method to save the 
+                    // uploaded file to the specified path.
+                    // This example does not perform all
+                    // the necessary error checking.               
+                    // If a file with the same name
+                    // already exists in the specified path,  
+                    // the uploaded file overwrites it.
+                    FileUpload1.SaveAs(savePath);
+
+                    // Notify the user of the name of the file
+                    // was saved under.
+                    lbl_Msg.Text = @"C:\Users\Felipe\Desktop\FATEC TI\4° Módulo\Inter 4\TheBeans Inter\TheBeans-4-Modulo-T.I\Default\Default\Documentos GED\" + fileName;
+                }
+                else
+                {
+                    // Notify the user that a file was not uploaded.
+                    lbl_Msg.Text = "Você não especificou um arquivo para upload.";
+                }
+
+
                 // novo registro
                 documento_ged g = new documento_ged();
                 g.numero_documento = txt_NumeroDoc.Text;
@@ -62,6 +98,7 @@ namespace Default
                 g.fornecedor = txt_Fornecedor.Text;
                 g.arquivo = lbl_Msg.Text;
                 entities.documento_ged.Add(g);
+                
             }
             else
             {
@@ -73,41 +110,7 @@ namespace Default
                 g.fornecedor = txt_Fornecedor.Text;
                 g.arquivo = lbl_Msg.Text;
                 entities.Entry(g);
-            }
 
-            // Specify the path on the server to
-            // save the uploaded file to.
-            String savePath = @"C:\arquivos";
-
-            // Before attempting to perform operations
-            // on the file, verify that the FileUpload 
-            // control contains a file.
-            if (FileUpload1.HasFile)
-            {
-                // Get the name of the file to upload.
-                String fileName = FileUpload1.FileName;
-
-                // Append the name of the file to upload to the path.
-                savePath += fileName;
-
-
-                // Call the SaveAs method to save the 
-                // uploaded file to the specified path.
-                // This example does not perform all
-                // the necessary error checking.               
-                // If a file with the same name
-                // already exists in the specified path,  
-                // the uploaded file overwrites it.
-                FileUpload1.SaveAs(savePath);
-
-                // Notify the user of the name of the file
-                // was saved under.
-                lbl_Msg.Text = "Your file was saved as " + fileName;
-            }
-            else
-            {
-                // Notify the user that a file was not uploaded.
-                lbl_Msg.Text = "You did not specify a file to upload.";
             }
 
 
@@ -123,15 +126,11 @@ namespace Default
             //id da linha selecionada
             int idSelect = Convert.ToInt32(grid_DocumentosGed.Rows[index].Cells[0].Text.ToString());
 
-            FileUpload fileUpload = (FileUpload)grid_DocumentosGed.Rows[5].FindControl("FileUpload1");
-
-            System.IO.Stream stream = fileUpload.PostedFile.InputStream;
-
-            int length = fileUpload.PostedFile.ContentLength;
-
-            byte[] data = new byte[length];
-
-            stream.Read(data, 0, length);
+            //FileUpload fileUpload = (FileUpload)grid_DocumentosGed.Rows[5].FindControl("FileUpload1");
+            //System.IO.Stream stream = fileUpload.PostedFile.InputStream;
+            //int length = fileUpload.PostedFile.ContentLength;
+            //byte[] data = new byte[length];
+            //stream.Read(data, 0, length);
 
             if (e.CommandName.ToString().Equals("btRemover"))
             {

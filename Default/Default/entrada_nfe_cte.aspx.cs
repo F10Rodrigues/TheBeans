@@ -38,9 +38,9 @@ namespace Default
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            carregaGrid();
             txt_data_emissao.Text = DateTime.Now.ToString("dd/MM/yyyy" + "    HH:mm");
             txt_data_entrada.Text = DateTime.Now.ToString("dd/MM/yyyy" + "    HH:mm");
+            carregaGrid();
         }
 
         protected void btn_sair_Click(object sender, EventArgs e)

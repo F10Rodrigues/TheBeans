@@ -32,7 +32,7 @@
         &nbsp;<asp:Label ID="lbl_Msg" runat="server"></asp:Label>
     </div>
     
-    <div>
+    <div class="grid">
 
         <asp:Label ID="Label5" runat="server" Text="Documentos"></asp:Label>
         <br />

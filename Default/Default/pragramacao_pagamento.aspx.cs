@@ -67,6 +67,8 @@ namespace Default
             }
             entities.SaveChanges();
             carregaGrid();
+
+
             Response.Redirect("pos_login.aspx");
         }
 
