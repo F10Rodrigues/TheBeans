@@ -121,7 +121,7 @@ namespace Default
                 txt_telefone.Text = k.telefone;
                 txt_celular.Text = k.celular;
                 txt_endereco.Text = k.endereco;
-                txt_numero.Text = k.numero.ToString();
+                txt_numero.Text = k.numero;
                 txt_bairro.Text = k.bairro;
                 txt_Cidade.Text = k.cidade;
                 ddl_estado.Text = k.estado;
@@ -147,4 +147,4 @@ namespace Default
             Response.Redirect("pos_login.aspx");
         }
     }
-    }
+}

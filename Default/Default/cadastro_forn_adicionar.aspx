@@ -11,7 +11,7 @@
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="validacao" />
     </div>
 
-    <div>
+    <div class="border border-success">
         <asp:TextBox ID="txtID_Fornec" runat="server" Visible="False"></asp:TextBox>
         <br />
         <asp:Label ID="lbl_cnpj" runat="server" Text="CNPJ"></asp:Label>
@@ -83,26 +83,35 @@
         <asp:Label ID="lbl_email" runat="server" Text="E-MAIL"></asp:Label>
         <asp:TextBox ID="txt_email" runat="server" Width="882px"></asp:TextBox>
     </div>
-
+    <br />
     <div>
-        <asp:GridView CssClass="grid" ID="grid_fornec" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="grid_fornec_PageIndexChanging" OnRowCommand="grid_fornec_RowCommand">
+        <asp:GridView CssClass="grid" ID="grid_fornec" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="grid_fornec_PageIndexChanging" OnRowCommand="grid_fornec_RowCommand" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+            <AlternatingRowStyle BackColor="#FFCC00" />
             <Columns>
                 <asp:BoundField DataField="id_fornecedor" HeaderText="ID" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
                 <asp:BoundField DataField="ie" HeaderText="I.E." />
-                <asp:BoundField DataField="razao_social" HeaderText="Razão Social" />
-                <asp:BoundField DataField="telefone" HeaderText="Telefone" />
-                <asp:BoundField DataField="celular" HeaderText="Celular" />
-                <asp:BoundField DataField="endereco" HeaderText="Endereço" />
+                <asp:BoundField DataField="razao_social" HeaderText="RAZÃO SOCIAL" />
+                <asp:BoundField DataField="telefone" HeaderText="TELEFONE" />
+                <asp:BoundField DataField="celular" HeaderText="CELULAR" />
+                <asp:BoundField DataField="endereco" HeaderText="ENDEREÇO" />
                 <asp:BoundField DataField="cep" HeaderText="CEP" />
-                <asp:BoundField DataField="numero" HeaderText="numero" />
-                <asp:BoundField DataField="bairro" HeaderText="Bairro" />
-                <asp:BoundField DataField="cidade" HeaderText="Cidade" />
-                <asp:BoundField DataField="estado" HeaderText="Estado" />
-                <asp:BoundField DataField="email" HeaderText="E-Mail" />
+                <asp:BoundField DataField="numero" HeaderText="NUMERO" />
+                <asp:BoundField DataField="bairro" HeaderText="BAIRRO" />
+                <asp:BoundField DataField="cidade" HeaderText="CIDADE" />
+                <asp:BoundField DataField="estado" HeaderText="ESTADO" />
+                <asp:BoundField DataField="email" HeaderText="E-MAIL" />
                 <asp:ButtonField CommandName="btAlterar" HeaderText="Alterar" Text="Alterar" />
                 <asp:ButtonField CommandName="btRemover" HeaderText="Remover" Text="Remover" />
             </Columns>
+            <FooterStyle BackColor="Black" />
+            <HeaderStyle BackColor="Green" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#808080" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
     </div>
 

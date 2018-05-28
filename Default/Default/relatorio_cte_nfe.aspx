@@ -9,7 +9,9 @@
     </div>
     <br />
 
-    <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False">
+    <div class="border border-success">
+    <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+            <AlternatingRowStyle BackColor="#FFCC00" />
             <Columns>
                 <asp:BoundField DataField="id_programacao" HeaderText="ID" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
@@ -22,7 +24,16 @@
                 <asp:BoundField DataField="total" HeaderText="TOTAL" />
                 <asp:BoundField DataField="observacao" HeaderText="OBSERVAÇÃO" />
             </Columns>
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Green" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#808080" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
+    </div>
     <br />
 </asp:Content>
 

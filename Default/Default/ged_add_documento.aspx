@@ -11,7 +11,8 @@
     </div>
     <br />
 
-    <div>
+    <div class="border border-success">
+        <br />
         <asp:TextBox ID="txt_ID" runat="server" Visible="False"></asp:TextBox>
         <asp:Label ID="lbl_NumeroDoc" runat="server" Text="NUMERO DOCUMENTO"></asp:Label>
         <asp:TextBox ID="txt_NumeroDoc" runat="server" Width="178px"></asp:TextBox>
@@ -30,23 +31,37 @@
         <br />
         &nbsp;<asp:FileUpload ID="FileUpload1" runat="server" />
         &nbsp;<asp:Label ID="lbl_Msg" runat="server"></asp:Label>
-    </div>
-    
-    <div class="grid">
 
-        <asp:Label ID="Label5" runat="server" Text="Documentos"></asp:Label>
         <br />
-        <asp:GridView ID="grid_DocumentosGed" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="grid_DocumentosGed_PageIndexChanging" OnRowCommand="grid_DocumentosGed_RowCommand">
+    </div>
+    <br />
+    
+    
+        <div>
+            <asp:Label CssClass="text-success" ID="Label5" runat="server" Font-Size="Larger" Font-Bold="true" Text="DOCUMENTOS"></asp:Label>
+        </div>
+        <br />
+    <div class="grid">
+        <asp:GridView ID="grid_DocumentosGed" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="grid_DocumentosGed_PageIndexChanging" OnRowCommand="grid_DocumentosGed_RowCommand" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+            <AlternatingRowStyle BackColor="#FFCC00" />
             <Columns>
                 <asp:BoundField DataField="id_documento" HeaderText="ID" />
-                <asp:BoundField DataField="numero_documento" HeaderText="Numero Documento" />
-                <asp:BoundField DataField="serie" HeaderText="Serie" />
+                <asp:BoundField DataField="numero_documento" HeaderText="NUMERO DOCUMENTO" />
+                <asp:BoundField DataField="serie" HeaderText="SERIE" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
-                <asp:BoundField DataField="fornecedor" HeaderText="Fornecedor" />
-                <asp:BoundField DataField="arquivo" HeaderText="Arquivo" />
-                <asp:ButtonField CommandName="btAlterar" HeaderText="Alterar" Text="Alterar" />
-                <asp:ButtonField CommandName="btRemover" HeaderText="Remover" Text="Remover" />
+                <asp:BoundField DataField="fornecedor" HeaderText="FORNECEDOR" />
+                <asp:BoundField DataField="arquivo" HeaderText="ARQUIVO" />
+                <asp:ButtonField CommandName="btAlterar" HeaderText="ALTERAR" Text="ALTERAR" />
+                <asp:ButtonField CommandName="btRemover" HeaderText="REMOVER" Text="REMOVER" />
             </Columns>
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Green" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#808080" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
         <br />
 
