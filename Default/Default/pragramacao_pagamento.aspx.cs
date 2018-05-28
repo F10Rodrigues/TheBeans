@@ -30,7 +30,7 @@ namespace Default
             txt_DataEntrada.Text = n.data_entrada.ToString();
             txt_Total.Text = n.total.ToString();
             carregaGrid();
-            
+            txt_DataVencimento.Text = DateTime.Now.ToString("dd/MM/yyyy" + "    HH:mm");
         }
 
         protected void btn_Sair_Click(object sender, EventArgs e)

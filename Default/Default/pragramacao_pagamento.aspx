@@ -26,7 +26,7 @@
             <asp:Label ID="Label5" runat="server" Text="SERIE"></asp:Label>
             <asp:TextBox ID="txt_Serie" runat="server" Width="172px" Enabled="False"></asp:TextBox>
             &nbsp;<asp:Label ID="Label6" runat="server" Text="DATA ENTRADA"></asp:Label>
-            <asp:TextBox ID="txt_DataEntrada" runat="server" Width="127px" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txt_DataEntrada" runat="server" Width="173px" Enabled="False"></asp:TextBox>
             <br />
             <br />
             &nbsp;<asp:Label ID="Label7" runat="server" Text="DATA VENCIMENTO"></asp:Label>

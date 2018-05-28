@@ -77,7 +77,7 @@ namespace Default
 
             // Specify the path on the server to
             // save the uploaded file to.
-            String savePath = @"C:\Users\Felipe\Desktop\FATEC TI\4° Módulo\Inter 4\TheBeans Inter\GED";
+            String savePath = @"C:\arquivos";
 
             // Before attempting to perform operations
             // on the file, verify that the FileUpload 
