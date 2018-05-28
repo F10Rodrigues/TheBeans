@@ -104,6 +104,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\bancodadosinter.mdf" />
+    <Content Include="App_Data\bancodadosinter_log.ldf" />
     <Content Include="bancodadosinter.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>bancodadosinter.edmx</DependentUpon>
