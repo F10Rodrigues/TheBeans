@@ -10,7 +10,7 @@
     <br />
 
     <div class="border border-success">
-    <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+    <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnRowCommand="grid_pag_RowCommand">
             <AlternatingRowStyle BackColor="#FFCC00" />
             <Columns>
                 <asp:BoundField DataField="id_programacao" HeaderText="ID" />
@@ -23,6 +23,7 @@
                 <asp:BoundField DataField="data_vencimento" HeaderText="DATA VENCIMENTO" />
                 <asp:BoundField DataField="total" HeaderText="TOTAL" />
                 <asp:BoundField DataField="observacao" HeaderText="OBSERVAÇÃO" />
+                <asp:ButtonField CommandName="btRemover" HeaderText="REMOVER" Text="REMOVER" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Green" Font-Bold="True" ForeColor="White" />

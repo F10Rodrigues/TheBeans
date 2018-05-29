@@ -14,23 +14,25 @@
     <div class="border border-success">
         <br />
         <asp:TextBox ID="txt_ID" runat="server" Visible="False"></asp:TextBox>
+        &nbsp;<br />
         <asp:Label ID="lbl_NumeroDoc" runat="server" Text="NUMERO DOCUMENTO"></asp:Label>
         <asp:TextBox ID="txt_NumeroDoc" runat="server" Width="178px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorNumeroDoc" runat="server" ControlToValidate="txt_NumeroDoc" ErrorMessage="Campo numero documento não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <asp:Label ID="lbl_Serie" runat="server" Text="SERIE"></asp:Label>
+        &nbsp;<asp:Label ID="lbl_Serie" runat="server" Text="SERIE"></asp:Label>
         <asp:TextBox ID="txt_Serie" runat="server" Width="180px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorSERIE" runat="server" ControlToValidate="txt_Serie" ErrorMessage="Campo serie não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <br /><br />
-        <asp:Label ID="lbl_Cnpj" runat="server" Text="CNPJ"></asp:Label>
-        <asp:TextBox ID="txt_CNPJ" runat="server" Width="230px"></asp:TextBox>
+        &nbsp;<asp:Label ID="lbl_Cnpj" runat="server" Text="CNPJ"></asp:Label>
+        <asp:TextBox ID="txt_CNPJ" runat="server" Width="265px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorCNPJ" runat="server" ControlToValidate="txt_CNPJ" ErrorMessage="Campo CNPJ não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
         &nbsp;<asp:Label ID="lbl_Fornecedor" runat="server" Text="FORNECEDOR"></asp:Label>
-        <asp:TextBox ID="txt_Fornecedor" runat="server" Width="189px"></asp:TextBox>
+        <asp:TextBox ID="txt_Fornecedor" runat="server" Width="290px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorFornecedor" runat="server" ControlToValidate="txt_Fornecedor" ErrorMessage="Campo fornecedor não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
+        &nbsp;<br />
         <br />
-        <br />
-        &nbsp;<asp:FileUpload ID="FileUpload1" runat="server" />
+        &nbsp;<asp:FileUpload ID="FileUpload1" runat="server" Width="482px" />
         &nbsp;<asp:Label ID="lbl_Msg" runat="server"></asp:Label>
+
+        <br />
 
         <br />
     </div>

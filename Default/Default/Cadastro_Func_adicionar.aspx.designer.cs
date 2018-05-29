@@ -49,6 +49,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.Button btn_sair;
         
         /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
         /// txt_IdFunc control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_cpf;
         
         /// <summary>
+        /// validatorCPF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorCPF;
+        
+        /// <summary>
         /// lbl_rg control.
         /// </summary>
         /// <remarks>
@@ -92,6 +110,42 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_rg;
+        
+        /// <summary>
+        /// validatorRG control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorRG;
+        
+        /// <summary>
+        /// lbl_nome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_nome;
+        
+        /// <summary>
+        /// txt_nome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_nome;
+        
+        /// <summary>
+        /// validatorNome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorNome;
         
         /// <summary>
         /// lbl_ctps control.
@@ -112,22 +166,13 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_ctps;
         
         /// <summary>
-        /// lbl_nome control.
+        /// validatorCTPS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nome;
-        
-        /// <summary>
-        /// txt_nome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nome;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorCTPS;
         
         /// <summary>
         /// lbl_telefone control.
@@ -166,6 +211,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_celular;
         
         /// <summary>
+        /// validatorCelular control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorCelular;
+        
+        /// <summary>
         /// lbl_cep control.
         /// </summary>
         /// <remarks>
@@ -182,6 +236,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_cep;
+        
+        /// <summary>
+        /// validatorCEP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorCEP;
         
         /// <summary>
         /// lbl_endereco control.
@@ -202,6 +265,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_endereco;
         
         /// <summary>
+        /// validatorEndereco control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorEndereco;
+        
+        /// <summary>
         /// lbl_numero control.
         /// </summary>
         /// <remarks>
@@ -218,6 +290,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_numero;
+        
+        /// <summary>
+        /// validatorNumero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorNumero;
         
         /// <summary>
         /// lbl_bairro control.
@@ -238,6 +319,15 @@ namespace Default {
         protected global::System.Web.UI.WebControls.TextBox txt_bairro;
         
         /// <summary>
+        /// validatorBairro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorBairro;
+        
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -254,6 +344,15 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Cidade;
+        
+        /// <summary>
+        /// validatorCidade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorCidade;
         
         /// <summary>
         /// lbl_estado control.

@@ -40,7 +40,7 @@ namespace Default
 
         protected void btn_Voltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("obs_gerente.aspx");
+            Response.Redirect("pos_login.aspx");
         }
 
         protected void btn_Limpar_Click(object sender, EventArgs e)

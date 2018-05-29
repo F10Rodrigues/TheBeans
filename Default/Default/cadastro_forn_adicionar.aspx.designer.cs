@@ -94,33 +94,6 @@ namespace Default {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorCNPJ;
         
         /// <summary>
-        /// lbl_ie control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ie;
-        
-        /// <summary>
-        /// txt_ie control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ie;
-        
-        /// <summary>
-        /// validatorIE control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorIE;
-        
-        /// <summary>
         /// lbl_razaosocial control.
         /// </summary>
         /// <remarks>
@@ -146,6 +119,33 @@ namespace Default {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorRazaoSocial;
+        
+        /// <summary>
+        /// lbl_ie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ie;
+        
+        /// <summary>
+        /// txt_ie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_ie;
+        
+        /// <summary>
+        /// validatorIE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorIE;
         
         /// <summary>
         /// lbl_telefone control.

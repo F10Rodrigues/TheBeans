@@ -15,43 +15,41 @@
         <asp:TextBox ID="txtID_Fornec" runat="server" Visible="False"></asp:TextBox>
         <br />
         <asp:Label ID="lbl_cnpj" runat="server" Text="CNPJ"></asp:Label>
-        <asp:TextBox ID="txt_cnpj" runat="server" Width="178px"></asp:TextBox>
+        <asp:TextBox ID="txt_cnpj" runat="server" Width="222px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorCNPJ" runat="server" ControlToValidate="txt_cnpj" ErrorMessage="Campo CNPJ não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
+        &nbsp;<asp:Label ID="lbl_razaosocial" runat="server" Text="RAZÃO SOCIAL"></asp:Label>
+        <asp:TextBox ID="txt_razaosocial" runat="server" Width="506px"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="validatorRazaoSocial" runat="server" ControlToValidate="txt_razaosocial" ErrorMessage="Campo Razão Social não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
+        &nbsp;
         <asp:Label ID="lbl_ie" runat="server" Text="INSCRIÇÃO ESTADUAL"></asp:Label>
-        <asp:TextBox ID="txt_ie" runat="server" Width="180px"></asp:TextBox>
+        <asp:TextBox ID="txt_ie" runat="server" Width="210px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorIE" runat="server" ControlToValidate="txt_ie" ErrorMessage="Campo I.E. não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
         <br />
         <br />
-        <asp:Label ID="lbl_razaosocial" runat="server" Text="RAZÃO SOCIAL"></asp:Label>
-        <asp:TextBox ID="txt_razaosocial" runat="server" Width="642px"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="validatorRazaoSocial" runat="server" ControlToValidate="txt_razaosocial" ErrorMessage="Campo Razão Social não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <br />
-        <br />
         <asp:Label ID="lbl_telefone" runat="server" Text="TELEFONE"></asp:Label>
-        <asp:TextBox ID="txt_telefone" runat="server" Width="189px"></asp:TextBox>
+        <asp:TextBox ID="txt_telefone" runat="server" Width="148px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorTelefone" runat="server" ControlToValidate="txt_telefone" ErrorMessage="Campo telefone não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <asp:Label ID="lbl_celular" runat="server" Text="CELULAR"></asp:Label>
-        <asp:TextBox ID="txt_celular" runat="server" Width="186px"></asp:TextBox>
-        <asp:Label ID="lbl_cep" runat="server" Text="CEP"></asp:Label>
+        &nbsp;<asp:Label ID="lbl_celular" runat="server" Text="CELULAR"></asp:Label>
+        <asp:TextBox ID="txt_celular" runat="server" Width="178px"></asp:TextBox>
+        &nbsp;<asp:Label ID="lbl_cep" runat="server" Text="CEP"></asp:Label>
         <asp:TextBox ID="txt_cep" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorCEP" runat="server" ControlToValidate="txt_cep" ErrorMessage="Campo CEP não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <br />
-        <br />
-        <asp:Label ID="lbl_endereco" runat="server" Text="ENDEREÇO"></asp:Label>
-        <asp:TextBox ID="txt_endereco" runat="server" Width="277px"></asp:TextBox>
+             
+        &nbsp;<asp:Label ID="lbl_endereco" runat="server" Text="ENDEREÇO"></asp:Label>
+        <asp:TextBox ID="txt_endereco" runat="server" Width="364px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorEndereco" runat="server" ControlToValidate="txt_endereco" ErrorMessage="Campo endereço não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <asp:Label ID="lbl_numero" runat="server" Text="Nº"></asp:Label>
-        <asp:TextBox ID="txt_numero" runat="server" Width="56px"></asp:TextBox>
+        &nbsp;<asp:Label ID="lbl_numero" runat="server" Text="Nº"></asp:Label>
+        <asp:TextBox ID="txt_numero" runat="server" Width="82px"></asp:TextBox>
+        <br />
+        <br />
         <asp:Label ID="lbl_bairro" runat="server" Text="BAIRRO"></asp:Label>
-        <asp:TextBox ID="txt_bairro" runat="server" Width="181px"></asp:TextBox>
+        <asp:TextBox ID="txt_bairro" runat="server" Width="288px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorBairro" runat="server" ControlToValidate="txt_bairro" ErrorMessage="Campo bairro não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
-        <br />
-        <br />
-        <asp:Label ID="Label1" runat="server" Text="CIDADE"></asp:Label>
-        &nbsp;<asp:TextBox ID="txt_cidade" runat="server"></asp:TextBox>
+        &nbsp;<asp:Label ID="Label1" runat="server" Text="CIDADE"></asp:Label>
+        &nbsp;<asp:TextBox ID="txt_cidade" runat="server" Width="526px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="validatorCidade" runat="server" ControlToValidate="txt_cidade" ErrorMessage="Campo cidade não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
         &nbsp;<asp:Label ID="lbl_estado" runat="server" Text="ESTADO"></asp:Label>
-        <asp:DropDownList ID="ddl_estado" runat="server">
+        <asp:DropDownList ID="ddl_estado" runat="server" Width="267px">
             <asp:ListItem>ACRE</asp:ListItem>
             <asp:ListItem>ALAGOAS</asp:ListItem>
             <asp:ListItem>AMAPA</asp:ListItem>
@@ -79,9 +77,13 @@
             <asp:ListItem>SÃO PAULO</asp:ListItem>
             <asp:ListItem>SERGIPE</asp:ListItem>
             <asp:ListItem>TOCANTINS</asp:ListItem>
-        </asp:DropDownList><br /><br />
+        </asp:DropDownList>
+        <br />
+        <br />
         <asp:Label ID="lbl_email" runat="server" Text="E-MAIL"></asp:Label>
-        <asp:TextBox ID="txt_email" runat="server" Width="882px"></asp:TextBox>
+        <asp:TextBox ID="txt_email" runat="server" Width="1248px"></asp:TextBox>
+        <br />
+        <br />
     </div>
     <br />
     <div>
@@ -101,8 +103,8 @@
                 <asp:BoundField DataField="cidade" HeaderText="CIDADE" />
                 <asp:BoundField DataField="estado" HeaderText="ESTADO" />
                 <asp:BoundField DataField="email" HeaderText="E-MAIL" />
-                <asp:ButtonField CommandName="btAlterar" HeaderText="Alterar" Text="Alterar" />
-                <asp:ButtonField CommandName="btRemover" HeaderText="Remover" Text="Remover" />
+                <asp:ButtonField CommandName="btAlterar" HeaderText="ALTERAR" Text="ALTERAR" />
+                <asp:ButtonField CommandName="btRemover" HeaderText="REMOVER" Text="REMOVER" />
             </Columns>
             <FooterStyle BackColor="Black" />
             <HeaderStyle BackColor="Green" Font-Bold="True" ForeColor="White" />

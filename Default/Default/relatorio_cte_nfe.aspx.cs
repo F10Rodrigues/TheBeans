@@ -34,5 +34,21 @@ namespace Default
         {
             Response.Redirect("login.aspx");
         }
+
+        protected void grid_pag_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            //linha selecionada
+            int index = Convert.ToInt32(e.CommandArgument);
+            // ID da linha selecionada
+            int idSelect = Convert.ToInt32(grid_pag.Rows[index].Cells[0].Text.ToString());
+            if (e.CommandName.ToString().Equals("btRemover"))
+            {
+                //remover
+                programacao_pagamento n = entities.programacao_pagamento.Find(Convert.ToInt32(idSelect));
+                entities.programacao_pagamento.Remove(n);
+                entities.SaveChanges();
+                carregaGrid();
+            }
+        }
     }
 }

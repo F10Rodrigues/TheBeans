@@ -18,7 +18,9 @@
             <asp:TextBox ID="txtIDNFe" runat="server" Visible="False"></asp:TextBox>
             <br />
             <asp:Label ID="lbl_chave" runat="server" Text="CHAVE"></asp:Label>
-            <asp:TextBox ID="txt_chave" runat="server" Width="95%"></asp:TextBox><br /><br />
+            <asp:TextBox ID="txt_chave" runat="server" Width="95%"></asp:TextBox>
+            <br />
+            <br />
             <asp:Label ID="lbl_cnpj" runat="server" Text="CNPJ"></asp:Label>
             <asp:TextBox ID="txt_cnpj" runat="server" Width="214px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorCNPJ" runat="server" ControlToValidate="txt_cnpj" ErrorMessage="Campo CNPJ não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
@@ -53,9 +55,9 @@
             <asp:TextBox ID="txt_base_calc_st" runat="server"></asp:TextBox>
             <asp:Label ID="lbl_valor_st" runat="server" Text="VALOR ST"></asp:Label>
             <asp:TextBox ID="txt_valor_st" runat="server"></asp:TextBox>
-            <asp:Label ID="lbl_ipi" runat="server" Text="IPI"></asp:Label>
+            &nbsp;<asp:Label ID="lbl_ipi" runat="server" Text="IPI"></asp:Label>
             <asp:TextBox ID="txt_ipi" runat="server"></asp:TextBox>
-            <asp:Label ID="lbl_valor_produtos" runat="server" Text="VALOR PRODUTOS"></asp:Label>
+            &nbsp;<asp:Label ID="lbl_valor_produtos" runat="server" Text="VALOR PRODUTOS"></asp:Label>
             <asp:TextBox ID="txt_vlor_produtos" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="validatorValorProdutos" runat="server" ControlToValidate="txt_vlor_produtos" ErrorMessage="Campo Valor Produtos não preenchido" ForeColor="Red" ValidationGroup="validacao">*</asp:RequiredFieldValidator>
             <asp:Label ID="lbl_total" runat="server" Text="TOTAL"></asp:Label>
