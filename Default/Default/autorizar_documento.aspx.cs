@@ -14,11 +14,13 @@ namespace Default
 
         private List<autorizar> lista;
 
+        private List<programacao_pagamento> lista1;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-               // carregaProgramacaoPag();
+                carregaProgramacaoPag();
                 carregagrid();
             }
         }
@@ -41,10 +43,11 @@ namespace Default
             grid_autorizar.DataBind();
         }
 
-      /*  private void carregaProgramacaoPag()
+       /* private void carregaProgramacaoPag()
         {
-            List<programacao_pagamento> lista = entities.programacao_pagamento.OrderBy(x => x.cnpj).ToList();
-            grid_autorizar.DataSource = lista;
+            
+            lista1 = entities.programacao_pagamento.OrderBy(x => x.cnpj).ToList();
+            grid_autorizar.DataSource = lista1;
             grid_autorizar.DataBind();
         }*/
 

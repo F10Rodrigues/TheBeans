@@ -110,8 +110,8 @@
           <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="data_emissao" Type="datetime" Nullable="false" />
-          <Property Name="numero" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="numero" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="serie" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="data_entrada" Type="datetime" Nullable="false" />
           <Property Name="data_vencimento" Type="datetime" Nullable="false" />
           <Property Name="total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
@@ -330,8 +330,8 @@
           <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
           <Property Name="ie" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="data_emissao" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="numero" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="serie" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="numero" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="serie" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="data_vencimento" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
