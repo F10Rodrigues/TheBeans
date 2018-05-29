@@ -14,6 +14,12 @@ namespace Default
     
     public partial class programacao_pagamento
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public programacao_pagamento()
+        {
+            this.autorizar = new HashSet<autorizar>();
+        }
+    
         public int id_programacao { get; set; }
         public string cnpj { get; set; }
         public string ie { get; set; }
@@ -24,5 +30,8 @@ namespace Default
         public System.DateTime data_vencimento { get; set; }
         public decimal total { get; set; }
         public string observacao { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<autorizar> autorizar { get; set; }
     }
 }

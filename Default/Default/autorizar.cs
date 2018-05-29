@@ -15,12 +15,15 @@ namespace Default
     public partial class autorizar
     {
         public int Id_autorizar { get; set; }
-        public System.DateTime vencimento { get; set; }
+        public System.DateTime data_vencimento { get; set; }
         public string cnpj { get; set; }
         public string numero { get; set; }
         public string serie { get; set; }
         public decimal total { get; set; }
         public string observacao { get; set; }
         public string autorizado { get; set; }
+        public int idprogramacao { get; set; }
+    
+        public virtual programacao_pagamento programacao_pagamento { get; set; }
     }
 }

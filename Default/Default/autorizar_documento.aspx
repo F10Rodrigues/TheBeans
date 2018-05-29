@@ -14,7 +14,7 @@
             <AlternatingRowStyle BackColor="#FFCC00" />
             <Columns>
                 <asp:BoundField DataField="Id_autorizar" HeaderText="ID" />
-                <asp:BoundField DataField="vencimento" HeaderText="DATA VENCIMENTO" />
+                <asp:BoundField DataField="data_vencimento" HeaderText="DATA VENCIMENTO" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
                 <asp:BoundField DataField="numero" HeaderText="NUMERO" />
                 <asp:BoundField DataField="serie" HeaderText="SERIE" />

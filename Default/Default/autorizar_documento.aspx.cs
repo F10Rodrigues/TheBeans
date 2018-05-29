@@ -16,7 +16,11 @@ namespace Default
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            carregagrid();
+            if (!IsPostBack)
+            {
+               // carregaProgramacaoPag();
+                carregagrid();
+            }
         }
 
         protected void btn_Voltar_Click(object sender, EventArgs e)
@@ -31,11 +35,18 @@ namespace Default
 
         public void carregagrid()
         {
-            
-            lista = entities.autorizar.OrderBy(x => x.vencimento).ToList();
+
+            lista = entities.autorizar.OrderBy(x => x.cnpj).ToList();
             grid_autorizar.DataSource = lista;
             grid_autorizar.DataBind();
         }
+
+      /*  private void carregaProgramacaoPag()
+        {
+            List<programacao_pagamento> lista = entities.programacao_pagamento.OrderBy(x => x.cnpj).ToList();
+            grid_autorizar.DataSource = lista;
+            grid_autorizar.DataBind();
+        }*/
 
         protected void grid_autorizar_RowDataBound(object sender, GridViewRowEventArgs e)
         {
