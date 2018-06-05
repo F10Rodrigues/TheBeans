@@ -14,13 +14,13 @@ namespace Default
 
         private List<autorizar> lista;
 
-        private List<programacao_pagamento> lista1;
+        //private List<programacao_pagamento> lista1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                carregaProgramacaoPag();
+                //carregaProgramacaoPag();
                 carregagrid();
             }
         }
