@@ -5,20 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="bancodadosinterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="autorizar">
-          <Key>
-            <PropertyRef Name="Id_autorizar" />
-          </Key>
-          <Property Name="Id_autorizar" Type="int" Nullable="false" />
-          <Property Name="data_vencimento" Type="datetime" Nullable="false" />
-          <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
-          <Property Name="numero" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="serie" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="observacao" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="autorizado" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="idprogramacao" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="documento_ged">
           <Key>
             <PropertyRef Name="Id_documento" />
@@ -89,19 +75,6 @@
           <Property Name="valor_produtos" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
-        <EntityType Name="pagamento">
-          <Key>
-            <PropertyRef Name="id_pagamento" />
-          </Key>
-          <Property Name="id_pagamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="vencimento" Type="datetime" Nullable="false" />
-          <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
-          <Property Name="numero" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="serie" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="observacao" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="pago" Type="varchar" MaxLength="10" Nullable="false" />
-        </EntityType>
         <EntityType Name="programacao_pagamento">
           <Key>
             <PropertyRef Name="id_programacao" />
@@ -116,41 +89,8 @@
           <Property Name="data_vencimento" Type="datetime" Nullable="false" />
           <Property Name="total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="observacao" Type="varchar" MaxLength="100" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Rel_documentos">
-          <Key>
-            <PropertyRef Name="id_rel_documentos" />
-          </Key>
-          <Property Name="id_rel_documentos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="data_entrada" Type="date" Nullable="false" />
-          <Property Name="Nfe_CTe" Type="int" Nullable="false" />
-          <Property Name="razao_social" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="valor" Type="float" Nullable="false" />
-          <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Rel_fornecedores">
-          <Key>
-            <PropertyRef Name="id_rel_fornecedores" />
-          </Key>
-          <Property Name="id_rel_fornecedores" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cnpj" Type="varchar" MaxLength="14" Nullable="false" />
-          <Property Name="razao_social" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="endereco" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="telefone" Type="varchar" MaxLength="9" Nullable="false" />
-          <Property Name="ie" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Rel_funcionarios">
-          <Key>
-            <PropertyRef Name="id_rel_funcionarios" />
-          </Key>
-          <Property Name="id_rel_funcionarios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cpf" Type="varchar" MaxLength="11" Nullable="false" />
-          <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="endereco" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="telefone" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="funcao" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="autorizado" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="pago" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Rel_ged">
           <Key>
@@ -172,73 +112,28 @@
           <Property Name="senha" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK_autorizar_ToTable">
-          <End Role="programacao_pagamento" Type="Self.programacao_pagamento" Multiplicity="1" />
-          <End Role="autorizar" Type="Self.autorizar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="programacao_pagamento">
-              <PropertyRef Name="id_programacao" />
-            </Principal>
-            <Dependent Role="autorizar">
-              <PropertyRef Name="idprogramacao" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="bancodadosinterModelStoreContainer">
-          <EntitySet Name="autorizar" EntityType="Self.autorizar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="documento_ged" EntityType="Self.documento_ged" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="funcionario" EntityType="Self.funcionario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NFe" EntityType="Self.NFe" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="pagamento" EntityType="Self.pagamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="programacao_pagamento" EntityType="Self.programacao_pagamento" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Rel_documentos" EntityType="Self.Rel_documentos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Rel_fornecedores" EntityType="Self.Rel_fornecedores" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Rel_funcionarios" EntityType="Self.Rel_funcionarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rel_ged" EntityType="Self.Rel_ged" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_autorizar_ToTable" Association="Self.FK_autorizar_ToTable">
-            <End Role="programacao_pagamento" EntitySet="programacao_pagamento" />
-            <End Role="autorizar" EntitySet="autorizar" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bancodadosinterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="bancodadosinterEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="autorizar" EntityType="bancodadosinterModel.autorizar" />
           <EntitySet Name="documento_ged" EntityType="bancodadosinterModel.documento_ged" />
           <EntitySet Name="fornecedor" EntityType="bancodadosinterModel.fornecedor" />
           <EntitySet Name="funcionario" EntityType="bancodadosinterModel.funcionario" />
           <EntitySet Name="NFe" EntityType="bancodadosinterModel.NFe" />
-          <EntitySet Name="pagamento" EntityType="bancodadosinterModel.pagamento" />
           <EntitySet Name="programacao_pagamento" EntityType="bancodadosinterModel.programacao_pagamento" />
-          <EntitySet Name="Rel_documentos" EntityType="bancodadosinterModel.Rel_documentos" />
-          <EntitySet Name="Rel_fornecedores" EntityType="bancodadosinterModel.Rel_fornecedores" />
-          <EntitySet Name="Rel_funcionarios" EntityType="bancodadosinterModel.Rel_funcionarios" />
           <EntitySet Name="Rel_ged" EntityType="bancodadosinterModel.Rel_ged" />
           <EntitySet Name="usuario" EntityType="bancodadosinterModel.usuario" />
-          <AssociationSet Name="FK_autorizar_ToTable" Association="bancodadosinterModel.FK_autorizar_ToTable">
-            <End Role="programacao_pagamento" EntitySet="programacao_pagamento" />
-            <End Role="autorizar" EntitySet="autorizar" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="autorizar">
-          <Key>
-            <PropertyRef Name="Id_autorizar" />
-          </Key>
-          <Property Name="Id_autorizar" Type="Int32" Nullable="false" />
-          <Property Name="data_vencimento" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
-          <Property Name="numero" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="serie" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="observacao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="autorizado" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="idprogramacao" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="programacao_pagamento" Relationship="bancodadosinterModel.FK_autorizar_ToTable" FromRole="autorizar" ToRole="programacao_pagamento" />
-        </EntityType>
         <EntityType Name="documento_ged">
           <Key>
             <PropertyRef Name="Id_documento" />
@@ -309,19 +204,6 @@
           <Property Name="valor_produtos" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
         </EntityType>
-        <EntityType Name="pagamento">
-          <Key>
-            <PropertyRef Name="id_pagamento" />
-          </Key>
-          <Property Name="id_pagamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="vencimento" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
-          <Property Name="numero" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="serie" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="observacao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="pago" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="programacao_pagamento">
           <Key>
             <PropertyRef Name="id_programacao" />
@@ -336,42 +218,8 @@
           <Property Name="data_vencimento" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="observacao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="autorizar" Relationship="bancodadosinterModel.FK_autorizar_ToTable" FromRole="programacao_pagamento" ToRole="autorizar" />
-        </EntityType>
-        <EntityType Name="Rel_documentos">
-          <Key>
-            <PropertyRef Name="id_rel_documentos" />
-          </Key>
-          <Property Name="id_rel_documentos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="data_entrada" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Nfe_CTe" Type="Int32" Nullable="false" />
-          <Property Name="razao_social" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="valor" Type="Double" Nullable="false" />
-          <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Rel_fornecedores">
-          <Key>
-            <PropertyRef Name="id_rel_fornecedores" />
-          </Key>
-          <Property Name="id_rel_fornecedores" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cnpj" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
-          <Property Name="razao_social" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="endereco" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="telefone" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
-          <Property Name="ie" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Rel_funcionarios">
-          <Key>
-            <PropertyRef Name="id_rel_funcionarios" />
-          </Key>
-          <Property Name="id_rel_funcionarios" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cpf" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="endereco" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="telefone" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="funcao" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="autorizado" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="pago" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Rel_ged">
           <Key>
@@ -393,39 +241,12 @@
           <Property Name="senha" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <Association Name="FK_autorizar_ToTable">
-          <End Type="bancodadosinterModel.programacao_pagamento" Role="programacao_pagamento" Multiplicity="1" />
-          <End Type="bancodadosinterModel.autorizar" Role="autorizar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="programacao_pagamento">
-              <PropertyRef Name="id_programacao" />
-            </Principal>
-            <Dependent Role="autorizar">
-              <PropertyRef Name="idprogramacao" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="bancodadosinterModelStoreContainer" CdmEntityContainer="bancodadosinterEntities1">
-          <EntitySetMapping Name="autorizar">
-            <EntityTypeMapping TypeName="bancodadosinterModel.autorizar">
-              <MappingFragment StoreEntitySet="autorizar">
-                <ScalarProperty Name="idprogramacao" ColumnName="idprogramacao" />
-                <ScalarProperty Name="autorizado" ColumnName="autorizado" />
-                <ScalarProperty Name="observacao" ColumnName="observacao" />
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="serie" ColumnName="serie" />
-                <ScalarProperty Name="numero" ColumnName="numero" />
-                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
-                <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
-                <ScalarProperty Name="Id_autorizar" ColumnName="Id_autorizar" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="documento_ged">
             <EntityTypeMapping TypeName="bancodadosinterModel.documento_ged">
               <MappingFragment StoreEntitySet="documento_ged">
@@ -500,23 +321,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="pagamento">
-            <EntityTypeMapping TypeName="bancodadosinterModel.pagamento">
-              <MappingFragment StoreEntitySet="pagamento">
-                <ScalarProperty Name="pago" ColumnName="pago" />
-                <ScalarProperty Name="observacao" ColumnName="observacao" />
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="serie" ColumnName="serie" />
-                <ScalarProperty Name="numero" ColumnName="numero" />
-                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
-                <ScalarProperty Name="vencimento" ColumnName="vencimento" />
-                <ScalarProperty Name="id_pagamento" ColumnName="id_pagamento" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="programacao_pagamento">
             <EntityTypeMapping TypeName="bancodadosinterModel.programacao_pagamento">
               <MappingFragment StoreEntitySet="programacao_pagamento">
+                <ScalarProperty Name="pago" ColumnName="pago" />
+                <ScalarProperty Name="autorizado" ColumnName="autorizado" />
                 <ScalarProperty Name="observacao" ColumnName="observacao" />
                 <ScalarProperty Name="total" ColumnName="total" />
                 <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
@@ -527,44 +336,6 @@
                 <ScalarProperty Name="ie" ColumnName="ie" />
                 <ScalarProperty Name="cnpj" ColumnName="cnpj" />
                 <ScalarProperty Name="id_programacao" ColumnName="id_programacao" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Rel_documentos">
-            <EntityTypeMapping TypeName="bancodadosinterModel.Rel_documentos">
-              <MappingFragment StoreEntitySet="Rel_documentos">
-                <ScalarProperty Name="usuario" ColumnName="usuario" />
-                <ScalarProperty Name="valor" ColumnName="valor" />
-                <ScalarProperty Name="razao_social" ColumnName="razao_social" />
-                <ScalarProperty Name="Nfe_CTe" ColumnName="Nfe_CTe" />
-                <ScalarProperty Name="data_entrada" ColumnName="data_entrada" />
-                <ScalarProperty Name="id_rel_documentos" ColumnName="id_rel_documentos" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Rel_fornecedores">
-            <EntityTypeMapping TypeName="bancodadosinterModel.Rel_fornecedores">
-              <MappingFragment StoreEntitySet="Rel_fornecedores">
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="ie" ColumnName="ie" />
-                <ScalarProperty Name="telefone" ColumnName="telefone" />
-                <ScalarProperty Name="endereco" ColumnName="endereco" />
-                <ScalarProperty Name="razao_social" ColumnName="razao_social" />
-                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
-                <ScalarProperty Name="id_rel_fornecedores" ColumnName="id_rel_fornecedores" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Rel_funcionarios">
-            <EntityTypeMapping TypeName="bancodadosinterModel.Rel_funcionarios">
-              <MappingFragment StoreEntitySet="Rel_funcionarios">
-                <ScalarProperty Name="funcao" ColumnName="funcao" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="telefone" ColumnName="telefone" />
-                <ScalarProperty Name="endereco" ColumnName="endereco" />
-                <ScalarProperty Name="nome" ColumnName="nome" />
-                <ScalarProperty Name="cpf" ColumnName="cpf" />
-                <ScalarProperty Name="id_rel_funcionarios" ColumnName="id_rel_funcionarios" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

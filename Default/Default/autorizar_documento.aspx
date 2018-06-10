@@ -13,14 +13,14 @@
         <asp:GridView CssClass="grid" ID="grid_autorizar" runat="server" AutoGenerateColumns="False" OnRowDataBound="grid_autorizar_RowDataBound" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#FFCC00" />
             <Columns>
-                <asp:BoundField DataField="Id_autorizar" HeaderText="ID" />
+                <asp:BoundField DataField="id_programacao" HeaderText="ID" />
                 <asp:BoundField DataField="data_vencimento" HeaderText="DATA VENCIMENTO" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
                 <asp:BoundField DataField="numero" HeaderText="NUMERO" />
                 <asp:BoundField DataField="serie" HeaderText="SERIE" />
                 <asp:BoundField DataField="total" HeaderText="TOTAL" />
                 <asp:BoundField DataField="observacao" HeaderText="OBSERVAÇÃO" />
-                <asp:BoundField DataField="autorizado" HeaderText="AUTORIZADO" />
+                <asp:BoundField DataField="autorizado" HeaderText="STATUS AUTORIZADO ?" />
                 <asp:ButtonField CommandName="btAutorizar" HeaderText="AUTORIZAR" Text="AUTORIZAR" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />

@@ -63,7 +63,10 @@ namespace Default
                 p.data_vencimento = Convert.ToDateTime(txt_DataVencimento.Text.ToString());
                 p.total = Convert.ToDecimal(txt_Total.Text.ToString());
                 p.observacao = txt_obs.Text;
+                p.pago = "NÃO";
+                p.autorizado = "NÃO"; 
                 entities.programacao_pagamento.Add(p);
+
             }
             entities.SaveChanges();
             carregaGrid();

@@ -13,14 +13,14 @@
         <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False" OnRowDataBound="grid_pag_RowDataBound" OnRowCommand="grid_pag_RowCommand" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#FFCC00" />
             <Columns>
-                <asp:BoundField DataField="id_pagamento" HeaderText="ID" />
-                <asp:BoundField DataField="vencimento" HeaderText="DATA VENCIMENTO" />
+                <asp:BoundField DataField="id_programacao" HeaderText="ID" />
+                <asp:BoundField DataField="data_vencimento" HeaderText="DATA VENCIMENTO" />
                 <asp:BoundField DataField="cnpj" HeaderText="CNPJ" />
                 <asp:BoundField DataField="numero" HeaderText="NUMERO" />
                 <asp:BoundField DataField="serie" HeaderText="SERIE" />
                 <asp:BoundField DataField="total" HeaderText="TOTAL" />
                 <asp:BoundField DataField="observacao" HeaderText="OBSERVAÇÃO" />
-                <asp:BoundField DataField="autorizar" HeaderText="AUTORIZADO" />
+                <asp:BoundField DataField="autorizado" HeaderText="AUTORIZADO ?" />
                 <asp:BoundField DataField="pago" HeaderText="PAGO ?" />
                 <asp:ButtonField CommandName="btPagar" HeaderText="PAGAR" Text="PAGAR" />
             </Columns>

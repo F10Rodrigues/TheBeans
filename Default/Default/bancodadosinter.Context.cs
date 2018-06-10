@@ -25,16 +25,11 @@ namespace Default
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<autorizar> autorizar { get; set; }
         public virtual DbSet<documento_ged> documento_ged { get; set; }
         public virtual DbSet<fornecedor> fornecedor { get; set; }
         public virtual DbSet<funcionario> funcionario { get; set; }
         public virtual DbSet<NFe> NFe { get; set; }
-        public virtual DbSet<pagamento> pagamento { get; set; }
         public virtual DbSet<programacao_pagamento> programacao_pagamento { get; set; }
-        public virtual DbSet<Rel_documentos> Rel_documentos { get; set; }
-        public virtual DbSet<Rel_fornecedores> Rel_fornecedores { get; set; }
-        public virtual DbSet<Rel_funcionarios> Rel_funcionarios { get; set; }
         public virtual DbSet<Rel_ged> Rel_ged { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
     }

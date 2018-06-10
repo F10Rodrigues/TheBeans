@@ -210,9 +210,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="autorizar.cs">
-      <DependentUpon>bancodadosinter.tt</DependentUpon>
-    </Compile>
     <Compile Include="autorizar_documento.aspx.cs">
       <DependentUpon>autorizar_documento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -296,9 +293,6 @@
     <Compile Include="NFe.cs">
       <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
-    <Compile Include="pagamento.cs">
-      <DependentUpon>bancodadosinter.tt</DependentUpon>
-    </Compile>
     <Compile Include="pos_login.aspx.cs">
       <DependentUpon>pos_login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -344,15 +338,6 @@
     </Compile>
     <Compile Include="relatorio_funcionario.aspx.designer.cs">
       <DependentUpon>relatorio_funcionario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Rel_documentos.cs">
-      <DependentUpon>bancodadosinter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Rel_fornecedores.cs">
-      <DependentUpon>bancodadosinter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Rel_funcionarios.cs">
-      <DependentUpon>bancodadosinter.tt</DependentUpon>
     </Compile>
     <Compile Include="Rel_ged.cs">
       <DependentUpon>bancodadosinter.tt</DependentUpon>

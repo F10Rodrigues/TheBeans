@@ -12,15 +12,12 @@ namespace Default
 
         private bancodadosinterEntities1 entities = new bancodadosinterEntities1();
 
-        private List<autorizar> lista;
-
-        //private List<programacao_pagamento> lista1;
+        private List<programacao_pagamento> lista;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //carregaProgramacaoPag();
                 carregagrid();
             }
         }
@@ -38,25 +35,24 @@ namespace Default
         public void carregagrid()
         {
 
-            lista = entities.autorizar.OrderBy(x => x.cnpj).ToList();
+            lista = entities.programacao_pagamento.OrderBy(x => x.cnpj).ToList();
             grid_autorizar.DataSource = lista;
             grid_autorizar.DataBind();
         }
 
-       /* private void carregaProgramacaoPag()
-        {
-            
-            lista1 = entities.programacao_pagamento.OrderBy(x => x.cnpj).ToList();
-            grid_autorizar.DataSource = lista1;
-            grid_autorizar.DataBind();
-        }*/
-
         protected void grid_autorizar_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if(e.Row.Cells[7].Text == "0")
+
+            if (e.Row.Cells[7].Text == "NÃO")
             {
                 e.Row.Cells[7].Text = "NÃO";
             }
+            else if (e.Row.Cells[7].ToString().Equals("btAutorizar"))
+            {
+                e.Row.Cells[7].Text = "SIM";
+            }
+
+
         }
     }
 }
