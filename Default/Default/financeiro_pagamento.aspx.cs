@@ -38,25 +38,7 @@ namespace Default
 
         protected void grid_pag_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
                 e.Row.Cells[8].Text = "SIM";
-
-        }
-        
-        protected void grid_pag_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            int idpagamento = Convert.ToInt32(e.CommandArgument);
-
-            int idSelect = Convert.ToInt32(grid_pag.Rows[idpagamento].Cells[0].Text.ToString());
-
-            programacao_pagamento p = entities.programacao_pagamento.Find(idSelect);
-
-            p.pago = " ";
-            entities.Entry(p);
-            entities.SaveChanges();
-            carregagrid();
-
-            //atualizar os valores 
         }
     }
 }
