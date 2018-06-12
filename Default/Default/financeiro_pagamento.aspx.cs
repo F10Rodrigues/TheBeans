@@ -34,11 +34,5 @@ namespace Default
             grid_pag.DataSource = lista;
             grid_pag.DataBind();
         }
-
-
-        protected void grid_pag_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-                e.Row.Cells[8].Text = "SIM";
-        }
     }
 }

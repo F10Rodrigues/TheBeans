@@ -10,7 +10,7 @@
     <br />
 
     <div class="border border-success">
-        <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False" OnRowDataBound="grid_pag_RowDataBound" OnRowCommand="grid_pag_RowCommand" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+        <asp:GridView CssClass="grid" ID="grid_pag" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#FFCC00" />
             <Columns>
                 <asp:BoundField DataField="id_programacao" HeaderText="ID" />
